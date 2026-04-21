@@ -129,14 +129,14 @@ window.portalData = {
           teacher: "Pak Budi Santoso",
           topic: "Latihan kekuatan otot dan daya tahan otot",
           summary: "Materi interaktif tentang kebugaran jasmani, latihan dasar, dan kuis singkat.",
-          materialUrl: "materi%20PJOK%20BAB%203.html"
+          materialUrl: "materi/pjok-kelas-3-bab-3.html"
         },
         {
           name: "Seni Budaya",
           teacher: "Bu Rina Pertiwi",
           topic: "Ritme, gerak, dan ekspresi sederhana",
           summary: "Aktivitas kreatif untuk menumbuhkan kepekaan seni dan rasa percaya diri.",
-          materialUrl: "materi%20Seni%20Budaya%20BAB%207.html"
+          materialUrl: "materi/seni-budaya-kelas-3-bab-7.html"
         }
       ]
     },
@@ -184,7 +184,7 @@ window.portalData = {
           teacher: "Pak Andri",
           topic: "Perangkat digital, internet, dan dampaknya",
           summary: "Materi interaktif tentang dunia digital, kartu belajar, game, dan refleksi siswa.",
-          materialUrl: "materi%20Informatika%20BAB%207.html"
+          materialUrl: "materi/informatika-kelas-4-bab-7.html"
         }
       ]
     },
