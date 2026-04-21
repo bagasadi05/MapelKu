@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Materi MI Al Irsyad Al Islamiyyah Kota Madiun</title>
+    <meta
+      name="description"
+      content="Portal materi pembelajaran MI Al Irsyad Al Islamiyyah Kota Madiun. Pilih kelas, cari mata pelajaran, dan buka materi belajar interaktif."
+    />
+    <meta
+      name="theme-color"
+      content="#0d4b32"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="assets/logo-mi-al-irsyad.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb-one" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-two" aria-hidden="true"></div>
+
+    <header class="hero shell">
+      <div class="hero-copy surface surface-hero">
+        <div class="brand-lockup">
+          <img
+            src="assets/logo-mi-al-irsyad.png"
+            alt="Logo MI Al Irsyad Al Islamiyyah Kota Madiun"
+            class="school-logo"
+            id="school-logo"
+          />
+          <div class="school-logo-fallback" id="school-logo-fallback" aria-hidden="true">MI</div>
+          <div>
+            <p class="eyebrow">Portal Materi Pembelajaran</p>
+            <h1>Akses materi belajar MI Al Irsyad dalam satu halaman ringkas.</h1>
+            <p class="lead">
+              Temukan materi per kelas dengan cepat, tampil rapi di desktop maupun HP,
+              dan siap dipakai untuk pendampingan belajar harian.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="primary-link" href="#portal-panel">Mulai Cari Materi</a>
+          <a class="secondary-link" href="#materi-unggulan">Lihat Unggulan</a>
+        </div>
+
+        <div class="hero-stats" id="hero-stats" aria-live="polite">
+          <article class="stat-card">
+            <span>Total Kelas</span>
+            <strong id="stat-kelas">-</strong>
+          </article>
+          <article class="stat-card">
+            <span>Total Mapel</span>
+            <strong id="stat-mapel">-</strong>
+          </article>
+          <article class="stat-card">
+            <span>Materi Aktif</span>
+            <strong id="stat-materi">-</strong>
+          </article>
+        </div>
+      </div>
+
+      <aside class="hero-side surface">
+        <p class="side-label">Status Portal</p>
+        <h2>Informasi ketersediaan materi diperbarui otomatis.</h2>
+        <div class="announcement-card">
+          <span class="announcement-label">Ringkasan</span>
+          <p id="availability-summary">Memuat data materi...</p>
+        </div>
+        <div class="quick-points" aria-label="Keunggulan portal">
+          <span class="quick-pill">Navigasi cepat</span>
+          <span class="quick-pill">Filter mapel</span>
+          <span class="quick-pill">Ramah mobile</span>
+        </div>
+      </aside>
+    </header>
+
+    <main class="shell layout">
+      <section class="surface spotlight" id="materi-unggulan" aria-labelledby="materi-unggulan-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Materi Unggulan</p>
+            <h2 id="materi-unggulan-title">Mulai dari materi yang sudah siap dipakai</h2>
+          </div>
+          <p class="section-note">Hanya materi dengan tautan aktif yang ditampilkan.</p>
+        </div>
+        <div id="featured-list" class="featured-grid">
+          <p class="placeholder-card">Daftar materi unggulan sedang dimuat.</p>
+        </div>
+      </section>
+
+      <section class="surface portal-panel" id="portal-panel" aria-labelledby="portal-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Portal Utama</p>
+            <h2 id="portal-title">Temukan materi sesuai kebutuhan belajar</h2>
+          </div>
+          <p class="section-note" id="result-summary">Memuat daftar mata pelajaran...</p>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-field" for="search-input">
+            <span class="search-label">Cari</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Cari mata pelajaran, topik, atau guru"
+              autocomplete="off"
+            />
+          </label>
+
+          <fieldset class="filter-group">
+            <legend class="search-label">Filter</legend>
+            <div class="filter-options">
+              <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">
+                Semua
+              </button>
+              <button type="button" class="filter-chip" data-filter="available" aria-pressed="false">
+                Materi tersedia
+              </button>
+              <button type="button" class="filter-chip" data-filter="pending" aria-pressed="false">
+                Segera hadir
+              </button>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="portal-columns">
+          <section class="panel-block" aria-labelledby="judul-kelas">
+            <div class="panel-head">
+              <h3 id="judul-kelas">Pilih Kelas</h3>
+              <span id="kelas-terpilih" class="pill">Semua kelas</span>
+            </div>
+            <div id="kelas-list" class="class-grid" role="listbox" aria-label="Daftar kelas"></div>
+          </section>
+
+          <section class="panel-block" aria-labelledby="judul-mapel">
+            <div class="panel-head">
+              <h3 id="judul-mapel">Daftar Mata Pelajaran</h3>
+              <span class="pill" id="mapel-info">Menampilkan semua mata pelajaran</span>
+            </div>
+            <div id="mapel-list" class="subject-grid">
+              <p class="placeholder-card">Daftar mata pelajaran sedang dimuat.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        © <span id="year"></span> MI Al Irsyad Al Islamiyyah Kota Madiun. Portal ini
+        disiapkan untuk akses materi belajar yang lebih rapi dan mudah digunakan.
+      </p>
+    </footer>
+
+    <script src="data/portal-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

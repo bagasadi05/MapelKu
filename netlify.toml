@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/materi/pjok-kelas-3-bab-3.html"
+  to = "/materi%20PJOK%20BAB%203.html"
+  status = 301
+
+[[redirects]]
+  from = "/materi/informatika-kelas-4-bab-7.html"
+  to = "/materi%20Informatika%20BAB%207.html"
+  status = 301
+
+[[redirects]]
+  from = "/materi/seni-budaya-kelas-3-bab-7.html"
+  to = "/materi%20Seni%20Budaya%20BAB%207.html"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
