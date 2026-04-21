@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi PJOK Kelas 3 Bab 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --blue-900: #1e3a8a;
+        --blue-700: #1d4ed8;
+        --blue-500: #3b82f6;
+        --sky-100: #e0f2fe;
+        --mint-100: #dcfce7;
+        --amber-100: #fef3c7;
+        --slate-900: #0f172a;
+        --slate-700: #334155;
+        --slate-500: #64748b;
+        --slate-200: #e2e8f0;
+        --bg: #f8fafc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "DM Sans", sans-serif;
+        background: radial-gradient(circle at 15% 15%, #dbeafe, transparent 26%),
+          radial-gradient(circle at 85% 90%, #dcfce7, transparent 26%), var(--bg);
+        color: var(--slate-900);
+      }
+
+      .wrap {
+        width: min(1100px, calc(100% - 2rem));
+        margin: 1.2rem auto 2rem;
+      }
+
+      .hero {
+        border-radius: 28px;
+        background: linear-gradient(145deg, var(--blue-700), var(--blue-500));
+        color: #fff;
+        padding: 1.5rem;
+        box-shadow: 0 20px 45px rgba(29, 78, 216, 0.25);
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.4rem, 1.8vw + 0.8rem, 2.2rem);
+      }
+
+      .hero p {
+        margin: 0.55rem 0 0;
+        max-width: 68ch;
+        color: #eaf1ff;
+      }
+
+      .pill-row {
+        margin-top: 0.9rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .pill {
+        background: rgba(255, 255, 255, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        padding: 0.36rem 0.68rem;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .card {
+        background: #fff;
+        margin-top: 1rem;
+        border: 1px solid var(--slate-200);
+        border-radius: 22px;
+        padding: 1rem;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: 1.1rem;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .tujuan-grid {
+        margin-top: 0.75rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+
+      .mini-card {
+        border-radius: 16px;
+        padding: 0.9rem;
+        border: 1px solid var(--slate-200);
+      }
+
+      .mini-card h3 {
+        margin: 0;
+        font-size: 0.93rem;
+      }
+
+      .mini-card p {
+        margin: 0.5rem 0 0;
+        color: var(--slate-700);
+        line-height: 1.5;
+      }
+
+      .mini-card ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .mini-card li {
+        color: var(--slate-700);
+        margin-bottom: 0.2rem;
+      }
+
+      .blue {
+        background: #f0f6ff;
+      }
+
+      .green {
+        background: #effcf4;
+      }
+
+      .exercise-grid {
+        margin-top: 0.75rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 0.75rem;
+      }
+
+      .exercise {
+        border: 1px solid var(--slate-200);
+        border-radius: 16px;
+        padding: 0.9rem;
+        background: #fff;
+      }
+
+      .exercise h3 {
+        margin: 0;
+        font-size: 0.98rem;
+      }
+
+      .meta {
+        margin-top: 0.32rem;
+        display: inline-block;
+        padding: 0.2rem 0.52rem;
+        border-radius: 999px;
+        background: var(--sky-100);
+        color: #0f4ea8;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .exercise ol {
+        margin: 0.55rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .exercise li {
+        margin-bottom: 0.2rem;
+        color: var(--slate-700);
+      }
+
+      .note {
+        margin: 0.5rem 0 0;
+        font-size: 0.84rem;
+        color: #22663f;
+        background: var(--mint-100);
+        border-radius: 10px;
+        padding: 0.45rem 0.52rem;
+      }
+
+      .quiz-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .score {
+        background: #1d4ed8;
+        color: #fff;
+        border-radius: 999px;
+        padding: 0.3rem 0.65rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .progress {
+        margin-top: 0.75rem;
+        height: 10px;
+        border-radius: 999px;
+        background: #e2e8f0;
+        overflow: hidden;
+      }
+
+      .bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #1d4ed8, #38bdf8);
+        transition: width 0.3s ease;
+      }
+
+      #question {
+        margin: 1rem 0 0.8rem;
+        font-size: 1.05rem;
+        font-weight: 800;
+      }
+
+      .answers {
+        display: grid;
+        gap: 0.55rem;
+      }
+
+      .answer-btn {
+        border: 1px solid var(--slate-200);
+        background: #fff;
+        color: var(--slate-900);
+        text-align: left;
+        border-radius: 12px;
+        padding: 0.75rem;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .answer-btn:hover {
+        border-color: #93c5fd;
+        background: #eff6ff;
+      }
+
+      .answer-btn.correct {
+        background: #dcfce7;
+        border-color: #22c55e;
+      }
+
+      .answer-btn.wrong {
+        background: #fee2e2;
+        border-color: #ef4444;
+      }
+
+      #feedback {
+        margin-top: 0.65rem;
+        font-weight: 700;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      #result {
+        margin-top: 0.8rem;
+        border-radius: 16px;
+        border: 1px solid var(--slate-200);
+        padding: 1rem;
+        background: #f8fafc;
+      }
+
+      .btn {
+        border: none;
+        border-radius: 12px;
+        background: var(--blue-700);
+        color: #fff;
+        font-weight: 800;
+        padding: 0.72rem 0.9rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 760px) {
+        .tujuan-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <h1>Materi PJOK Kelas 3 - Bab 3</h1>
+        <p>
+          Pelajaran kebugaran jasmani: latihan kekuatan otot dan daya tahan otot secara aman,
+          bertahap, dan menyenangkan.
+        </p>
+        <div class="pill-row">
+          <span class="pill">MI Al Irsyad Al Islamiyyah Kota Madiun</span>
+          <span class="pill">Kurikulum Merdeka</span>
+          <span class="pill">10 Soal Kuis</span>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2 class="section-title">Tujuan Pembelajaran</h2>
+        <div class="tujuan-grid">
+          <article class="mini-card blue">
+            <h3>Capaian Pembelajaran</h3>
+            <p>
+              Peserta didik dapat menerapkan prosedur dan mempraktikkan latihan pengembangan
+              kebugaran jasmani sesuai ukuran dan intensitas aktivitas jasmani.
+            </p>
+          </article>
+          <article class="mini-card green">
+            <h3>Profil Pelajar Pancasila</h3>
+            <ul>
+              <li>Beriman</li>
+              <li>Gotong Royong</li>
+              <li>Mandiri</li>
+              <li>Bernalar Kritis</li>
+              <li>Kreatif</li>
+              <li>Berkebinekaan Global</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Materi Kekuatan Otot</h2>
+        <div class="exercise-grid">
+          <article class="exercise">
+            <h3>1. Saling Mendorong Bahu</h3>
+            <span class="meta">15-30 detik</span>
+            <ol>
+              <li>Berdiri berpasangan berhadapan.</li>
+              <li>Sentuh bahu satu sama lain.</li>
+              <li>Kaki kanan di depan dan lutut sedikit ditekuk.</li>
+              <li>Dorong bahu pasangan dengan tenaga sedang.</li>
+            </ol>
+            <p class="note">Melatih kekuatan, keseimbangan, dan koordinasi.</p>
+          </article>
+
+          <article class="exercise">
+            <h3>2. Mendorong Sambil Merangkak</h3>
+            <span class="meta">15-30 detik</span>
+            <ol>
+              <li>Posisi merangkak berhadapan dengan pasangan.</li>
+              <li>Sentuhkan bahu satu sama lain.</li>
+              <li>Dorong dengan tenaga maksimal.</li>
+              <li>Jaga postur tubuh tetap stabil.</li>
+            </ol>
+            <p class="note">Meningkatkan kekuatan otot bahu.</p>
+          </article>
+
+          <article class="exercise">
+            <h3>3. Saling Tarik-Menarik Duduk</h3>
+            <span class="meta">15-30 detik</span>
+            <ol>
+              <li>Duduk berhadapan dan kaki lurus ke depan.</li>
+              <li>Tempelkan telapak kaki satu sama lain.</li>
+              <li>Saling berpegangan tangan dengan erat.</li>
+              <li>Tarik tubuh pasangan hingga terangkat.</li>
+            </ol>
+            <p class="note">Melatih kekuatan otot dan koordinasi.</p>
+          </article>
+
+          <article class="exercise">
+            <h3>4. Sit Up</h3>
+            <span class="meta">15-30 detik</span>
+            <ol>
+              <li>Berbaring telentang.</li>
+              <li>Lutut ditekuk dan kaki ditahan teman.</li>
+              <li>Tangan diletakkan di belakang kepala.</li>
+              <li>Angkat tubuh hingga posisi duduk.</li>
+            </ol>
+            <p class="note">Efektif melatih otot perut.</p>
+          </article>
+
+          <article class="exercise">
+            <h3>5. Mengangkat Kedua Kaki</h3>
+            <span class="meta">15-30 detik</span>
+            <ol>
+              <li>Duduk dengan kedua kaki terangkat.</li>
+              <li>Lutut ditekuk dan menggantung di udara.</li>
+              <li>Luruskan kedua kaki sambil menjaga seimbang.</li>
+              <li>Turunkan perlahan.</li>
+            </ol>
+            <p class="note">Melatih otot perut bawah dan keseimbangan.</p>
+          </article>
+
+          <article class="exercise">
+            <h3>6. Push Up</h3>
+            <span class="meta">15-30 detik</span>
+            <ol>
+              <li>Posisi tengkurap di lantai.</li>
+              <li>Rapatkan kaki dan luruskan ke belakang.</li>
+              <li>Letakkan telapak tangan di samping dada.</li>
+              <li>Dorong tubuh ke atas hingga tangan lurus.</li>
+            </ol>
+            <p class="note">Melatih kekuatan otot lengan dan dada.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Materi Daya Tahan Otot</h2>
+        <div class="exercise-grid">
+          <article class="exercise">
+            <h3>1. Berjalan dengan Tangan (Gerobak)</h3>
+            <span class="meta">10 meter</span>
+            <ol>
+              <li>Satu teman tengkurap dan satu teman memegang kaki.</li>
+              <li>Berjalan maju menggunakan kedua tangan.</li>
+              <li>Lakukan bergantian sejauh 10 meter.</li>
+            </ol>
+            <p class="note">Melatih daya tahan otot lengan.</p>
+          </article>
+
+          <article class="exercise">
+            <h3>2. Lompat Tali Perorangan</h3>
+            <span class="meta">1 menit</span>
+            <ol>
+              <li>Siapkan tali skipping.</li>
+              <li>Pegang ujung tali di kedua tangan.</li>
+              <li>Putar tali dari depan ke belakang.</li>
+              <li>Lompat saat tali lewat di bawah kaki.</li>
+            </ol>
+            <p class="note">Meningkatkan daya tahan jantung.</p>
+          </article>
+
+          <article class="exercise">
+            <h3>3. Tarik Tambang Beregu</h3>
+            <span class="meta">30-60 detik</span>
+            <ol>
+              <li>Bentuk tim, masing-masing 3 orang.</li>
+              <li>Gunakan tali minimal 2 meter.</li>
+              <li>Kedua regu memegang ujung tali.</li>
+              <li>Tarik sekuat tenaga saat aba-aba "Ya".</li>
+            </ol>
+            <p class="note">Melatih kekompakan dan daya tahan tim.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="quiz-head">
+          <h2 class="section-title">Kuis PJOK</h2>
+          <span class="score" id="score">Skor: 0</span>
+        </div>
+        <div class="progress"><div class="bar" id="bar"></div></div>
+        <p id="question"></p>
+        <div class="answers" id="answers"></div>
+        <p id="feedback"></p>
+        <div id="result" class="hide"></div>
+      </section>
+    </div>
+
+    <script>
+      const kuisData = [
+        { q: "Apa definisi dari kekuatan otot?", a: ["Kemampuan melawan beban", "Kemampuan berlari jauh", "Kemampuan bernapas panjang"], c: 0 },
+        { q: "Latihan Sit Up melatih otot bagian...", a: ["Lengan", "Perut", "Kaki"], c: 1 },
+        { q: "Durasi latihan dorong bahu adalah...", a: ["1 jam", "15-30 detik", "2 menit"], c: 1 },
+        { q: "Jarak berjalan dengan tangan adalah...", a: ["5 meter", "10 meter", "50 meter"], c: 1 },
+        { q: "Latihan daya tahan bertujuan agar tidak cepat...", a: ["Lapar", "Lelah", "Ngantuk"], c: 1 },
+        { q: "Panjang tali minimal tarik tambang adalah...", a: ["2 meter", "1 meter", "50 cm"], c: 0 },
+        { q: "Aba-aba mulai menarik tali adalah...", a: ["Siap", "Mulai", "Ya"], c: 2 },
+        { q: "Push Up melatih kekuatan otot...", a: ["Perut", "Lengan dan Dada", "Leher"], c: 1 },
+        { q: "Lompat tali perorangan dilakukan selama...", a: ["1 menit", "10 menit", "5 detik"], c: 0 },
+        { q: "Kebugaran membantu mencegah penyakit...", a: ["Hanya flu", "Menular dan tidak menular", "Sakit gigi"], c: 1 }
+      ];
+
+      const scoreEl = document.getElementById("score");
+      const questionEl = document.getElementById("question");
+      const answersEl = document.getElementById("answers");
+      const feedbackEl = document.getElementById("feedback");
+      const barEl = document.getElementById("bar");
+      const resultEl = document.getElementById("result");
+
+      let idx = 0;
+      let score = 0;
+
+      function renderQuiz() {
+        const current = kuisData[idx];
+        questionEl.textContent = `Soal ${idx + 1}: ${current.q}`;
+        answersEl.innerHTML = "";
+        feedbackEl.textContent = "";
+        barEl.style.width = `${((idx + 1) / kuisData.length) * 100}%`;
+        scoreEl.textContent = `Skor: ${score}`;
+
+        current.a.forEach((ans, i) => {
+          const btn = document.createElement("button");
+          btn.className = "answer-btn";
+          btn.textContent = ans;
+          btn.addEventListener("click", () => pilihJawaban(i));
+          answersEl.appendChild(btn);
+        });
+      }
+
+      function pilihJawaban(selected) {
+        const current = kuisData[idx];
+        const buttons = Array.from(answersEl.children);
+
+        buttons.forEach((btn, i) => {
+          btn.disabled = true;
+          if (i === current.c) {
+            btn.classList.add("correct");
+          }
+        });
+
+        if (selected === current.c) {
+          score += 100;
+          feedbackEl.textContent = "Jawaban benar. Mantap!";
+          feedbackEl.style.color = "#15803d";
+        } else {
+          buttons[selected].classList.add("wrong");
+          feedbackEl.textContent = "Belum tepat. Tetap semangat ya.";
+          feedbackEl.style.color = "#b91c1c";
+        }
+
+        scoreEl.textContent = `Skor: ${score}`;
+
+        setTimeout(() => {
+          idx += 1;
+          if (idx < kuisData.length) {
+            renderQuiz();
+          } else {
+            tampilHasil();
+          }
+        }, 850);
+      }
+
+      function tampilHasil() {
+        questionEl.textContent = "Kuis selesai.";
+        answersEl.innerHTML = "";
+        feedbackEl.textContent = "";
+        barEl.style.width = "100%";
+        resultEl.classList.remove("hide");
+        resultEl.innerHTML = `
+          <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;">Skor Akhir: ${score} / 1000</h3>
+          <p style="margin:.45rem 0 0;color:#334155;">Terus latihan agar tubuh makin kuat, sehat, dan bugar.</p>
+          <button class="btn" id="ulang-btn" style="margin-top:.8rem;">Ulangi Kuis</button>
+        `;
+
+        document.getElementById("ulang-btn").addEventListener("click", () => {
+          idx = 0;
+          score = 0;
+          resultEl.classList.add("hide");
+          renderQuiz();
+        });
+      }
+
+      renderQuiz();
+    </script>
+  </body>
+</html>

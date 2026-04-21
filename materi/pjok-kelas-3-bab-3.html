@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PJOK Kelas 3 Bab 3 | Portal Materi MI Al Irsyad</title>
+    <meta
+      name="description"
+      content="Materi PJOK kelas 3 bab 3 tentang latihan kekuatan otot dan daya tahan otot, lengkap dengan aktivitas dan kuis interaktif."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/lesson.css" />
+  </head>
+  <body class="lesson-page lesson-pjok">
+    <main class="lesson-shell">
+      <a class="crumb-link" href="../index.html">← Kembali ke portal materi</a>
+
+      <header class="lesson-header">
+        <div class="header-layout">
+          <div>
+            <p class="header-eyebrow">PJOK Kelas 3</p>
+            <h1>Kebugaran Jasmani: Kekuatan Otot dan Daya Tahan Otot</h1>
+            <p>
+              Siswa belajar mengenali latihan sederhana yang aman, bertahap, dan menyenangkan
+              untuk menjaga tubuh tetap kuat, sehat, dan siap beraktivitas.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Bab 3</span>
+              <span class="pill">Kurikulum Merdeka</span>
+              <span class="pill">10 Soal Kuis</span>
+              <span class="pill">Rekap Nama Siswa</span>
+            </div>
+          </div>
+
+          <aside class="header-panel">
+            <h2>Panduan Singkat</h2>
+            <p>Halaman ini dibuat ringan, jelas, dan mudah dipakai saat pembelajaran harian.</p>
+            <ul>
+              <li>Isi nama siswa lebih dulu.</li>
+              <li>Baca ringkasan latihan dengan tertib.</li>
+              <li>Jawab kuis sampai selesai.</li>
+              <li>Simpan hasil agar skor masuk ke Netlify.</li>
+            </ul>
+          </aside>
+        </div>
+      </header>
+
+      <div class="lesson-stack">
+        <section class="card identity-card">
+          <h2>Identitas Siswa</h2>
+          <p class="helper-text">
+            Nama siswa dipakai saat hasil kuis dikirim. Setelah kuis selesai, skor dapat
+            disimpan ke Netlify Forms dan juga dicadangkan di perangkat ini.
+          </p>
+
+          <div class="identity-grid" style="margin-top: 1rem">
+            <div>
+              <div class="form-meta">
+                <div class="field">
+                  <label for="student-name">Nama siswa</label>
+                  <input
+                    class="text-input"
+                    id="student-name"
+                    type="text"
+                    placeholder="Contoh: Siti Aisyah"
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="field">
+                  <label for="student-group">Kelas / Absen</label>
+                  <input
+                    class="text-input"
+                    id="student-group"
+                    type="text"
+                    placeholder="Contoh: 3B / 08"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="inline-note" id="identity-note">Isi nama siswa agar hasil kuis bisa disimpan.</div>
+            </div>
+
+            <aside class="identity-note">
+              <strong>Yang akan direkap</strong>
+              <p class="helper-text" style="margin: 0">
+                Sistem akan menyimpan nama siswa, kelas atau nomor absen, skor akhir, jumlah
+                jawaban benar, dan waktu pengerjaan.
+              </p>
+            </aside>
+          </div>
+
+          <div class="status-grid" style="margin-top: 1rem">
+            <article class="status-card">
+              <span>Identitas aktif</span>
+              <strong id="identity-status-name">Belum diisi</strong>
+            </article>
+            <article class="status-card">
+              <span>Progres kuis</span>
+              <strong id="identity-status-progress">0 / 10 soal</strong>
+            </article>
+            <article class="status-card">
+              <span>Status penyimpanan</span>
+              <strong id="identity-status-save">Belum disimpan</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Tujuan Pembelajaran</h2>
+          <div class="two-column" style="margin-top: 0.9rem">
+            <article class="mini-card">
+              <h3>Capaian Utama</h3>
+              <p>
+                Siswa dapat memahami tujuan latihan kebugaran jasmani dan mempraktikkan
+                latihan yang sesuai usia dengan aman.
+              </p>
+            </article>
+            <article class="mini-card">
+              <h3>Karakter yang Dibangun</h3>
+              <ul class="check-list">
+                <li>Disiplin mengikuti instruksi.</li>
+                <li>Berani mencoba gerakan baru dengan aman.</li>
+                <li>Bekerja sama dan sportif saat berpasangan.</li>
+                <li>Menjaga tubuh tetap aktif dan sehat.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Sebelum Berlatih</h2>
+          <div class="grid-auto" style="margin-top: 0.9rem">
+            <article class="tip-box">
+              <strong>Pemanasan dulu</strong>
+              <p>Lakukan peregangan ringan agar tubuh siap bergerak dan risiko cedera berkurang.</p>
+            </article>
+            <article class="tip-box">
+              <strong>Gunakan tenaga secukupnya</strong>
+              <p>Latihan anak dilakukan bertahap, fokus pada teknik, bukan tenaga berlebihan.</p>
+            </article>
+            <article class="tip-box">
+              <strong>Jaga area tetap aman</strong>
+              <p>Pilih tempat yang cukup luas, tidak licin, dan nyaman untuk bergerak.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Latihan Kekuatan Otot</h2>
+          <div class="grid-auto" style="margin-top: 0.9rem">
+            <article class="activity-card">
+              <h3>Saling Mendorong Bahu</h3>
+              <span class="meta-chip">15 sampai 30 detik</span>
+              <ol class="ordered-list">
+                <li>Berdiri berpasangan saling berhadapan.</li>
+                <li>Sentuhkan bahu dan tekuk lutut sedikit.</li>
+                <li>Dorong perlahan dengan tenaga sedang.</li>
+                <li>Jaga keseimbangan dan jangan berlebihan.</li>
+              </ol>
+            </article>
+            <article class="activity-card">
+              <h3>Mendorong Sambil Merangkak</h3>
+              <span class="meta-chip">15 sampai 30 detik</span>
+              <ol class="ordered-list">
+                <li>Ambil posisi merangkak berhadapan.</li>
+                <li>Sentuhkan bahu dan pertahankan postur tubuh.</li>
+                <li>Dorong perlahan sambil menjaga keseimbangan.</li>
+                <li>Berhenti jika tubuh terasa tidak nyaman.</li>
+              </ol>
+            </article>
+            <article class="activity-card">
+              <h3>Saling Tarik Duduk</h3>
+              <span class="meta-chip">15 sampai 30 detik</span>
+              <ol class="ordered-list">
+                <li>Duduk berhadapan dengan kaki lurus.</li>
+                <li>Tempelkan telapak kaki dengan pasangan.</li>
+                <li>Berpegangan tangan lalu tarik perlahan.</li>
+                <li>Lakukan bergantian dengan tertib.</li>
+              </ol>
+            </article>
+            <article class="activity-card">
+              <h3>Sit Up</h3>
+              <span class="meta-chip">Latihan inti</span>
+              <ol class="ordered-list">
+                <li>Berbaring telentang dengan lutut ditekuk.</li>
+                <li>Minta teman membantu menahan kaki.</li>
+                <li>Angkat tubuh perlahan sampai posisi duduk.</li>
+                <li>Turun kembali dengan terkendali.</li>
+              </ol>
+            </article>
+            <article class="activity-card">
+              <h3>Mengangkat Kedua Kaki</h3>
+              <span class="meta-chip">Latihan keseimbangan</span>
+              <ol class="ordered-list">
+                <li>Duduk sambil menjaga kedua kaki terangkat.</li>
+                <li>Luruskan kaki perlahan sambil seimbang.</li>
+                <li>Tahan sebentar, lalu turunkan perlahan.</li>
+                <li>Ulangi sesuai kemampuan.</li>
+              </ol>
+            </article>
+            <article class="activity-card">
+              <h3>Push Up</h3>
+              <span class="meta-chip">Latihan lengan dan dada</span>
+              <ol class="ordered-list">
+                <li>Posisikan tubuh tengkurap menghadap lantai.</li>
+                <li>Letakkan telapak tangan di samping dada.</li>
+                <li>Dorong tubuh ke atas sampai tangan lurus.</li>
+                <li>Turun perlahan sambil menjaga postur.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Latihan Daya Tahan Otot</h2>
+          <div class="grid-auto" style="margin-top: 0.9rem">
+            <article class="activity-card">
+              <h3>Berjalan dengan Tangan</h3>
+              <span class="meta-chip">Jarak 10 meter</span>
+              <p>
+                Latihan dilakukan berpasangan. Satu siswa berjalan memakai tangan, satu siswa
+                memegang kaki temannya dengan aman.
+              </p>
+            </article>
+            <article class="activity-card">
+              <h3>Lompat Tali Perorangan</h3>
+              <span class="meta-chip">Durasi 1 menit</span>
+              <p>
+                Gunakan ritme yang stabil agar tubuh terbiasa bergerak terus-menerus tanpa
+                cepat lelah.
+              </p>
+            </article>
+            <article class="activity-card">
+              <h3>Tarik Tambang Beregu</h3>
+              <span class="meta-chip">30 sampai 60 detik</span>
+              <p>
+                Latihan ini membantu melatih daya tahan, kerja sama tim, dan semangat sportif
+                saat bermain.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card quiz-card" aria-labelledby="quiz-title">
+          <div class="quiz-header">
+            <div>
+              <h2 id="quiz-title">Kuis PJOK</h2>
+              <p class="helper-text">Jawab soal satu per satu untuk mengecek pemahamanmu.</p>
+            </div>
+            <span class="score-pill" id="score-pill">Skor: 0</span>
+          </div>
+
+          <div class="progress-track">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+
+          <p class="question-text" id="question-text"></p>
+          <div class="answer-list" id="answer-list"></div>
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+          <div class="result-box" id="result-box" hidden></div>
+          <div class="save-status" id="quiz-save-status" hidden></div>
+        </section>
+      </div>
+
+      <form
+        name="pjok-quiz-result"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="pjok-quiz-result" />
+        <input type="text" name="bot-field" />
+        <input type="text" name="lesson_name" />
+        <input type="text" name="student_name" />
+        <input type="text" name="student_group" />
+        <input type="text" name="score" />
+        <input type="text" name="correct_answers" />
+        <input type="text" name="total_questions" />
+        <input type="text" name="completion_status" />
+        <input type="text" name="submitted_at_local" />
+        <input type="text" name="submitted_at_iso" />
+      </form>
+    </main>
+
+    <script>
+      const lessonName = "PJOK Kelas 3 Bab 3";
+      const localStorageKey = "mapelku:pjok-quiz-submissions";
+
+      const quizData = [
+        {
+          question: "Apa tujuan utama latihan kekuatan otot?",
+          answers: [
+            "Membuat tubuh lebih kuat",
+            "Membuat tubuh selalu diam",
+            "Membuat tubuh cepat lelah"
+          ],
+          correct: 0
+        },
+        {
+          question: "Sit up terutama melatih otot bagian apa?",
+          answers: ["Perut", "Mata", "Telinga"],
+          correct: 0
+        },
+        {
+          question: "Durasi saling mendorong bahu yang dianjurkan adalah...",
+          answers: ["15 sampai 30 detik", "5 menit", "1 jam"],
+          correct: 0
+        },
+        {
+          question: "Latihan berjalan dengan tangan dilakukan sejauh...",
+          answers: ["10 meter", "1 meter", "100 meter"],
+          correct: 0
+        },
+        {
+          question: "Saat berlatih, yang paling penting adalah...",
+          answers: ["Teknik aman dan bertahap", "Selalu paling kuat", "Berlomba tanpa aturan"],
+          correct: 0
+        },
+        {
+          question: "Push up membantu melatih otot...",
+          answers: ["Lengan dan dada", "Rambut", "Jari kaki saja"],
+          correct: 0
+        },
+        {
+          question: "Lompat tali perorangan membantu melatih...",
+          answers: ["Daya tahan tubuh", "Cara tidur", "Cara duduk diam"],
+          correct: 0
+        },
+        {
+          question: "Tarik tambang beregu juga melatih...",
+          answers: ["Kerja sama tim", "Malas bergerak", "Berteriak terus"],
+          correct: 0
+        },
+        {
+          question: "Sebelum olahraga, siswa sebaiknya melakukan...",
+          answers: ["Pemanasan", "Langsung tidur", "Makan berlebihan"],
+          correct: 0
+        },
+        {
+          question: "Jika tubuh terasa tidak nyaman saat latihan, kita harus...",
+          answers: [
+            "Berhenti dan memberi tahu guru",
+            "Memaksa terus",
+            "Menertawakan teman"
+          ],
+          correct: 0
+        }
+      ];
+
+      const questionTextEl = document.getElementById("question-text");
+      const answerListEl = document.getElementById("answer-list");
+      const feedbackEl = document.getElementById("feedback");
+      const progressBarEl = document.getElementById("progress-bar");
+      const scorePillEl = document.getElementById("score-pill");
+      const resultBoxEl = document.getElementById("result-box");
+      const quizSaveStatusEl = document.getElementById("quiz-save-status");
+      const studentNameEl = document.getElementById("student-name");
+      const studentGroupEl = document.getElementById("student-group");
+      const identityNoteEl = document.getElementById("identity-note");
+      const identityStatusNameEl = document.getElementById("identity-status-name");
+      const identityStatusProgressEl = document.getElementById("identity-status-progress");
+      const identityStatusSaveEl = document.getElementById("identity-status-save");
+
+      let currentIndex = 0;
+      let score = 0;
+      let correctCount = 0;
+      let quizFinished = false;
+
+      function encodeForm(data) {
+        return Object.entries(data)
+          .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+          .join("&");
+      }
+
+      function saveLocally(payload) {
+        try {
+          const existing = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
+          existing.unshift(payload);
+          localStorage.setItem(localStorageKey, JSON.stringify(existing.slice(0, 50)));
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+
+      function getProgressText() {
+        const answered = Math.min(currentIndex, quizData.length);
+        return `${answered} / ${quizData.length} soal`;
+      }
+
+      function updateIdentitySummary() {
+        const studentName = studentNameEl.value.trim();
+        const studentGroup = studentGroupEl.value.trim();
+        const label = studentName
+          ? `${studentName}${studentGroup ? ` (${studentGroup})` : ""}`
+          : "Belum diisi";
+
+        identityStatusNameEl.textContent = label;
+        identityStatusProgressEl.textContent = getProgressText();
+        identityNoteEl.textContent = studentName
+          ? `Siswa aktif: ${label}. Hasil kuis akan tersimpan atas nama ini.`
+          : "Isi nama siswa agar hasil kuis bisa disimpan.";
+      }
+
+      function setSaveStatus(type, message, summary) {
+        quizSaveStatusEl.hidden = false;
+        quizSaveStatusEl.className = `save-status is-${type}`;
+        quizSaveStatusEl.textContent = message;
+        identityStatusSaveEl.textContent = summary;
+      }
+
+      function buildPayload() {
+        const now = new Date();
+        return {
+          "form-name": "pjok-quiz-result",
+          lesson_name: lessonName,
+          student_name: studentNameEl.value.trim(),
+          student_group: studentGroupEl.value.trim(),
+          score: `${score} / 100`,
+          correct_answers: `${correctCount}`,
+          total_questions: `${quizData.length}`,
+          completion_status: quizFinished ? "Selesai" : "Belum selesai",
+          submitted_at_local: new Intl.DateTimeFormat("id-ID", {
+            dateStyle: "full",
+            timeStyle: "short"
+          }).format(now),
+          submitted_at_iso: now.toISOString()
+        };
+      }
+
+      function renderQuiz() {
+        const item = quizData[currentIndex];
+        questionTextEl.textContent = `Soal ${currentIndex + 1} dari ${quizData.length}: ${item.question}`;
+        answerListEl.innerHTML = "";
+        feedbackEl.textContent = "";
+        resultBoxEl.hidden = true;
+        quizSaveStatusEl.hidden = true;
+        progressBarEl.style.width = `${(currentIndex / quizData.length) * 100}%`;
+        scorePillEl.textContent = `Skor: ${score}`;
+        quizFinished = false;
+        updateIdentitySummary();
+
+        item.answers.forEach((answer, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "answer-btn";
+          button.textContent = answer;
+          button.addEventListener("click", () => handleAnswer(index));
+          answerListEl.appendChild(button);
+        });
+      }
+
+      function handleAnswer(selectedIndex) {
+        const item = quizData[currentIndex];
+        const buttons = Array.from(answerListEl.children);
+
+        buttons.forEach((button, index) => {
+          button.disabled = true;
+          if (index === item.correct) {
+            button.classList.add("correct");
+          }
+        });
+
+        if (selectedIndex === item.correct) {
+          score += 10;
+          correctCount += 1;
+          feedbackEl.textContent = "Jawaban benar. Bagus, lanjutkan!";
+          feedbackEl.style.color = "#166534";
+        } else {
+          buttons[selectedIndex].classList.add("wrong");
+          feedbackEl.textContent = "Belum tepat. Baca lagi langkah latihannya ya.";
+          feedbackEl.style.color = "#b91c1c";
+        }
+
+        scorePillEl.textContent = `Skor: ${score}`;
+
+        window.setTimeout(() => {
+          currentIndex += 1;
+          if (currentIndex < quizData.length) {
+            renderQuiz();
+            return;
+          }
+
+          renderResult();
+        }, 800);
+      }
+
+      function renderResult() {
+        quizFinished = true;
+        questionTextEl.textContent = "Kuis selesai.";
+        answerListEl.innerHTML = "";
+        feedbackEl.textContent = "";
+        progressBarEl.style.width = "100%";
+        resultBoxEl.hidden = false;
+        resultBoxEl.innerHTML = `
+          <h3>Skor Akhir: ${score} dari 100</h3>
+          <p>${
+            score >= 80
+              ? "Hebat, kamu sudah memahami materi dengan sangat baik."
+              : "Bagus, materi utama sudah dicoba. Ulangi lagi untuk hasil yang lebih tinggi."
+          }</p>
+          <p><strong>Jawaban benar:</strong> ${correctCount} dari ${quizData.length} soal.</p>
+          <div class="button-row">
+            <button type="button" class="button" id="retry-button">Ulangi Kuis</button>
+            <button type="button" class="button is-secondary" id="save-result-button">Simpan Hasil Siswa</button>
+          </div>
+        `;
+
+        document.getElementById("retry-button").addEventListener("click", () => {
+          currentIndex = 0;
+          score = 0;
+          correctCount = 0;
+          quizFinished = false;
+          identityStatusSaveEl.textContent = "Belum disimpan";
+          renderQuiz();
+        });
+
+        document.getElementById("save-result-button").addEventListener("click", saveResult);
+        updateIdentitySummary();
+      }
+
+      async function saveResult() {
+        const studentName = studentNameEl.value.trim();
+
+        if (!quizFinished) {
+          setSaveStatus("error", "Selesaikan kuis dulu sebelum menyimpan hasil siswa.", "Belum selesai");
+          return;
+        }
+
+        if (!studentName) {
+          setSaveStatus("error", "Nama siswa wajib diisi sebelum hasil kuis disimpan.", "Nama belum lengkap");
+          studentNameEl.focus();
+          return;
+        }
+
+        const payload = buildPayload();
+        const saveButtonEl = document.getElementById("save-result-button");
+
+        if (saveButtonEl) {
+          saveButtonEl.disabled = true;
+          saveButtonEl.textContent = "Menyimpan...";
+        }
+
+        try {
+          const response = await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encodeForm(payload)
+          });
+
+          if (!response.ok) {
+            throw new Error("Netlify form submit failed");
+          }
+
+          saveLocally(payload);
+          setSaveStatus(
+            "success",
+            "Hasil kuis berhasil dikirim. Nama siswa dan skor sudah tersimpan.",
+            "Tersimpan di Netlify"
+          );
+        } catch (error) {
+          const savedOffline = saveLocally(payload);
+          if (savedOffline) {
+            setSaveStatus(
+              "warning",
+              "Kirim ke Netlify belum berhasil, tetapi hasil kuis sudah dicadangkan di perangkat ini.",
+              "Cadangan lokal aktif"
+            );
+          } else {
+            setSaveStatus(
+              "error",
+              "Penyimpanan belum berhasil. Coba kirim lagi saat koneksi lebih stabil.",
+              "Gagal disimpan"
+            );
+            if (saveButtonEl) {
+              saveButtonEl.disabled = false;
+              saveButtonEl.textContent = "Simpan Hasil Siswa";
+            }
+            return;
+          }
+        }
+
+        if (saveButtonEl) {
+          saveButtonEl.disabled = false;
+          saveButtonEl.textContent = "Simpan Hasil Siswa";
+        }
+
+        studentNameEl.value = "";
+        studentGroupEl.value = "";
+        updateIdentitySummary();
+      }
+
+      studentNameEl.addEventListener("input", updateIdentitySummary);
+      studentGroupEl.addEventListener("input", updateIdentitySummary);
+
+      updateIdentitySummary();
+      renderQuiz();
+    </script>
+  </body>
+</html>

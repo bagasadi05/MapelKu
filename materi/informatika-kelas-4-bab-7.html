@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informatika Kelas 4 Bab 7 | Portal Materi MI Al Irsyad</title>
+    <meta
+      name="description"
+      content="Materi Informatika kelas 4 bab 7 tentang perangkat digital, internet, dampak teknologi, dan refleksi belajar interaktif."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/lesson.css" />
+  </head>
+  <body class="lesson-page lesson-informatika">
+    <main class="lesson-shell">
+      <a class="crumb-link" href="../index.html">← Kembali ke portal materi</a>
+
+      <header class="lesson-header">
+        <div class="header-layout">
+          <div>
+            <p class="header-eyebrow">Informatika Kelas 4</p>
+            <h1>Dunia Digital: Perangkat, Internet, dan Dampaknya</h1>
+            <p>
+              Siswa diajak mengenal perangkat digital di sekitar mereka, memahami manfaat
+              internet, dan belajar membedakan dampak positif serta dampak negatif teknologi.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Bab 7</span>
+              <span class="pill">Materi Interaktif</span>
+              <span class="pill">Refleksi Siswa</span>
+              <span class="pill">Netlify Ready</span>
+            </div>
+          </div>
+
+          <aside class="header-panel">
+            <h2>Alur Belajar Hari Ini</h2>
+            <p>Urutan belajar dibuat singkat supaya nyaman dipakai anak di HP maupun laptop.</p>
+            <ul>
+              <li>Isi nama siswa terlebih dahulu.</li>
+              <li>Pelajari contoh perangkat digital.</li>
+              <li>Mainkan game dampak teknologi.</li>
+              <li>Simpan refleksi agar jawaban masuk ke Netlify.</li>
+            </ul>
+          </aside>
+        </div>
+      </header>
+
+      <div class="lesson-stack">
+        <section class="card identity-card">
+          <h2>Profil Siswa</h2>
+          <p class="helper-text">
+            Nama siswa dipakai sebagai identitas saat jawaban dikirim. Data refleksi akan
+            dikirim ke Netlify Forms dan juga disimpan sebagai cadangan di perangkat ini.
+          </p>
+
+          <div class="identity-grid" style="margin-top: 1rem">
+            <div>
+              <div class="form-meta">
+                <div class="field">
+                  <label for="student-name">Nama siswa</label>
+                  <input
+                    class="text-input"
+                    id="student-name"
+                    type="text"
+                    placeholder="Contoh: Ahmad Fikri"
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="field">
+                  <label for="student-group">Kelas / Absen</label>
+                  <input
+                    class="text-input"
+                    id="student-group"
+                    type="text"
+                    placeholder="Contoh: 4A / 12"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="inline-note" id="identity-note">Isi nama siswa dulu sebelum menyimpan jawaban.</div>
+            </div>
+
+            <aside class="identity-note">
+              <strong>Catatan singkat guru</strong>
+              <p class="helper-text" style="margin: 0">
+                Hasil kirim akan menyertakan nama siswa, rombel/absen, skor game, dan tiga
+                jawaban refleksi agar mudah direkap.
+              </p>
+            </aside>
+          </div>
+
+          <div class="status-grid" style="margin-top: 1rem">
+            <article class="status-card">
+              <span>Identitas aktif</span>
+              <strong id="identity-status-name">Belum diisi</strong>
+            </article>
+            <article class="status-card">
+              <span>Progres game</span>
+              <strong id="identity-status-progress">0 / 6 soal</strong>
+            </article>
+            <article class="status-card">
+              <span>Status penyimpanan</span>
+              <strong id="identity-status-save">Belum disimpan</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Pemahaman Inti</h2>
+          <div class="two-column" style="margin-top: 0.9rem">
+            <article class="mini-card">
+              <h3>Apa itu perangkat digital?</h3>
+              <p>
+                Perangkat digital adalah alat yang membantu manusia mengolah informasi,
+                berkomunikasi, belajar, bekerja, dan menyelesaikan kegiatan sehari-hari.
+              </p>
+            </article>
+            <article class="mini-card">
+              <h3>Peran internet</h3>
+              <p>
+                Internet membantu perangkat saling terhubung sehingga kita bisa mencari
+                informasi, mengirim pesan, menonton video, hingga belajar dari mana saja.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Contoh di Sekitar Kita</h2>
+          <p class="helper-text">
+            Klik tombol pada setiap kartu untuk melihat manfaat dari contoh perangkat digital.
+          </p>
+          <div class="flip-grid" style="margin-top: 0.9rem">
+            <article class="flip-card">
+              <div class="flip-face flip-front">
+                <h3>Belajar Daring</h3>
+                <p>
+                  Laptop, tablet, dan internet membantu siswa belajar tanpa harus selalu
+                  berada di kelas.
+                </p>
+                <button type="button" class="flip-toggle" data-card="card-1">Lihat manfaat</button>
+              </div>
+              <div class="flip-face flip-back" id="card-1" hidden>
+                <h3>Manfaat</h3>
+                <p>
+                  Siswa bisa mengakses video, latihan, dan materi tambahan dari rumah dengan
+                  lebih fleksibel.
+                </p>
+              </div>
+            </article>
+
+            <article class="flip-card">
+              <div class="flip-face flip-front">
+                <h3>Transportasi Online</h3>
+                <p>
+                  Aplikasi digital membantu orang memesan kendaraan atau pengiriman barang
+                  dengan cepat.
+                </p>
+                <button type="button" class="flip-toggle" data-card="card-2">Lihat manfaat</button>
+              </div>
+              <div class="flip-face flip-back" id="card-2" hidden>
+                <h3>Manfaat</h3>
+                <p>
+                  Kegiatan sehari-hari menjadi lebih praktis karena layanan bisa dipesan lewat
+                  ponsel.
+                </p>
+              </div>
+            </article>
+
+            <article class="flip-card">
+              <div class="flip-face flip-front">
+                <h3>Mesin ATM</h3>
+                <p>
+                  Mesin ATM adalah perangkat digital yang membantu orang mengambil uang atau
+                  mengecek saldo.
+                </p>
+                <button type="button" class="flip-toggle" data-card="card-3">Lihat manfaat</button>
+              </div>
+              <div class="flip-face flip-back" id="card-3" hidden>
+                <h3>Manfaat</h3>
+                <p>
+                  Layanan perbankan menjadi lebih cepat karena tidak selalu harus menunggu
+                  antrean di kantor bank.
+                </p>
+              </div>
+            </article>
+
+            <article class="flip-card">
+              <div class="flip-face flip-front">
+                <h3>Kamera CCTV</h3>
+                <p>
+                  Kamera digital membantu menjaga keamanan di rumah, sekolah, dan tempat
+                  umum.
+                </p>
+                <button type="button" class="flip-toggle" data-card="card-4">Lihat manfaat</button>
+              </div>
+              <div class="flip-face flip-back" id="card-4" hidden>
+                <h3>Manfaat</h3>
+                <p>
+                  Lingkungan bisa dipantau dengan lebih baik sehingga membantu mencegah
+                  tindakan yang merugikan.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Sikap Bijak di Dunia Digital</h2>
+          <div class="helper-grid" style="margin-top: 0.9rem">
+            <article class="tip-box">
+              <strong>Gunakan seperlunya</strong>
+              <p>Teknologi membantu banyak hal, tetapi tetap perlu dipakai dengan batas yang sehat.</p>
+            </article>
+            <article class="tip-box">
+              <strong>Pilih informasi dengan cermat</strong>
+              <p>Tidak semua yang ada di internet benar. Siswa perlu dibimbing untuk memeriksa sumber.</p>
+            </article>
+            <article class="tip-box">
+              <strong>Jaga sopan santun</strong>
+              <p>Berkomunikasi di internet tetap harus santun, aman, dan tidak menyakiti orang lain.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card quiz-card" aria-labelledby="impact-quiz-title">
+          <div class="quiz-header">
+            <div>
+              <h2 id="impact-quiz-title">Game Dampak Teknologi</h2>
+              <p class="helper-text">
+                Tentukan apakah pernyataan berikut termasuk dampak positif atau negatif.
+              </p>
+            </div>
+            <span class="score-pill" id="impact-score">Benar: 0</span>
+          </div>
+
+          <div class="progress-track">
+            <div class="progress-bar" id="impact-progress"></div>
+          </div>
+
+          <p class="question-text" id="impact-question"></p>
+          <div class="button-row" id="impact-actions">
+            <button type="button" class="button" data-choice="positive">Positif</button>
+            <button type="button" class="button is-secondary" data-choice="negative">Negatif</button>
+          </div>
+          <p class="feedback" id="impact-feedback" aria-live="polite"></p>
+          <div class="result-box" id="impact-result" hidden></div>
+        </section>
+
+        <section class="card">
+          <h2>Refleksi Singkat</h2>
+          <p class="helper-text">
+            Isi jawaban berikut untuk membantu siswa menghubungkan materi dengan kehidupan
+            sehari-hari. Saat tombol simpan ditekan, nama siswa ikut dikirim bersama
+            jawabannya.
+          </p>
+
+          <div class="helper-grid" style="margin-top: 0.9rem">
+            <article class="helper-panel">
+              <strong>Yang akan tersimpan</strong>
+              <p>Nama siswa, kelas/absen, skor game, dan seluruh jawaban refleksi.</p>
+            </article>
+            <article class="helper-panel">
+              <strong>Cadangan otomatis</strong>
+              <p>Kalau kirim ke Netlify gagal, jawaban tetap dicadangkan dulu di browser ini.</p>
+            </article>
+          </div>
+
+          <div class="field-stack" style="margin-top: 0.9rem">
+            <div class="field">
+              <label for="device-input">Perangkat digital apa yang paling sering kamu lihat?</label>
+              <input
+                class="text-input"
+                id="device-input"
+                type="text"
+                placeholder="Contoh: HP, televisi, laptop"
+              />
+            </div>
+            <div class="field">
+              <label for="benefit-input">Manfaat apa yang kamu rasakan dari teknologi itu?</label>
+              <input
+                class="text-input"
+                id="benefit-input"
+                type="text"
+                placeholder="Contoh: membantu belajar dan berkomunikasi"
+              />
+            </div>
+            <div class="field">
+              <label for="idea-input">Kalau kamu jadi penemu, alat digital apa yang ingin kamu buat?</label>
+              <textarea
+                class="textarea"
+                id="idea-input"
+                placeholder="Jelaskan idemu dengan singkat"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="button" class="button" id="reflection-button">Simpan Refleksi</button>
+          </div>
+          <div class="save-status" id="reflection-status" hidden></div>
+          <div class="result-box reflection-output" id="reflection-output" hidden></div>
+        </section>
+      </div>
+
+      <form
+        name="informatika-reflection"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="informatika-reflection" />
+        <input type="text" name="bot-field" />
+        <input type="text" name="lesson_name" />
+        <input type="text" name="student_name" />
+        <input type="text" name="student_group" />
+        <input type="text" name="impact_score" />
+        <input type="text" name="impact_progress" />
+        <input type="text" name="impact_completed" />
+        <input type="text" name="device_observed" />
+        <input type="text" name="technology_benefit" />
+        <textarea name="invention_idea"></textarea>
+        <input type="text" name="submitted_at_local" />
+        <input type="text" name="submitted_at_iso" />
+      </form>
+    </main>
+
+    <script>
+      const lessonName = "Informatika Kelas 4 Bab 7";
+      const localStorageKey = "mapelku:informatika-reflection-submissions";
+
+      const impactData = [
+        { text: "Komunikasi menjadi lebih cepat dan mudah.", answer: "positive" },
+        { text: "Orang bisa kecanduan bermain gawai tanpa batas.", answer: "negative" },
+        { text: "Belajar bisa dilakukan lewat video dan materi online.", answer: "positive" },
+        { text: "Penipuan digital bisa meningkat jika teknologi disalahgunakan.", answer: "negative" },
+        { text: "Informasi dapat dicari lebih cepat melalui internet.", answer: "positive" },
+        {
+          text: "Komunikasi tatap muka bisa berkurang jika teknologi dipakai berlebihan.",
+          answer: "negative"
+        }
+      ];
+
+      const impactQuestionEl = document.getElementById("impact-question");
+      const impactFeedbackEl = document.getElementById("impact-feedback");
+      const impactScoreEl = document.getElementById("impact-score");
+      const impactProgressEl = document.getElementById("impact-progress");
+      const impactResultEl = document.getElementById("impact-result");
+      const impactActionEls = document.querySelectorAll("[data-choice]");
+      const reflectionButtonEl = document.getElementById("reflection-button");
+      const reflectionOutputEl = document.getElementById("reflection-output");
+      const reflectionStatusEl = document.getElementById("reflection-status");
+      const flipToggleEls = document.querySelectorAll(".flip-toggle");
+      const studentNameEl = document.getElementById("student-name");
+      const studentGroupEl = document.getElementById("student-group");
+      const identityNoteEl = document.getElementById("identity-note");
+      const identityStatusNameEl = document.getElementById("identity-status-name");
+      const identityStatusProgressEl = document.getElementById("identity-status-progress");
+      const identityStatusSaveEl = document.getElementById("identity-status-save");
+      const deviceInputEl = document.getElementById("device-input");
+      const benefitInputEl = document.getElementById("benefit-input");
+      const ideaInputEl = document.getElementById("idea-input");
+
+      let impactIndex = 0;
+      let impactScore = 0;
+      let impactCompleted = false;
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, (char) => {
+          const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+          };
+          return entities[char];
+        });
+      }
+
+      function encodeForm(data) {
+        return Object.entries(data)
+          .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+          .join("&");
+      }
+
+      function saveLocally(payload) {
+        try {
+          const existing = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
+          existing.unshift(payload);
+          localStorage.setItem(localStorageKey, JSON.stringify(existing.slice(0, 50)));
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+
+      function setSaveStatus(type, message, summary) {
+        reflectionStatusEl.hidden = false;
+        reflectionStatusEl.className = `save-status is-${type}`;
+        reflectionStatusEl.textContent = message;
+        identityStatusSaveEl.textContent = summary;
+      }
+
+      function getProgressText() {
+        const answered = Math.min(impactIndex, impactData.length);
+        return `${answered} / ${impactData.length} soal`;
+      }
+
+      function updateIdentitySummary() {
+        const studentName = studentNameEl.value.trim();
+        const studentGroup = studentGroupEl.value.trim();
+        const label = studentName
+          ? `${studentName}${studentGroup ? ` (${studentGroup})` : ""}`
+          : "Belum diisi";
+
+        identityStatusNameEl.textContent = label;
+        identityStatusProgressEl.textContent = getProgressText();
+        identityNoteEl.textContent = studentName
+          ? `Siswa aktif: ${label}. Jawaban akan disimpan atas nama ini.`
+          : "Isi nama siswa dulu sebelum menyimpan jawaban.";
+      }
+
+      function buildPayload() {
+        const now = new Date();
+        return {
+          "form-name": "informatika-reflection",
+          lesson_name: lessonName,
+          student_name: studentNameEl.value.trim(),
+          student_group: studentGroupEl.value.trim(),
+          impact_score: `${impactScore}/${impactData.length}`,
+          impact_progress: getProgressText(),
+          impact_completed: impactCompleted ? "Ya" : "Belum",
+          device_observed: deviceInputEl.value.trim(),
+          technology_benefit: benefitInputEl.value.trim(),
+          invention_idea: ideaInputEl.value.trim(),
+          submitted_at_local: new Intl.DateTimeFormat("id-ID", {
+            dateStyle: "full",
+            timeStyle: "short"
+          }).format(now),
+          submitted_at_iso: now.toISOString()
+        };
+      }
+
+      function renderImpactQuestion() {
+        const current = impactData[impactIndex];
+        impactQuestionEl.textContent = `Pernyataan ${impactIndex + 1} dari ${impactData.length}: ${current.text}`;
+        impactFeedbackEl.textContent = "";
+        impactScoreEl.textContent = `Benar: ${impactScore}`;
+        impactProgressEl.style.width = `${(impactIndex / impactData.length) * 100}%`;
+        updateIdentitySummary();
+      }
+
+      function finishImpactGame() {
+        impactCompleted = true;
+        impactQuestionEl.textContent = "Game selesai.";
+        impactFeedbackEl.textContent = "";
+        impactProgressEl.style.width = "100%";
+        document.getElementById("impact-actions").hidden = true;
+        impactResultEl.hidden = false;
+        impactResultEl.innerHTML = `
+          <h3>Hasil Akhir: ${impactScore} dari ${impactData.length}</h3>
+          <p>${
+            impactScore >= 5
+              ? "Bagus sekali. Kamu sudah bisa membedakan dampak teknologi dengan tepat."
+              : "Bagus. Coba ulangi lagi sambil membaca bagian sikap bijak di atas."
+          }</p>
+          <div class="button-row">
+            <button type="button" class="button" id="restart-impact">Ulangi Game</button>
+          </div>
+        `;
+
+        document.getElementById("restart-impact").addEventListener("click", () => {
+          impactIndex = 0;
+          impactScore = 0;
+          impactCompleted = false;
+          impactResultEl.hidden = true;
+          document.getElementById("impact-actions").hidden = false;
+          renderImpactQuestion();
+        });
+
+        updateIdentitySummary();
+      }
+
+      flipToggleEls.forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetId = button.dataset.card;
+          const target = document.getElementById(targetId);
+          const hidden = target.hasAttribute("hidden");
+          target.toggleAttribute("hidden");
+          button.textContent = hidden ? "Sembunyikan manfaat" : "Lihat manfaat";
+        });
+      });
+
+      impactActionEls.forEach((button) => {
+        button.addEventListener("click", () => {
+          const current = impactData[impactIndex];
+          const selected = button.dataset.choice;
+
+          if (selected === current.answer) {
+            impactScore += 1;
+            impactFeedbackEl.textContent = "Benar. Pilihanmu tepat.";
+            impactFeedbackEl.style.color = "#166534";
+          } else {
+            impactFeedbackEl.textContent = "Belum tepat. Coba ingat lagi manfaat dan risikonya.";
+            impactFeedbackEl.style.color = "#b91c1c";
+          }
+
+          impactScoreEl.textContent = `Benar: ${impactScore}`;
+
+          window.setTimeout(() => {
+            impactIndex += 1;
+            if (impactIndex < impactData.length) {
+              renderImpactQuestion();
+            } else {
+              finishImpactGame();
+            }
+          }, 750);
+        });
+      });
+
+      reflectionButtonEl.addEventListener("click", async () => {
+        const studentName = studentNameEl.value.trim();
+        const device = deviceInputEl.value.trim();
+        const benefit = benefitInputEl.value.trim();
+        const idea = ideaInputEl.value.trim();
+
+        if (!studentName) {
+          setSaveStatus("error", "Nama siswa wajib diisi sebelum jawaban disimpan.", "Nama belum lengkap");
+          studentNameEl.focus();
+          return;
+        }
+
+        if (!device || !benefit || !idea) {
+          setSaveStatus(
+            "error",
+            "Lengkapi semua jawaban refleksi dulu supaya data yang tersimpan utuh.",
+            "Jawaban belum lengkap"
+          );
+          (!device ? deviceInputEl : !benefit ? benefitInputEl : ideaInputEl).focus();
+          return;
+        }
+
+        const payload = buildPayload();
+        reflectionButtonEl.disabled = true;
+        reflectionButtonEl.textContent = "Menyimpan...";
+
+        try {
+          const response = await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encodeForm(payload)
+          });
+
+          if (!response.ok) {
+            throw new Error("Netlify form submit failed");
+          }
+
+          saveLocally(payload);
+          setSaveStatus(
+            "success",
+            "Jawaban berhasil dikirim. Nama siswa dan refleksi sudah tersimpan.",
+            "Tersimpan di Netlify"
+          );
+        } catch (error) {
+          const savedOffline = saveLocally(payload);
+          if (savedOffline) {
+            setSaveStatus(
+              "warning",
+              "Kirim ke Netlify belum berhasil, tetapi jawaban sudah dicadangkan di perangkat ini.",
+              "Cadangan lokal aktif"
+            );
+          } else {
+            setSaveStatus(
+              "error",
+              "Penyimpanan belum berhasil. Coba kirim lagi saat koneksi lebih stabil.",
+              "Gagal disimpan"
+            );
+            reflectionButtonEl.disabled = false;
+            reflectionButtonEl.textContent = "Simpan Refleksi";
+            return;
+          }
+        }
+
+        reflectionOutputEl.hidden = false;
+        reflectionOutputEl.innerHTML = `
+          <h3>Refleksi tersimpan atas nama ${escapeHtml(payload.student_name)}</h3>
+          <p><strong>Kelas / Absen:</strong> ${escapeHtml(payload.student_group || "-")}</p>
+          <p><strong>Skor game:</strong> ${escapeHtml(payload.impact_score)} (${escapeHtml(payload.impact_completed)})</p>
+          <p><strong>Perangkat yang diamati:</strong> ${escapeHtml(payload.device_observed)}</p>
+          <p><strong>Manfaat yang dirasakan:</strong> ${escapeHtml(payload.technology_benefit)}</p>
+          <p><strong>Ide penemuan:</strong> ${escapeHtml(payload.invention_idea)}</p>
+          <p><strong>Waktu kirim:</strong> ${escapeHtml(payload.submitted_at_local)}</p>
+        `;
+
+        studentNameEl.value = "";
+        studentGroupEl.value = "";
+        deviceInputEl.value = "";
+        benefitInputEl.value = "";
+        ideaInputEl.value = "";
+        updateIdentitySummary();
+
+        reflectionButtonEl.disabled = false;
+        reflectionButtonEl.textContent = "Simpan Refleksi";
+      });
+
+      studentNameEl.addEventListener("input", updateIdentitySummary);
+      studentGroupEl.addEventListener("input", updateIdentitySummary);
+
+      updateIdentitySummary();
+      renderImpactQuestion();
+    </script>
+  </body>
+</html>

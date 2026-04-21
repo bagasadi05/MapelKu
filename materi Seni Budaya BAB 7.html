@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Seni Budaya Kelas 3 - Cerita Rakyat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0fdf4;
+            background-image: radial-gradient(#bbf7d0 2px, transparent 2px);
+            background-size: 30px 30px;
+            /* Mencegah scroll horizontal di HP */
+            overflow-x: hidden; 
+        }
+        .bounce-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Confetti animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            animation: fall linear infinite;
+            z-index: 100;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Loading Spinner */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Navbar / Header -->
+    <header class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-5 sm:p-6 shadow-lg rounded-b-[2rem] relative z-10 w-full">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-black mb-2 animate-bounce">🎭 Seni Budaya Kelas 3 🎨</h1>
+            <p class="text-base sm:text-lg md:text-xl font-semibold bg-white/20 inline-block px-4 py-1.5 rounded-full">Bab 7: Bercerita melalui Tarian</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-3 sm:p-4 md:p-6 mt-4 sm:mt-6 space-y-6 sm:space-y-8">
+        
+        <!-- Welcome Section -->
+        <section class="bg-white rounded-3xl p-5 sm:p-6 md:p-8 card-shadow border-4 border-yellow-300 relative mt-4">
+            <div class="absolute -top-6 -left-2 sm:-left-4 text-4xl sm:text-5xl">👋</div>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-3 sm:mb-4 text-center">Halo, Anak-anak Hebat!</h2>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed text-center">
+                Hari ini kita akan belajar hal yang sangat seru, yaitu tentang <b>Cerita Rakyat</b>. Siapa yang pernah didongengkan oleh Ayah, Ibu, atau Nenek sebelum tidur? Nah, cerita-cerita itu termasuk cerita rakyat lho! Yuk, kita pelajari sama-sama! 🚀
+            </p>
+        </section>
+
+        <!-- Pengertian & Ciri-ciri -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            <!-- Pengertian -->
+            <div class="bg-blue-100 rounded-3xl p-5 sm:p-6 card-shadow border-4 border-blue-300 bounce-hover">
+                <h3 class="text-lg sm:text-xl font-extrabold text-blue-700 mb-3 flex items-center">
+                    <span class="text-2xl sm:text-3xl mr-2">📚</span> Apa itu Cerita Rakyat?
+                </h3>
+                <p class="text-gray-700 text-base sm:text-lg">
+                    Cerita rakyat adalah cerita dari zaman dahulu yang berkembang dalam kehidupan masyarakat dan diwariskan secara <b>turun-temurun</b>. Setiap daerah di Indonesia punya cerita yang unik dan menarik!
+                </p>
+            </div>
+
+            <!-- Ciri-ciri -->
+            <div class="bg-pink-100 rounded-3xl p-5 sm:p-6 card-shadow border-4 border-pink-300 bounce-hover">
+                <h3 class="text-lg sm:text-xl font-extrabold text-pink-700 mb-3 flex items-center">
+                    <span class="text-2xl sm:text-3xl mr-2">✨</span> Ciri-ciri Cerita Rakyat
+                </h3>
+                <ul class="space-y-2 text-gray-700 text-base sm:text-lg">
+                    <li class="flex items-start"><span class="mr-2 text-pink-500 text-xl leading-none">•</span> Disampaikan lisan & turun-temurun.</li>
+                    <li class="flex items-start"><span class="mr-2 text-pink-500 text-xl leading-none">•</span> Tidak diketahui pengarangnya (anonim).</li>
+                    <li class="flex items-start"><span class="mr-2 text-pink-500 text-xl leading-none">•</span> Mengandung nilai-nilai luhur/baik.</li>
+                    <li class="flex items-start"><span class="mr-2 text-pink-500 text-xl leading-none">•</span> Bersifat tradisional & kedaerahan.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Fungsi Cerita Rakyat -->
+        <section class="bg-purple-100 rounded-3xl p-5 sm:p-6 md:p-8 card-shadow border-4 border-purple-300 text-center">
+            <h3 class="text-xl sm:text-2xl font-extrabold text-purple-700 mb-4 sm:mb-6 leading-tight">Kenapa Kita Harus Tahu Cerita Rakyat? 🤔</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-2xl p-4 shadow-md border-b-4 border-purple-200">
+                    <div class="text-4xl mb-2">🎓</div>
+                    <h4 class="font-bold text-lg text-purple-600">Sarana Pendidikan</h4>
+                    <p class="text-gray-600 text-sm sm:text-base">Ada pesan dan nasihat baik (amanat) yang bisa kita tiru di kehidupan sehari-hari.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-4 shadow-md border-b-4 border-purple-200">
+                    <div class="text-4xl mb-2">😂</div>
+                    <h4 class="font-bold text-lg text-purple-600">Sarana Hiburan</h4>
+                    <p class="text-gray-600 text-sm sm:text-base">Ceritanya sangat menarik, seru, dan kadang jenaka (lucu) untuk menghibur kita.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jenis Cerita Rakyat (Interactive Cards) -->
+        <section>
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-center text-green-600 mb-4 sm:mb-6 bg-white py-2 px-6 rounded-full mx-auto shadow-md border-2 border-green-200 w-max max-w-[90%]">
+                Jenis Cerita Rakyat 🧩
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                <!-- Mitos -->
+                <div class="bg-yellow-100 rounded-3xl p-5 sm:p-6 card-shadow border-b-8 border-yellow-400 bounce-hover active:scale-95 transition-transform cursor-pointer group">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-yellow-400 p-2 sm:p-3 rounded-full text-xl sm:text-2xl mr-3 sm:mr-4 group-hover:scale-110 transition-transform">🧚‍♀️</div>
+                        <h4 class="text-xl sm:text-2xl font-extrabold text-yellow-700">Mitos</h4>
+                    </div>
+                    <p class="text-gray-700 mb-3 text-sm sm:text-base">Cerita yang tokohnya para dewa atau makhluk setengah dewa. Dipercaya terjadi di masa lampau.</p>
+                    <div class="bg-white/60 p-3 rounded-xl border border-yellow-300 text-sm sm:text-base">
+                        <span class="font-bold text-yellow-800">Contoh:</span> Mitos tentang Dewi Sri (Dewi Padi).
+                    </div>
+                </div>
+
+                <!-- Legenda -->
+                <div class="bg-red-100 rounded-3xl p-5 sm:p-6 card-shadow border-b-8 border-red-400 bounce-hover active:scale-95 transition-transform cursor-pointer group">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-red-400 p-2 sm:p-3 rounded-full text-xl sm:text-2xl mr-3 sm:mr-4 group-hover:scale-110 transition-transform">🌋</div>
+                        <h4 class="text-xl sm:text-2xl font-extrabold text-red-700">Legenda</h4>
+                    </div>
+                    <p class="text-gray-700 mb-3 text-sm sm:text-base">Cerita tentang asal-usul suatu daerah, terbentuknya gunung/sungai, atau benda bersejarah.</p>
+                    <div class="bg-white/60 p-3 rounded-xl border border-red-300 text-sm sm:text-base">
+                        <span class="font-bold text-red-800">Contoh:</span> Legenda Gunung Tangkuban Perahu.
+                    </div>
+                </div>
+
+                <!-- Sage -->
+                <div class="bg-blue-100 rounded-3xl p-5 sm:p-6 card-shadow border-b-8 border-blue-400 bounce-hover active:scale-95 transition-transform cursor-pointer group">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-400 p-2 sm:p-3 rounded-full text-xl sm:text-2xl mr-3 sm:mr-4 group-hover:scale-110 transition-transform">🏇</div>
+                        <h4 class="text-xl sm:text-2xl font-extrabold text-blue-700">Sage</h4>
+                    </div>
+                    <p class="text-gray-700 mb-3 text-sm sm:text-base">Cerita tentang sejarah suatu tempat, tapi dicampur dengan imajinasi/karangan penulisnya.</p>
+                    <div class="bg-white/60 p-3 rounded-xl border border-blue-300 text-sm sm:text-base">
+                        <span class="font-bold text-blue-800">Contoh:</span> Cerita tentang kehebatan Jaka Tingkir.
+                    </div>
+                </div>
+
+                <!-- Epos -->
+                <div class="bg-orange-100 rounded-3xl p-5 sm:p-6 card-shadow border-b-8 border-orange-400 bounce-hover active:scale-95 transition-transform cursor-pointer group">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-orange-400 p-2 sm:p-3 rounded-full text-xl sm:text-2xl mr-3 sm:mr-4 group-hover:scale-110 transition-transform">🦸‍♂️</div>
+                        <h4 class="text-xl sm:text-2xl font-extrabold text-orange-700">Epos</h4>
+                    </div>
+                    <p class="text-gray-700 mb-3 text-sm sm:text-base">Cerita rakyat yang isinya tentang kisah pahlawan yang hebat dan gagah berani.</p>
+                    <div class="bg-white/60 p-3 rounded-xl border border-orange-300 text-sm sm:text-base">
+                        <span class="font-bold text-orange-800">Contoh:</span> Kisah kepahlawanan Mahabharata.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tugas/Misi -->
+        <section class="bg-gradient-to-br from-teal-400 to-blue-500 text-white rounded-3xl p-4 sm:p-6 md:p-8 card-shadow relative overflow-hidden">
+            <div class="absolute -right-4 -top-4 opacity-10 text-8xl md:text-9xl pointer-events-none">🎬</div>
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black mb-4 sm:mb-6 relative z-10 flex items-center justify-center text-center">
+                <span class="mr-2 sm:mr-3">🎬</span> Misi Hari Ini!
+            </h3>
+            
+            <div class="bg-white text-gray-800 rounded-2xl p-4 sm:p-6 md:p-8 relative z-10 shadow-xl border-b-8 border-yellow-400">
+                <p class="text-lg sm:text-xl md:text-2xl font-bold text-teal-600 mb-4 sm:mb-6 text-center bg-teal-50 py-2 sm:py-3 px-2 rounded-xl border border-teal-100 leading-snug">
+                    Tonton Videonya & Tuliskan Ceritanya! 🌟
+                </p>
+
+                <!-- Embed Video YouTube (Responsive Aspect Ratio) -->
+                <div class="mb-6 sm:mb-8 rounded-xl overflow-hidden shadow-lg border-4 border-teal-200 aspect-video w-full bg-gray-100 flex items-center justify-center relative">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/DW6S3mAmVEo" title="Video Cerita Rakyat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="space-y-4 sm:space-y-5 text-base sm:text-lg font-medium text-gray-700">
+                    <div class="flex items-start bg-gray-50 p-3 sm:p-4 rounded-xl border border-gray-100">
+                        <div class="bg-yellow-400 text-yellow-900 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-black mr-3 sm:mr-4 shrink-0 shadow-sm text-sm sm:text-base">1</div>
+                        <p class="mt-0.5 sm:mt-1"><b>Tontonlah video</b> di atas sampai selesai dengan saksama. Perhatikan siapa saja tokohnya dan bagaimana jalan ceritanya ya!</p>
+                    </div>
+                    
+                    <div class="flex items-start bg-blue-50 p-3 sm:p-4 rounded-xl border border-blue-100">
+                        <div class="bg-blue-400 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-black mr-3 sm:mr-4 shrink-0 shadow-sm text-sm sm:text-base">2</div>
+                        <p class="mt-0.5 sm:mt-1">Siapkan <b>buku tulis catatanmu</b> dan alat tulis.</p>
+                    </div>
+                    
+                    <div class="flex items-start bg-green-50 p-3 sm:p-4 rounded-xl border border-green-100">
+                        <div class="bg-green-400 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-black mr-3 sm:mr-4 shrink-0 shadow-sm animate-pulse text-sm sm:text-base">3</div>
+                        <p class="mt-0.5 sm:mt-1"><b>Tuliskan kembali</b> cerita dari video tersebut di buku tulismu. Gunakan <b>bahasamu sendiri</b> ya! Ceritakan seolah-olah kamu sedang mendongeng.</p>
+                    </div>
+
+                    <div class="flex items-start bg-purple-50 p-3 sm:p-4 rounded-xl border border-purple-100">
+                        <div class="bg-purple-400 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-black mr-3 sm:mr-4 shrink-0 shadow-sm text-sm sm:text-base">4</div>
+                        <p class="mt-0.5 sm:mt-1">Di bagian atas ceritamu, jangan lupa tuliskan judulnya!</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 sm:mt-8 text-center">
+                    <p class="inline-block bg-orange-100 text-orange-800 font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-full border-2 border-orange-300 text-sm sm:text-base shadow-sm">
+                        📚 Kumpulkan buku tulismu ke Guru. Semangat!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kuis Interaktif dengan Input Nama -->
+        <section class="bg-white rounded-3xl p-4 sm:p-6 md:p-8 card-shadow border-4 border-pink-400 mb-10" id="quiz-section">
+            <div class="text-center mb-6">
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-pink-600 mb-2">Yuk, Uji Ingatanmu! 🧠</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Kerjakan kuis ini dan namamu akan tersimpan!</p>
+            </div>
+
+            <!-- Form Input Nama (Sebelum Kuis) -->
+            <div id="name-entry-container" class="bg-pink-50 p-5 sm:p-6 rounded-2xl border-2 border-pink-200 text-center max-w-md mx-auto transition-all duration-300">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">Siapa namamu?</h4>
+                <input type="text" id="student-name" placeholder="Ketik nama lengkapmu..." class="w-full p-3 sm:p-4 text-base sm:text-lg border-2 border-pink-300 rounded-xl mb-4 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-center font-semibold text-gray-700 placeholder-gray-400 transition-all">
+                <button id="start-quiz-btn" class="w-full bg-pink-500 hover:bg-pink-600 active:bg-pink-700 text-white font-bold py-3 sm:py-4 px-6 rounded-xl transition-colors shadow-lg flex justify-center items-center gap-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                    <span>Mulai Kuis!</span> 🚀
+                </button>
+                <p id="name-error" class="text-red-500 text-sm mt-2 hidden font-semibold">Tulis namamu dulu ya!</p>
+            </div>
+
+            <!-- Question Container (Hidden by default) -->
+            <div id="question-container" class="bg-pink-50 p-4 sm:p-6 rounded-2xl border-2 border-pink-200 hidden transition-all duration-300">
+                <div class="flex justify-between items-center mb-4">
+                    <span id="student-display-name" class="bg-white px-3 py-1 rounded-full text-pink-600 font-bold text-sm shadow-sm border border-pink-100"></span>
+                    <span id="question-counter" class="bg-pink-200 text-pink-800 px-3 py-1 rounded-full font-bold text-sm">Soal 1/3</span>
+                </div>
+                <h4 id="question-text" class="text-lg sm:text-xl font-bold text-gray-800 mb-5 sm:mb-6 leading-snug">Pertanyaan...</h4>
+                <div id="options-container" class="flex flex-col gap-3 sm:gap-4">
+                    <!-- Options injected by JS -->
+                </div>
+            </div>
+
+            <!-- Result Feedback Box (Hidden by default) -->
+            <div id="feedback-box" class="hidden mt-5 sm:mt-6 p-4 rounded-xl font-bold text-base sm:text-lg text-white text-center shadow-md transition-all duration-300">
+            </div>
+
+            <!-- Leaderboard / Daftar Siswa (Hidden by default) -->
+            <div id="leaderboard-container" class="mt-8 hidden">
+                <h4 class="text-center font-bold text-gray-700 mb-4 border-b-2 border-gray-100 pb-2">🌟 Teman-teman yang sudah mengerjakan:</h4>
+                <div id="leaderboard-list" class="flex flex-wrap gap-2 justify-center max-h-48 overflow-y-auto p-2">
+                    <!-- Nama-nama akan muncul di sini -->
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Custom Alert Modal -->
+    <div id="custom-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-[2rem] p-6 sm:p-8 max-w-sm w-full text-center card-shadow border-4 border-yellow-400 transform scale-95 transition-transform duration-300" id="modal-content">
+            <div id="modal-icon" class="text-5xl sm:text-6xl mb-3 sm:mb-4">🏆</div>
+            <h3 id="modal-title" class="text-xl sm:text-2xl font-black text-gray-800 mb-2">Hore!</h3>
+            <p id="modal-message" class="text-gray-600 mb-5 sm:mb-6 text-base sm:text-lg">Kamu berhasil menyelesaikan kuis!</p>
+            <button id="close-modal-btn" class="bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-3 px-8 rounded-full w-full transition-colors shadow-lg min-h-[48px] text-lg flex justify-center items-center">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <script type="module">
+        // --- Firebase Imports ---
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- Firebase Configuration Setup ---
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'seni-budaya-kelas-3';
+        const firebaseConfigStr = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
+        
+        let app, db, auth;
+        let isFirebaseActive = false;
+
+        try {
+            const firebaseConfig = JSON.parse(firebaseConfigStr);
+            if (Object.keys(firebaseConfig).length > 0) {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                isFirebaseActive = true;
+            } else {
+                console.warn("Firebase config kosong. Berjalan dalam mode lokal.");
+            }
+        } catch (e) {
+            console.error("Gagal inisialisasi Firebase:", e);
+        }
+
+        // --- Quiz Data ---
+        const quizData = [
+            {
+                question: "Cerita rakyat asal-usul Gunung Tangkuban Perahu termasuk jenis apa?",
+                options: ["Mitos", "Legenda", "Epos", "Sage"],
+                correctAnswer: 1 
+            },
+            {
+                question: "Cerita yang tokohnya para dewa atau makhluk setengah dewa disebut...",
+                options: ["Sage", "Fabel", "Mitos", "Legenda"],
+                correctAnswer: 2 
+            },
+            {
+                question: "Salah satu fungsi cerita rakyat adalah sebagai sarana pendidikan karena...",
+                options: [
+                    "Mengandung pesan & nasihat baik", 
+                    "Sangat lucu dan jenaka", 
+                    "Pengarangnya tidak diketahui", 
+                    "Ceritanya sangat panjang"
+                ],
+                correctAnswer: 0 
+            }
+        ];
+
+        // --- State Variables ---
+        let currentQuestion = 0;
+        let score = 0;
+        let currentStudentName = "";
+        let isSaving = false;
+
+        // --- DOM Elements ---
+        const nameEntryContainer = document.getElementById('name-entry-container');
+        const studentNameInput = document.getElementById('student-name');
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const nameError = document.getElementById('name-error');
+        
+        const questionContainer = document.getElementById('question-container');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const feedbackBox = document.getElementById('feedback-box');
+        const studentDisplayName = document.getElementById('student-display-name');
+        const questionCounter = document.getElementById('question-counter');
+        
+        const modal = document.getElementById('custom-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        
+        const leaderboardContainer = document.getElementById('leaderboard-container');
+        const leaderboardList = document.getElementById('leaderboard-list');
+
+        // --- Authentication ---
+        async function authenticateUser() {
+            if (!isFirebaseActive) return true; // Bypass jika tidak ada firebase
+            
+            try {
+                const token = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+                if (token) {
+                    await signInWithCustomToken(auth, token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                return true;
+            } catch (error) {
+                console.error("Auth error:", error);
+                return false;
+            }
+        }
+
+        // --- Event Listeners ---
+        startQuizBtn.addEventListener('click', async () => {
+            const name = studentNameInput.value.trim();
+            if (name === "") {
+                nameError.classList.remove('hidden');
+                studentNameInput.classList.add('border-red-500');
+                studentNameInput.focus();
+                return;
+            }
+            
+            nameError.classList.add('hidden');
+            studentNameInput.classList.remove('border-red-500');
+            currentStudentName = name;
+            
+            // Visual feedback: Loading state
+            startQuizBtn.disabled = true;
+            startQuizBtn.innerHTML = '<span class="loader"></span> Siap-siap...';
+
+            // Authenticate before starting
+            await authenticateUser();
+
+            // Transition UI
+            nameEntryContainer.classList.add('hidden');
+            questionContainer.classList.remove('hidden');
+            studentDisplayName.innerText = `👤 ${currentStudentName}`;
+            
+            loadQuestion();
+        });
+
+        // Hapus error saat mengetik
+        studentNameInput.addEventListener('input', () => {
+            nameError.classList.add('hidden');
+            studentNameInput.classList.remove('border-red-500');
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        function loadQuestion() {
+            feedbackBox.classList.add('hidden');
+            
+            if (currentQuestion >= quizData.length) {
+                finishQuiz();
+                return;
+            }
+
+            questionCounter.innerText = `Soal ${currentQuestion + 1} / ${quizData.length}`;
+            const q = quizData[currentQuestion];
+            questionText.innerText = q.question;
+            
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full bg-white hover:bg-pink-50 active:bg-pink-100 text-gray-700 border-2 border-pink-200 font-bold py-3 sm:py-4 px-4 sm:px-5 rounded-xl transition-all text-left shadow-sm flex items-center min-h-[56px] touch-manipulation";
+                btn.innerHTML = `<span class="bg-pink-100 text-pink-700 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center mr-3 sm:mr-4 font-black shrink-0 shadow-sm">${String.fromCharCode(65 + index)}</span> <span class="text-sm sm:text-base leading-snug">${option}</span>`;
+                
+                btn.onclick = () => checkAnswer(index, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIndex, clickedBtn) {
+            const correctIndex = quizData[currentQuestion].correctAnswer;
+            const buttons = optionsContainer.querySelectorAll('button');
+            
+            // Disable semua tombol agar tidak diklik dua kali
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-80', 'cursor-not-allowed');
+            });
+
+            feedbackBox.classList.remove('hidden');
+
+            if (selectedIndex === correctIndex) {
+                score++;
+                clickedBtn.classList.replace('bg-white', 'bg-green-500');
+                clickedBtn.classList.replace('border-pink-200', 'border-green-600');
+                clickedBtn.classList.replace('text-gray-700', 'text-white');
+                clickedBtn.querySelector('span').classList.replace('bg-pink-100', 'bg-green-600');
+                clickedBtn.querySelector('span').classList.replace('text-pink-700', 'text-white');
+                
+                feedbackBox.className = "mt-5 p-3 sm:p-4 rounded-xl font-bold text-sm sm:text-base text-white bg-green-500 shadow-md animate-bounce text-center";
+                feedbackBox.innerHTML = "✨ Hebat! Jawabanmu Benar! ✨";
+            } else {
+                clickedBtn.classList.replace('bg-white', 'bg-red-500');
+                clickedBtn.classList.replace('border-pink-200', 'border-red-600');
+                clickedBtn.classList.replace('text-gray-700', 'text-white');
+                clickedBtn.querySelector('span').classList.replace('bg-pink-100', 'bg-red-600');
+                clickedBtn.querySelector('span').classList.replace('text-pink-700', 'text-white');
+                
+                // Highlight jawaban benar
+                const correctBtn = buttons[correctIndex];
+                correctBtn.classList.replace('bg-white', 'bg-green-100');
+                correctBtn.classList.replace('border-pink-200', 'border-green-400');
+                
+                feedbackBox.className = "mt-5 p-3 sm:p-4 rounded-xl font-bold text-sm sm:text-base text-white bg-red-500 shadow-md text-center";
+                feedbackBox.innerHTML = "Oops! Kurang tepat. Coba perhatikan lagi ya! 😉";
+            }
+
+            // Lanjut ke soal berikutnya setelah jeda singkat
+            setTimeout(() => {
+                currentQuestion++;
+                loadQuestion();
+            }, 1800);
+        }
+
+        async function finishQuiz() {
+            // Sembunyikan container soal
+            questionContainer.classList.add('hidden');
+            
+            // Tampilkan loading saat menyimpan
+            feedbackBox.className = "mt-5 p-6 rounded-xl font-bold text-base sm:text-lg text-blue-700 bg-blue-100 border-2 border-blue-300 text-center flex flex-col items-center justify-center gap-3";
+            feedbackBox.innerHTML = `<span class="loader border-blue-300 border-t-blue-700"></span> Menyimpan nilaimu...`;
+            feedbackBox.classList.remove('hidden');
+
+            // Simpan ke Firestore
+            if (isFirebaseActive && auth.currentUser) {
+                try {
+                    const submissionsRef = collection(db, 'artifacts', appId, 'public', 'data', 'quiz_submissions');
+                    await addDoc(submissionsRef, {
+                        name: currentStudentName,
+                        score: score,
+                        total: quizData.length,
+                        timestamp: serverTimestamp() // Atau new Date().getTime()
+                    });
+                    
+                    // Setelah tersimpan, ambil daftar teman yang sudah mengerjakan
+                    await loadLeaderboard();
+
+                } catch (error) {
+                    console.error("Gagal menyimpan data:", error);
+                    // Lanjut tampilkan hasil meski gagal simpan (agar anak tidak bingung)
+                }
+            }
+
+            // Sembunyikan loading
+            feedbackBox.classList.add('hidden');
+            showFinalModal();
+            
+            if(isFirebaseActive) {
+                leaderboardContainer.classList.remove('hidden');
+            }
+        }
+
+        // --- Leaderboard / Data Fetching ---
+        async function loadLeaderboard() {
+            if (!isFirebaseActive || !auth.currentUser) return;
+            
+            try {
+                // Rule 2: No complex queries, just fetch all from collection
+                const submissionsRef = collection(db, 'artifacts', appId, 'public', 'data', 'quiz_submissions');
+                const querySnapshot = await getDocs(submissionsRef);
+                
+                const submissions = [];
+                querySnapshot.forEach((doc) => {
+                    submissions.push(doc.data());
+                });
+
+                // Tampilkan di UI
+                leaderboardList.innerHTML = '';
+                if (submissions.length === 0) {
+                    leaderboardList.innerHTML = '<span class="text-gray-500 italic text-sm">Belum ada teman yang mengerjakan. Kamu yang pertama! 🎉</span>';
+                    return;
+                }
+
+                // Filter & tampilkan nama unik (agar tidak dobel jika submit berulang)
+                const uniqueNames = [...new Set(submissions.map(s => s.name))];
+                
+                uniqueNames.forEach(name => {
+                    const badge = document.createElement('span');
+                    badge.className = "bg-green-100 text-green-800 border border-green-200 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold m-1 shadow-sm";
+                    
+                    // Beri highlight jika itu namanya sendiri
+                    if(name.toLowerCase() === currentStudentName.toLowerCase()) {
+                        badge.className = "bg-yellow-200 text-yellow-800 border border-yellow-400 px-3 py-1 rounded-full text-xs sm:text-sm font-black m-1 shadow-sm ring-2 ring-yellow-400";
+                        badge.innerText = `👦/👧 ${name} (Kamu)`;
+                    } else {
+                        badge.innerText = `👤 ${name}`;
+                    }
+                    leaderboardList.appendChild(badge);
+                });
+
+            } catch (error) {
+                console.error("Gagal memuat leaderboard:", error);
+            }
+        }
+
+        function showFinalModal() {
+            document.getElementById('modal-title').innerText = "Kuis Selesai!";
+            
+            let message = "";
+            let icon = "";
+            if (score === quizData.length) {
+                message = `Luar Biasa, ${currentStudentName}! Kamu menjawab SEMUA dengan benar! 🌟💯`;
+                icon = "🏆";
+                createConfetti();
+            } else if (score > 0) {
+                message = `Bagus sekali, ${currentStudentName}! Nilaimu: ${score} dari ${quizData.length}. 👍`;
+                icon = "⭐";
+            } else {
+                message = `Tetap semangat, ${currentStudentName}! Yuk baca lagi materinya dan coba lagi nanti! 💪`;
+                icon = "📚";
+            }
+
+            document.getElementById('modal-message').innerText = message;
+            document.getElementById('modal-icon').innerText = icon;
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            
+            // Ubah tampilan section kuis
+            nameEntryContainer.innerHTML = `
+                <div class="text-center">
+                    <h4 class="text-xl sm:text-2xl font-black text-pink-600 mb-2">Terima Kasih, ${currentStudentName}! 🥳</h4>
+                    <p class="text-gray-700 font-semibold bg-white inline-block px-4 py-2 rounded-xl border-2 border-pink-200">Skor Akhir: ${score} / ${quizData.length}</p>
+                </div>
+            `;
+            nameEntryContainer.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                
+                // Clear confetti
+                const confettis = document.querySelectorAll('.confetti');
+                confettis.forEach(c => c.remove());
+            }, 300);
+        }
+
+        // --- Visual Effects ---
+        function createConfetti() {
+            const colors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899'];
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.animationDelay = Math.random() * 1.5 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+    </script>
+</body>
+</html>
