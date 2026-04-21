@@ -184,7 +184,7 @@ window.portalData = {
           teacher: "Pak Andri",
           topic: "Perangkat digital, internet, dan dampaknya",
           summary: "Materi interaktif tentang dunia digital, kartu belajar, game, dan refleksi siswa.",
-          materialUrl: "materi/informatika-kelas-4-bab-7.html"
+          materialUrl: "materi/informatika-kelas-3-bab-7.html"
         }
       ]
     },
