@@ -106,9 +106,9 @@ window.portalData = {
         {
           name: "Matematika",
           teacher: "Pak Imam Syafii",
-          topic: "Perkalian, pembagian, dan penerapannya",
-          summary: "Numerasi bertahap dengan konteks yang dekat dengan dunia anak.",
-          materialUrl: null
+          topic: "Penyajian data dan membaca tabel sederhana",
+          summary: "Latihan interaktif membaca data, menghitung jumlah, dan memahami selisih dengan contoh yang ramah anak.",
+          materialUrl: "materi/Matematika-kelas-3-bab-5.html"
         },
         {
           name: "IPAS",

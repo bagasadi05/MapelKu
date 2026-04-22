@@ -21,6 +21,16 @@
   to = "/materi/seni-budaya-kelas-3-bab-7.html"
   status = 301
 
+[[redirects]]
+  from = "/materi%20Matematika%20BAB%205.html"
+  to = "/materi/Matematika-kelas-3-bab-5.html"
+  status = 301
+
+[[redirects]]
+  from = "/materi/matematika-kelas-3-bab-5.html"
+  to = "/materi/Matematika-kelas-3-bab-5.html"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tugas Matematika Kelas 3 - Penyajian Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0fdfa;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        h1, h2, h3, .comic-font {
+            font-family: 'Comic Neue', cursive;
+        }
+        .tally {
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #475569;
+        }
+        .tally-5 {
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #ef4444;
+        }
+        .input-box {
+            width: 60px;
+            text-align: center;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 4px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .input-box:focus, .input-text:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        .input-text {
+            width: 100%;
+            max-width: 150px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 4px 8px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        /* Penyesuaian lebar input teks untuk layar kecil */
+        @media (max-width: 640px) {
+            .input-text { max-width: 100%; }
+        }
+        .correct {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+            color: #166534;
+        }
+        .incorrect {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body class="text-slate-800 p-2 sm:p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden border-2 md:border-4 border-teal-500">
+        <!-- Header -->
+        <div class="bg-teal-500 p-5 md:p-6 text-white text-center">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">📝 Latihan Soal Matematika 📝</h1>
+            <p class="text-lg md:text-xl">Bab: Penyajian Data | Kelas 3 SD</p>
+        </div>
+
+        <!-- Identitas -->
+        <div class="p-4 md:p-6 bg-teal-50 border-b-2 border-teal-100 flex flex-col sm:flex-row gap-4 justify-center items-start sm:items-center">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full sm:w-auto">
+                <label class="font-bold whitespace-nowrap">Nama:</label>
+                <input type="text" class="border-2 border-teal-300 rounded-lg p-2 outline-none focus:border-teal-600 w-full sm:w-48" placeholder="Nama Panggilan...">
+            </div>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full sm:w-auto">
+                <label class="font-bold whitespace-nowrap">Kelas:</label>
+                <input type="text" class="border-2 border-teal-300 rounded-lg p-2 outline-none focus:border-teal-600 w-full sm:w-24" value="3">
+            </div>
+        </div>
+
+        <!-- Instruksi Pengerjaan -->
+        <div class="mx-4 mt-4 md:mx-8 md:mt-8 bg-yellow-100 border-l-8 border-yellow-400 rounded-lg p-4 md:p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div class="text-4xl drop-shadow-md hidden sm:block">📓</div>
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="text-2xl sm:hidden">📓</span>
+                    <h3 class="font-bold text-yellow-800 text-lg md:text-xl comic-font">Instruksi Pengerjaan:</h3>
+                </div>
+                <p class="text-yellow-800 text-sm md:text-base leading-relaxed">Tugas ini <b>harus disalin dan dikerjakan di buku tulis</b> Matematika kalian masing-masing ya! Gunakan halaman web ini untuk berlatih dan mengecek apakah jawaban di buku tulismu sudah benar.</p>
+            </div>
+        </div>
+
+        <div class="p-4 md:p-8 space-y-10 mt-2">
+            
+            <!-- BAGIAN A -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-orange-400 text-white min-w-[40px] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl comic-font">A</div>
+                    <h2 class="text-xl md:text-2xl font-bold text-orange-600">Melengkapi dan Membaca Tabel</h2>
+                </div>
+                
+                <p class="text-base md:text-lg">1. Perhatikan tabel jenis mata pelajaran yang disukai siswa kelas 3 berikut! Lengkapilah banyak siswanya.</p>
+                
+                <!-- Wrapper agar tabel bisa discroll ke samping di HP -->
+                <div class="overflow-x-auto w-full pb-2">
+                    <table class="w-full min-w-[350px] max-w-lg mx-auto border-collapse border-2 border-orange-200 shadow-sm rounded-lg overflow-hidden">
+                        <thead>
+                            <tr class="bg-orange-100 text-orange-800">
+                                <th class="border-2 border-orange-200 p-2 md:p-3 text-center text-sm md:text-base">Mata Pelajaran</th>
+                                <th class="border-2 border-orange-200 p-2 md:p-3 text-center text-sm md:text-base">Turus</th>
+                                <th class="border-2 border-orange-200 p-2 md:p-3 text-center text-sm md:text-base whitespace-nowrap">Banyak Siswa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Matematika</td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center text-base md:text-lg tally whitespace-nowrap">
+                                    <span class="tally-5">||||</span> ||
+                                </td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center">
+                                    <input type="number" class="input-box answer-input" data-answer="7">
+                                </td>
+                            </tr>
+                            <tr class="bg-orange-50">
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">IPAS</td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center text-base md:text-lg tally whitespace-nowrap">
+                                    <span class="tally-5">||||</span> |
+                                </td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center">
+                                    <input type="number" class="input-box answer-input" data-answer="6">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Seni Budaya</td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center text-base md:text-lg tally whitespace-nowrap">
+                                    <span class="tally-5">||||</span> ||||
+                                </td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center">
+                                    <input type="number" class="input-box answer-input" data-answer="9">
+                                </td>
+                            </tr>
+                            <tr class="bg-orange-50">
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Bahasa Inggris</td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center text-base md:text-lg tally whitespace-nowrap">
+                                    ||||
+                                </td>
+                                <td class="border-2 border-orange-200 p-2 md:p-3 text-center">
+                                    <input type="number" class="input-box answer-input" data-answer="4">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pembahasan Tabel A -->
+                <div class="explanation-box hidden mt-2 mb-4 p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                    <b>💡 Pembahasan Tabel:</b><br>
+                    • <b>Matematika:</b> 1 coretan miring berarti isi 5. Jadi 5 + 2 = 7.<br>
+                    • <b>IPAS:</b> 5 + 1 = 6.<br>
+                    • <b>Seni Budaya:</b> 5 + 4 = 9.<br>
+                    • <b>B. Inggris:</b> Cuma ada 4 garis, jadi 4.
+                </div>
+
+                <div class="bg-orange-50 p-4 md:p-5 rounded-xl border border-orange-200 space-y-4">
+                    <div class="flex flex-col gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="text-sm md:text-base">2. Berapa selisih banyak siswa yang menyukai Matematika dan IPAS?</span>
+                            <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                                <input type="number" class="input-box answer-input" data-answer="1">
+                                <span class="text-sm md:text-base">siswa.</span>
+                            </div>
+                        </div>
+                        <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                            <b>💡 Pembahasan:</b> "Selisih" itu dikurangi. Matematika (7) dikurangi IPAS (6) &rarr; 7 - 6 = 1 siswa.
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="text-sm md:text-base">3. Berapa jumlah seluruh siswa kelas 3 pada data tersebut?</span>
+                            <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                                <input type="number" class="input-box answer-input" data-answer="26">
+                                <span class="text-sm md:text-base">siswa.</span>
+                            </div>
+                        </div>
+                        <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                            <b>💡 Pembahasan:</b> Jumlahkan semua angkanya &rarr; 7 + 6 + 9 + 4 = 26 siswa.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-2 border-dashed border-gray-200">
+
+            <!-- BAGIAN B -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-blue-400 text-white min-w-[40px] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl comic-font">B</div>
+                    <h2 class="text-xl md:text-2xl font-bold text-blue-600">Tabel Nilai & Penjualan</h2>
+                </div>
+
+                <p class="text-base md:text-lg">Perhatikan tabel nilai ulangan Matematika siswa kelas 3 berikut untuk menjawab soal nomor 1 dan 2!</p>
+                
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+                    <div class="overflow-x-auto w-full md:w-auto shrink-0 pb-2">
+                        <table class="w-full md:w-auto min-w-[280px] border-collapse border-2 border-blue-200 shadow-sm rounded-lg overflow-hidden">
+                            <thead>
+                                <tr class="bg-blue-100 text-blue-800">
+                                    <th class="border-2 border-blue-200 p-2 text-center text-sm md:text-base">Nilai</th>
+                                    <th class="border-2 border-blue-200 p-2 text-center text-sm md:text-base">Turus</th>
+                                    <th class="border-2 border-blue-200 p-2 text-center text-sm md:text-base whitespace-nowrap">Banyak Siswa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border-2 border-blue-200 p-2 text-center font-bold text-sm md:text-base">6</td>
+                                    <td class="border-2 border-blue-200 p-2 text-center tally whitespace-nowrap">||||</td>
+                                    <td class="border-2 border-blue-200 p-2 text-center text-sm md:text-base">4</td>
+                                </tr>
+                                <tr class="bg-blue-50">
+                                    <td class="border-2 border-blue-200 p-2 text-center font-bold text-sm md:text-base">7</td>
+                                    <td class="border-2 border-blue-200 p-2 text-center tally whitespace-nowrap"><span class="tally-5">||||</span> |</td>
+                                    <td class="border-2 border-blue-200 p-2 text-center text-sm md:text-base">6</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-blue-200 p-2 text-center font-bold text-sm md:text-base">8</td>
+                                    <td class="border-2 border-blue-200 p-2 text-center tally whitespace-nowrap"><span class="tally-5">||||</span></td>
+                                    <td class="border-2 border-blue-200 p-2 text-center text-sm md:text-base">5</td>
+                                </tr>
+                                <tr class="bg-blue-50">
+                                    <td class="border-2 border-blue-200 p-2 text-center font-bold text-sm md:text-base">9</td>
+                                    <td class="border-2 border-blue-200 p-2 text-center tally whitespace-nowrap">|||</td>
+                                    <td class="border-2 border-blue-200 p-2 text-center text-sm md:text-base">3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 md:p-5 rounded-xl border border-blue-200 space-y-4 w-full">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-sm md:text-base">1. Jumlah siswa kelas 3 yang memperoleh nilai tertinggi (nilai 9) adalah</span>
+                                <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                                    <input type="number" class="input-box answer-input" data-answer="3">
+                                    <span class="text-sm md:text-base">orang.</span>
+                                </div>
+                            </div>
+                            <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                                <b>💡 Pembahasan:</b> Coba lihat kolom "Nilai". Nilai tertinggi adalah 9. Lurus ke kanan, banyak siswanya adalah 3 orang.
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-sm md:text-base">2. Jumlah seluruh siswa kelas 3 yang mengikuti ulangan adalah</span>
+                                <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                                    <input type="number" class="input-box answer-input" data-answer="18">
+                                    <span class="text-sm md:text-base">orang.</span>
+                                </div>
+                            </div>
+                            <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                                <b>💡 Pembahasan:</b> Jumlahkan angka di kolom "Banyak Siswa" &rarr; 4 + 6 + 5 + 3 = 18 orang.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 md:mt-8"></div>
+                <p class="text-base md:text-lg">Perhatikan tabel penjualan sepeda di sebuah toko selama 5 bulan berikut untuk menjawab soal nomor 3 dan 4!</p>
+
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start mt-4">
+                    <div class="overflow-x-auto w-full md:w-auto shrink-0 pb-2">
+                        <table class="w-full md:w-auto min-w-[250px] border-collapse border-2 border-cyan-200 shadow-sm rounded-lg overflow-hidden">
+                            <thead>
+                                <tr class="bg-cyan-100 text-cyan-800">
+                                    <th class="border-2 border-cyan-200 p-2 text-center text-sm md:text-base">Bulan</th>
+                                    <th class="border-2 border-cyan-200 p-2 text-center text-sm md:text-base whitespace-nowrap">Banyak Penjualan (unit)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border-2 border-cyan-200 p-2 text-center font-semibold text-sm md:text-base">Agustus</td>
+                                    <td class="border-2 border-cyan-200 p-2 text-center text-sm md:text-base">20</td>
+                                </tr>
+                                <tr class="bg-cyan-50">
+                                    <td class="border-2 border-cyan-200 p-2 text-center font-semibold text-sm md:text-base">September</td>
+                                    <td class="border-2 border-cyan-200 p-2 text-center text-sm md:text-base">15</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-cyan-200 p-2 text-center font-semibold text-sm md:text-base">Oktober</td>
+                                    <td class="border-2 border-cyan-200 p-2 text-center text-sm md:text-base">25</td>
+                                </tr>
+                                <tr class="bg-cyan-50">
+                                    <td class="border-2 border-cyan-200 p-2 text-center font-semibold text-sm md:text-base">November</td>
+                                    <td class="border-2 border-cyan-200 p-2 text-center text-sm md:text-base">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-cyan-200 p-2 text-center font-semibold text-sm md:text-base">Desember</td>
+                                    <td class="border-2 border-cyan-200 p-2 text-center text-sm md:text-base">25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-cyan-50 p-4 md:p-5 rounded-xl border border-cyan-200 space-y-4 w-full">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-sm md:text-base">3. Sepeda paling banyak terjual pada bulan</span>
+                                <div class="w-full sm:w-auto mt-2 sm:mt-0">
+                                    <input type="text" class="input-text answer-input" data-answer="november">
+                                </div>
+                            </div>
+                            <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                                <b>💡 Pembahasan:</b> Cari angka paling besar di tabel penjualan. Angka terbesarnya 30, yaitu pada bulan November.
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-sm md:text-base">4. Jumlah penjualan sepeda setelah bulan September (Oktober + November + Desember) adalah</span>
+                                <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                                    <input type="number" class="input-box answer-input" data-answer="80">
+                                    <span class="text-sm md:text-base">unit.</span>
+                                </div>
+                            </div>
+                            <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                                <b>💡 Pembahasan:</b> Tambahkan jualan di bulan Okt (25), Nov (30), dan Des (25) &rarr; 25 + 30 + 25 = 80 unit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-2 border-dashed border-gray-200">
+
+            <!-- BAGIAN C -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-purple-400 text-white min-w-[40px] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl comic-font">C</div>
+                    <h2 class="text-xl md:text-2xl font-bold text-purple-600">Mencari Data yang Hilang</h2>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start">
+                    <div class="w-full sm:w-auto shrink-0 flex justify-center pb-2">
+                        <table class="w-full sm:w-auto min-w-[200px] border-collapse border-2 border-purple-200 shadow-sm rounded-lg overflow-hidden">
+                            <thead>
+                                <tr class="bg-purple-100 text-purple-800">
+                                    <th class="border-2 border-purple-200 p-2 text-center text-sm md:text-base">Kelas</th>
+                                    <th class="border-2 border-purple-200 p-2 text-center text-sm md:text-base whitespace-nowrap">Banyak Siswa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border-2 border-purple-200 p-2 text-center font-bold text-sm md:text-base">1</td>
+                                    <td class="border-2 border-purple-200 p-2 text-center text-sm md:text-base">25</td>
+                                </tr>
+                                <tr class="bg-purple-50">
+                                    <td class="border-2 border-purple-200 p-2 text-center font-bold text-sm md:text-base">2</td>
+                                    <td class="border-2 border-purple-200 p-2 text-center text-sm md:text-base">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-purple-200 p-2 text-center font-bold bg-yellow-100 text-sm md:text-base">3</td>
+                                    <td class="border-2 border-purple-200 p-2 text-center font-bold text-red-500 text-lg md:text-xl bg-yellow-100">?</td>
+                                </tr>
+                                <tr class="bg-purple-50">
+                                    <td class="border-2 border-purple-200 p-2 text-center font-bold text-sm md:text-base">4</td>
+                                    <td class="border-2 border-purple-200 p-2 text-center text-sm md:text-base">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-purple-200 p-2 text-center font-bold text-sm md:text-base">5</td>
+                                    <td class="border-2 border-purple-200 p-2 text-center text-sm md:text-base">25</td>
+                                </tr>
+                                <tr class="bg-purple-50">
+                                    <td class="border-2 border-purple-200 p-2 text-center font-bold text-sm md:text-base">6</td>
+                                    <td class="border-2 border-purple-200 p-2 text-center text-sm md:text-base">30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-purple-50 p-4 md:p-6 rounded-xl border border-purple-200 space-y-4 w-full h-full flex flex-col justify-center">
+                        <p class="text-sm md:text-base">Perhatikan tabel banyak siswa di SD Maju di samping.</p>
+                        <p class="text-base md:text-lg font-semibold text-purple-800">Jika jumlah siswa SD Maju seluruhnya ada 178 siswa, berapa banyak siswa kelas 3 di sekolah tersebut?</p>
+                        
+                        <div class="flex items-center gap-3 pt-4 border-t border-purple-200">
+                            <label class="font-bold text-sm md:text-base">Jawaban:</label>
+                            <input type="number" class="input-box w-16 md:w-20 answer-input" data-answer="38">
+                            <span class="text-sm md:text-base">siswa.</span>
+                        </div>
+
+                        <div class="explanation-box hidden mt-2 p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                            <b>💡 Pembahasan:</b><br>
+                            1. Jumlahkan dulu siswa kelas lain: 25 + 30 + 30 + 25 + 30 = 140 siswa.<br>
+                            2. Total semua siswa ada 178. Untuk mencari kelas 3: 178 - 140 = 38 siswa.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-2 border-dashed border-gray-200">
+
+            <!-- BAGIAN D -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-green-400 text-white min-w-[40px] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl comic-font">D</div>
+                    <h2 class="text-xl md:text-2xl font-bold text-green-600">Membaca Diagram Gambar</h2>
+                </div>
+
+                <p class="text-base md:text-lg">Perhatikan diagram gambar (piktogram) hasil panen apel di kebun Pak Budi berikut!</p>
+                <div class="bg-green-100 border-2 border-green-300 rounded-lg p-3 inline-block mb-2 shadow-sm w-full md:w-auto">
+                    <p class="font-bold text-green-800 text-sm md:text-base">📌 Keterangan: Setiap 1 gambar 🍎 mewakili 10 kg apel.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+                    <div class="overflow-x-auto w-full md:w-auto shrink-0 pb-2">
+                        <table class="w-full md:w-auto min-w-[280px] border-collapse border-2 border-green-200 shadow-sm rounded-lg overflow-hidden bg-white">
+                            <thead>
+                                <tr class="bg-green-200 text-green-800">
+                                    <th class="border-2 border-green-300 p-2 md:p-3 text-center w-1/3 text-sm md:text-base">Bulan</th>
+                                    <th class="border-2 border-green-300 p-2 md:p-3 text-center text-sm md:text-base whitespace-nowrap">Hasil Panen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Januari</td>
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-left text-xl md:text-2xl tracking-widest whitespace-nowrap">🍎🍎🍎</td>
+                                </tr>
+                                <tr class="bg-green-50">
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Februari</td>
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-left text-xl md:text-2xl tracking-widest whitespace-nowrap">🍎🍎🍎🍎</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">Maret</td>
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-left text-xl md:text-2xl tracking-widest whitespace-nowrap">🍎🍎</td>
+                                </tr>
+                                <tr class="bg-green-50">
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-center font-semibold text-sm md:text-base">April</td>
+                                    <td class="border-2 border-green-200 p-2 md:p-3 text-left text-xl md:text-2xl tracking-widest whitespace-nowrap">🍎🍎🍎🍎🍎</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-green-50 p-4 md:p-5 rounded-xl border border-green-200 space-y-4 w-full">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-sm md:text-base">1. Berapa kg hasil panen apel pada bulan Maret?</span>
+                                <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                                    <input type="number" class="input-box answer-input" data-answer="20">
+                                    <span class="text-sm md:text-base">kg.</span>
+                                </div>
+                            </div>
+                            <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                                <b>💡 Pembahasan:</b> Bulan Maret ada 2 gambar 🍎. Karena 1 gambar = 10 kg, maka hitungannya: 2 x 10 kg = 20 kg.
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-sm md:text-base">2. Pada bulan apa hasil panen apel paling banyak?</span>
+                                <div class="w-full sm:w-auto mt-2 sm:mt-0">
+                                    <input type="text" class="input-text answer-input" data-answer="april">
+                                </div>
+                            </div>
+                            <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                                <b>💡 Pembahasan:</b> Cari bulan dengan gambar 🍎 paling panjang/banyak. Jawabannya bulan April (ada 5 gambar).
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-sm md:text-base">3. Berapa jumlah seluruh panen apel dari bulan Januari sampai April?</span>
+                                <div class="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                                    <input type="number" class="input-box answer-input" data-answer="140">
+                                    <span class="text-sm md:text-base">kg.</span>
+                                </div>
+                            </div>
+                            <div class="explanation-box hidden p-3 bg-blue-50 border-l-4 border-blue-400 text-sm md:text-base text-blue-800 rounded-r-lg">
+                                <b>💡 Pembahasan:</b> <br>
+                                Hitung total gambarnya dulu: 3 + 4 + 2 + 5 = 14 gambar 🍎.<br>
+                                Total panen = 14 gambar x 10 kg = 140 kg.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Tombol Periksa & Hasil -->
+        <div class="bg-gray-50 p-4 md:p-8 border-t-2 md:border-t-4 border-teal-500 text-center">
+            <button onclick="checkAnswers()" class="w-full sm:w-auto bg-teal-500 hover:bg-teal-600 text-white font-bold py-4 md:py-3 px-8 rounded-xl md:rounded-full shadow-lg transition-transform transform hover:scale-105 text-lg md:text-xl active:bg-teal-700">
+                ✨ Periksa Jawabanku ✨
+            </button>
+            
+            <div id="result-box" class="hidden mt-6 p-4 md:p-6 rounded-2xl border-4 max-w-md mx-auto transform transition-all duration-500">
+                <h3 id="result-message" class="text-xl md:text-2xl font-bold mb-2"></h3>
+                <p id="result-score" class="text-3xl md:text-4xl font-black text-slate-800 comic-font"></p>
+                <p class="text-slate-500 mt-2 text-sm md:text-base">Semangat terus belajarnya!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Pemeriksaan -->
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.answer-input');
+            let correctCount = 0;
+            const totalQuestions = inputs.length;
+
+            inputs.forEach(input => {
+                input.classList.remove('correct', 'incorrect');
+                
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.getAttribute('data-answer').toLowerCase();
+
+                if (userAnswer === '') {
+                    input.classList.add('incorrect'); 
+                } else if (userAnswer === correctAnswer) {
+                    input.classList.add('correct');
+                    correctCount++;
+                } else {
+                    input.classList.add('incorrect');
+                }
+            });
+
+            const score = Math.round((correctCount / totalQuestions) * 100);
+            
+            const resultBox = document.getElementById('result-box');
+            const resultMessage = document.getElementById('result-message');
+            const resultScore = document.getElementById('result-score');
+            
+            resultBox.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400', 'bg-yellow-100', 'border-yellow-400');
+            
+            if (score === 100) {
+                resultBox.classList.add('bg-green-100', 'border-green-400');
+                resultMessage.innerText = "Luar Biasa! Sempurna! 🎉";
+                resultMessage.className = "text-xl md:text-2xl font-bold mb-2 text-green-700";
+            } else if (score >= 70) {
+                resultBox.classList.add('bg-yellow-100', 'border-yellow-400');
+                resultMessage.innerText = "Kerja Bagus! Tingkatkan lagi! 👍";
+                resultMessage.className = "text-xl md:text-2xl font-bold mb-2 text-yellow-700";
+            } else {
+                resultBox.classList.add('bg-red-100', 'border-red-400');
+                resultMessage.innerText = "Ayo coba teliti lagi ya! 💪";
+                resultMessage.className = "text-xl md:text-2xl font-bold mb-2 text-red-700";
+            }
+            
+            resultScore.innerText = `Nilai: ${score}`;
+            
+            // Tampilkan semua kotak pembahasan setelah tombol ditekan
+            const explanations = document.querySelectorAll('.explanation-box');
+            explanations.forEach(box => {
+                box.classList.remove('hidden');
+            });
+            
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+    </script>
+</body>
+</html>
