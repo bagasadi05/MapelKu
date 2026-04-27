@@ -1,389 +1,578 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Petualangan Dunia Digital</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-            -ms-overflow-style: none;  
-            scrollbar-width: none;  
-            display: flex;
-            justify-content: center;
-        }
-        body::-webkit-scrollbar { display: none; }
-        
-        /* Wadah utama menyerupai layar HP modern */
-        .app-container {
-            width: 100%;
-            max-width: 480px;
-            background-color: #ffffff;
-            min-height: 100vh;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informatika Kelas 3 Bab 7 - Dampak Sosial Informatika</title>
+  <meta name="description" content="Materi Informatika kelas 3 tentang dunia digital, dampak teknologi, perlindungan data pribadi, dan HAKI.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #172033;
+      --paper: #f7fbff;
+      --teal: #0f766e;
+      --blue: #2563eb;
+      --rose: #e11d48;
+      --amber: #d97706;
+      --green: #16a34a;
+    }
 
-        /* Animasi mengambang untuk header */
-        .float-anim {
-            animation: floating 3s ease-in-out infinite;
-        }
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .pop-in {
-            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Tombol gaya 3D (Premium feel) */
-        .btn-3d {
-            transition: all 0.1s ease;
-        }
-        .btn-3d:active {
-            transform: translateY(4px);
-            box-shadow: 0 0px 0 0 transparent !important;
-        }
+    body {
+      margin: 0;
+      font-family: "Nunito", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 32rem),
+        linear-gradient(315deg, rgba(217, 119, 6, 0.12), transparent 28rem),
+        var(--paper);
+    }
 
-        .flip-card {
-            background-color: transparent;
-            height: 140px;
-            perspective: 1000px;
-            cursor: pointer;
-        }
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-        .flip-card.flipped .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .flip-card-front {
-            background-color: #ffffff;
-            border: 2px solid #e2e8f0;
-        }
-        .flip-card-back {
-            transform: rotateY(180deg);
-        }
-        
-        /* Transisi halus untuk progress bar */
-        #progress-bar {
-            transition: width 0.3s ease-in-out;
-        }
-    </style>
+    h1,
+    h2,
+    h3,
+    .display-font {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .progress-fill {
+      width: 0%;
+      transition: width 180ms ease;
+    }
+
+    .lesson-shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-panel {
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.96), rgba(37, 99, 235, 0.92)),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 18px);
+    }
+
+    .section-card {
+      border: 1px solid rgba(23, 32, 51, 0.1);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 18px 48px rgba(23, 32, 51, 0.08);
+    }
+
+    .nav-pill,
+    .option-button,
+    .tab-button {
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .nav-pill:hover,
+    .option-button:hover,
+    .tab-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .tab-button.active {
+      background: #ffffff;
+      color: var(--teal);
+      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.14);
+    }
+
+    .quiz-option.correct {
+      border-color: var(--green);
+      background: #dcfce7;
+      color: #14532d;
+    }
+
+    .quiz-option.wrong {
+      border-color: var(--rose);
+      background: #ffe4e6;
+      color: #881337;
+    }
+
+    .quiz-option.dimmed {
+      opacity: 0.55;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .section-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
-<body class="text-slate-700">
+<body>
+  <div class="fixed left-0 top-0 z-50 h-1.5 w-full bg-slate-200 no-print" aria-hidden="true">
+    <div id="reading-progress" class="progress-fill h-full bg-gradient-to-r from-teal-500 via-blue-500 to-amber-500"></div>
+  </div>
 
-    <div class="app-container pb-24">
-        
-        <header class="bg-gradient-to-br from-indigo-500 via-purple-500 to-fuchsia-500 rounded-b-[2.5rem] p-8 text-white text-center shadow-lg relative z-10">
-            <div class="float-anim mb-3 text-5xl">🚀</div>
-            <h1 class="text-3xl font-black mb-2 tracking-tight">Dunia Digital</h1>
-            <p class="text-sm font-bold bg-white/20 backdrop-blur-sm text-white inline-block px-5 py-2 rounded-full border border-white/30 shadow-sm">
-                Petualangan Teknologi
-            </p>
-        </header>
+  <header class="hero-panel text-white">
+    <div class="lesson-shell py-10 md:py-14">
+      <a href="../index.html" class="no-print mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-sm font-extrabold text-white backdrop-blur hover:bg-white/25">
+        <span aria-hidden="true">←</span>
+        Kembali ke Portal
+      </a>
 
-        <main class="p-6 space-y-10">
-            
-            <section class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm relative mt-4">
-                <div class="absolute -top-6 -left-2 text-5xl bg-amber-100 rounded-full p-2 border-4 border-white shadow-sm">🤔</div>
-                <h2 class="text-xl font-extrabold text-slate-800 ml-12 mb-3">Pernahkah Kamu...?</h2>
-                <p class="text-slate-600 leading-relaxed text-[15px] font-medium">
-                    Melakukan <i>Video Call</i> dengan nenek di luar kota? Atau melihat ibu memesan makanan lewat HP? 
-                    Semua itu bisa terjadi karena adanya <b class="text-indigo-600">Perangkat Digital</b> dan <b class="text-indigo-600">Internet!</b>
-                </p>
-            </section>
-
-            <section class="bg-teal-50/50 border border-teal-100 rounded-3xl p-5 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-3xl">🎬</span>
-                    <div>
-                        <h2 class="text-xl font-extrabold text-teal-800">Nonton Yuk!</h2>
-                        <p class="text-xs font-bold text-teal-600">Mari pelajari lewat video ini</p>
-                    </div>
-                </div>
-                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-md border-2 border-white bg-slate-100">
-                    <iframe 
-                        class="w-full h-full" 
-                        src="https://www.youtube.com/embed/qNskX8A5I90?rel=0" 
-                        title="Video Pembelajaran Dunia Digital" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </section>
-
-            <section>
-                <div class="flex flex-col items-center mb-5">
-                    <h2 class="text-2xl font-extrabold text-slate-800">Benda Ajaib Masa Kini</h2>
-                    <p class="text-sm font-semibold text-slate-500 bg-slate-100 px-4 py-1 rounded-full mt-2">Ketuk kartu untuk membalik 🔄</p>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- Kartu 1 -->
-                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="text-4xl mb-3">👩‍💻</div>
-                                <h3 class="font-extrabold text-slate-700 text-sm">Belajar Daring</h3>
-                            </div>
-                            <div class="flip-card-back bg-rose-50 border-2 border-rose-200">
-                                <p class="text-xs text-rose-700 font-bold leading-snug">Belajar dari rumah lewat laptop dan koneksi internet!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Kartu 2 -->
-                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="text-4xl mb-3">🛵</div>
-                                <h3 class="font-extrabold text-slate-700 text-sm">Transportasi</h3>
-                            </div>
-                            <div class="flip-card-back bg-emerald-50 border-2 border-emerald-200">
-                                <p class="text-xs text-emerald-700 font-bold leading-snug">Pesan ojek atau antar barang pakai aplikasi HP.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Kartu 3 -->
-                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="text-4xl mb-3">🏧</div>
-                                <h3 class="font-extrabold text-slate-700 text-sm">Mesin ATM</h3>
-                            </div>
-                            <div class="flip-card-back bg-blue-50 border-2 border-blue-200">
-                                <p class="text-xs text-blue-700 font-bold leading-snug">Ambil uang tabungan cepat tanpa harus antre di bank.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Kartu 4 -->
-                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="text-4xl mb-3">📹</div>
-                                <h3 class="font-extrabold text-slate-700 text-sm">Kamera CCTV</h3>
-                            </div>
-                            <div class="flip-card-back bg-purple-50 border-2 border-purple-200">
-                                <p class="text-xs text-purple-700 font-bold leading-snug">Kamera pengawas agar lingkungan jadi lebih aman.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="bg-indigo-50 border border-indigo-100 rounded-3xl p-6 shadow-sm">
-                <div class="flex items-center gap-3 mb-5">
-                    <span class="text-3xl bg-white p-2 rounded-xl shadow-sm">🎮</span>
-                    <div>
-                        <h2 class="text-xl font-extrabold text-indigo-900">Game Waktu!</h2>
-                        <p class="text-xs font-bold text-indigo-600">Pilih Baik (Positif) atau Buruk (Negatif)</p>
-                    </div>
-                </div>
-
-                <!-- Progress Bar -->
-                <div class="w-full bg-indigo-200 rounded-full h-2.5 mb-4 overflow-hidden">
-                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full" style="width: 0%"></div>
-                </div>
-
-                <!-- Area Pertanyaan -->
-                <div class="bg-white rounded-2xl p-6 text-center shadow-sm mb-6 border border-slate-200 min-h-[160px] flex flex-col justify-center items-center">
-                    <span id="game-counter" class="text-xs font-extrabold text-slate-400 mb-3 tracking-wider uppercase">Soal 1 / 8</span>
-                    <p id="game-question" class="text-[17px] font-bold text-slate-700 leading-snug">
-                        <!-- Teks soal via JS -->
-                    </p>
-                </div>
-
-                <!-- Tombol Jawaban Bergaya Duolingo -->
-                <div class="flex gap-4">
-                    <button onclick="checkAnswer(true)" class="btn-3d flex-1 bg-emerald-500 text-white font-extrabold py-4 rounded-2xl shadow-[0_6px_0_#047857] flex flex-col items-center justify-center border-2 border-emerald-600">
-                        <span class="text-xl mb-1">👍</span>
-                        <span class="text-lg">Positif</span>
-                    </button>
-                    <button onclick="checkAnswer(false)" class="btn-3d flex-1 bg-rose-500 text-white font-extrabold py-4 rounded-2xl shadow-[0_6px_0_#be123c] flex flex-col items-center justify-center border-2 border-rose-600">
-                        <span class="text-xl mb-1">👎</span>
-                        <span class="text-lg">Negatif</span>
-                    </button>
-                </div>
-            </section>
-
-            <section class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-3xl bg-amber-100 p-2 rounded-xl shadow-sm">✍️</span>
-                    <div>
-                        <h2 class="text-xl font-extrabold text-slate-800">Misi Diskusi!</h2>
-                        <p class="text-xs font-bold text-slate-500">Jawab pertanyaan ini dengan imajinasimu</p>
-                    </div>
-                </div>
-                
-                <div class="space-y-5">
-                    <div>
-                        <label class="block text-[13px] font-bold text-slate-600 mb-2 uppercase tracking-wide">1. Apa saja perangkat digital di sekitarmu?</label>
-                        <input type="text" id="q1-input" class="w-full rounded-xl border-2 border-slate-200 p-3.5 font-medium text-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 transition-all placeholder-slate-300" placeholder="Contoh: HP, TV, Laptop...">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-[13px] font-bold text-slate-600 mb-2 uppercase tracking-wide">2. Apa manfaat yang telah kamu rasakan?</label>
-                        <input type="text" id="q2-input" class="w-full rounded-xl border-2 border-slate-200 p-3.5 font-medium text-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 transition-all placeholder-slate-300" placeholder="Contoh: Bisa belajar online...">
-                    </div>
-
-                    <div>
-                        <label class="block text-[13px] font-bold text-slate-600 mb-2 uppercase tracking-wide">3. Jika jadi penemu, alat apa yang ingin diciptakan?</label>
-                        <textarea id="q3-input" rows="3" class="w-full rounded-xl border-2 border-slate-200 p-3.5 font-medium text-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 transition-all placeholder-slate-300 resize-none" placeholder="Ceritakan idemu beserta manfaatnya di sini..."></textarea>
-                    </div>
-                </div>
-                
-                <button onclick="submitIdea()" class="btn-3d mt-6 w-full bg-indigo-600 text-white font-extrabold text-lg py-4 rounded-xl shadow-[0_6px_0_#4338ca] border-2 border-indigo-700 transition-all">
-                    Kirim Jawaban Hebatku! 🚀
-                </button>
-            </section>
-
-        </main>
-
-        <div id="custom-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex justify-center items-center p-5">
-            <div class="bg-white w-full max-w-sm rounded-3xl p-8 text-center shadow-2xl" id="modal-content">
-                <div id="modal-icon" class="text-7xl mb-5 float-anim">🌟</div>
-                <h3 id="modal-title" class="text-2xl font-black text-slate-800 mb-3">Judul</h3>
-                <p id="modal-message" class="text-slate-600 font-medium mb-8 leading-relaxed">Pesan di sini</p>
-                <button onclick="closeModal()" class="btn-3d bg-slate-800 text-white font-extrabold text-lg py-3.5 px-8 rounded-2xl shadow-[0_5px_0_#334155] border border-slate-900 w-full transition-all">
-                    Oke, Lanjut!
-                </button>
-            </div>
+      <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+        <div>
+          <p class="mb-4 inline-flex rounded-full bg-white/18 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.18em]">
+            Informatika Kelas 3 • Bab 7
+          </p>
+          <h1 class="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
+            Dampak Sosial Informatika
+          </h1>
+          <p class="mt-5 max-w-2xl text-lg font-semibold leading-relaxed text-white/90 md:text-xl">
+            Kenali manfaat dunia digital, gunakan internet dengan bijak, lindungi data pribadi, dan hargai karya orang lain.
+          </p>
         </div>
 
+        <div class="rounded-3xl border border-white/25 bg-white/14 p-5 backdrop-blur">
+          <p class="text-sm font-extrabold uppercase tracking-[0.14em] text-white/80">Target Belajar</p>
+          <ul class="mt-4 space-y-3 text-sm font-bold leading-relaxed text-white/92">
+            <li class="flex gap-3"><span aria-hidden="true">01</span><span>Menjelaskan contoh teknologi digital di sekitar kita.</span></li>
+            <li class="flex gap-3"><span aria-hidden="true">02</span><span>Membedakan dampak positif dan negatif penggunaan teknologi.</span></li>
+            <li class="flex gap-3"><span aria-hidden="true">03</span><span>Menentukan data pribadi yang perlu dilindungi saat online.</span></li>
+            <li class="flex gap-3"><span aria-hidden="true">04</span><span>Memahami HAKI dan contoh menghargai karya digital.</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <script>
-        const gameData = [
-            { text: "Mempermudah manusia melakukan kegiatan. 🛠️", isPositive: true },
-            { text: "Berkurangnya komunikasi secara langsung (jarang tatap muka). 📵", isPositive: false },
-            { text: "Membuat komunikasi menjadi lebih mudah, cepat, dan efisien. 🚀", isPositive: true },
-            { text: "Meningkatnya kejahatan (seperti penipuan, pembajakan, cyberbullying). 👿", isPositive: false },
-            { text: "Meningkatkan perekonomian karena terbukanya pasar digital. 🛒", isPositive: true },
-            { text: "Ketergantungan pada teknologi (kecanduan main HP terus). 😵‍💫", isPositive: false },
-            { text: "Mempermudah manusia mendapatkan informasi dan ilmu pengetahuan. 🧠", isPositive: true },
-            { text: "Kerusakan lingkungan akibat produksi dalam bidang teknologi. 🏭", isPositive: false }
-        ];
+  <nav class="no-print sticky top-1.5 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="lesson-shell flex gap-2 overflow-x-auto py-3">
+      <a class="nav-pill shrink-0 rounded-full bg-slate-900 px-4 py-2 text-sm font-extrabold text-white" href="#dunia-digital">Dunia Digital</a>
+      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#dampak">Dampak</a>
+      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#data-pribadi">Data Pribadi</a>
+      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#haki">HAKI</a>
+      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#kuis">Kuis</a>
+    </div>
+  </nav>
 
-        let currentQuestionIndex = 0;
-        let score = 0;
+  <main class="lesson-shell space-y-8 py-8 md:py-12">
+    <section id="dunia-digital" class="section-card rounded-3xl p-5 md:p-8">
+      <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.16em] text-teal-700">A. Dunia Digital</p>
+          <h2 class="mt-2 text-3xl font-black text-slate-950 md:text-4xl">Teknologi membuat kegiatan harian lebih mudah.</h2>
+          <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-600">
+            Saat melakukan panggilan video, belajar daring, atau melihat orang tua memesan kendaraan lewat aplikasi, kita sedang memakai perangkat TIK dan internet.
+          </p>
+          <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-5">
+            <p class="font-extrabold text-teal-900">Pertanyaan pembuka</p>
+            <p class="mt-2 text-slate-700">Pernahkah kamu memakai internet untuk belajar, berkomunikasi, atau mencari informasi? Ceritakan satu contoh di kelas.</p>
+          </div>
+        </div>
 
-        function updateProgress() {
-            const progress = (currentQuestionIndex / gameData.length) * 100;
-            document.getElementById('progress-bar').style.width = `${progress}%`;
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
+            <div class="text-4xl" aria-hidden="true">🎥</div>
+            <h3 class="mt-4 text-xl font-black text-blue-950">Belajar Daring</h3>
+            <p class="mt-2 font-semibold text-blue-900/80">Belajar dari rumah atau sekolah lain menggunakan HP, laptop, dan internet.</p>
+          </article>
+          <article class="rounded-2xl border border-green-100 bg-green-50 p-5">
+            <div class="text-4xl" aria-hidden="true">🚕</div>
+            <h3 class="mt-4 text-xl font-black text-green-950">Transportasi Daring</h3>
+            <p class="mt-2 font-semibold text-green-900/80">Memesan ojek atau mobil lewat aplikasi dengan bantuan peta digital.</p>
+          </article>
+          <article class="rounded-2xl border border-amber-100 bg-amber-50 p-5">
+            <div class="text-4xl" aria-hidden="true">🏧</div>
+            <h3 class="mt-4 text-xl font-black text-amber-950">ATM</h3>
+            <p class="mt-2 font-semibold text-amber-900/80">Mengambil uang dan melakukan transaksi secara mandiri melalui mesin.</p>
+          </article>
+          <article class="rounded-2xl border border-rose-100 bg-rose-50 p-5">
+            <div class="text-4xl" aria-hidden="true">📹</div>
+            <h3 class="mt-4 text-xl font-black text-rose-950">Kamera CCTV</h3>
+            <p class="mt-2 font-semibold text-rose-900/80">Membantu menjaga keamanan dengan merekam keadaan suatu tempat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card rounded-3xl p-5 md:p-8">
+      <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.16em] text-blue-700">Video Pendamping</p>
+          <h2 class="mt-2 text-3xl font-black text-slate-950">Belajar lewat contoh visual</h2>
+        </div>
+        <p class="max-w-xl font-semibold leading-relaxed text-slate-600">
+          Gunakan video sebagai pengantar diskusi. Setelah menonton, siswa bisa menyebutkan teknologi digital yang sering mereka temui.
+        </p>
+      </div>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
+        <iframe
+          class="aspect-video w-full"
+          src="https://www.youtube.com/embed/qNskX8A5I90?rel=0"
+          title="Video Pembelajaran Dunia Digital"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section id="dampak" class="section-card rounded-3xl p-5 md:p-8">
+      <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.16em] text-green-700">B. Pengaruh Dunia Digital</p>
+          <h2 class="mt-2 text-3xl font-black text-slate-950 md:text-4xl">Teknologi punya manfaat, tetapi perlu aturan.</h2>
+          <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-600">
+            Dunia digital bisa membantu kita belajar dan berkomunikasi. Namun, jika digunakan tanpa batas, teknologi juga bisa membawa risiko.
+          </p>
+        </div>
+
+        <div>
+          <div class="rounded-2xl bg-slate-100 p-2">
+            <div class="grid grid-cols-2 gap-2">
+              <button class="tab-button active rounded-xl px-4 py-3 text-center font-black" type="button" data-tab="positif">Dampak Positif</button>
+              <button class="tab-button rounded-xl px-4 py-3 text-center font-black text-slate-600" type="button" data-tab="negatif">Dampak Negatif</button>
+            </div>
+          </div>
+
+          <div id="tab-positif" class="mt-4 rounded-2xl border border-green-100 bg-green-50 p-5">
+            <ul class="space-y-3 font-bold text-green-950">
+              <li class="rounded-xl bg-white p-4 shadow-sm">Mempermudah manusia melakukan kegiatan sehari-hari.</li>
+              <li class="rounded-xl bg-white p-4 shadow-sm">Membuat komunikasi menjadi lebih cepat dan efisien.</li>
+              <li class="rounded-xl bg-white p-4 shadow-sm">Membantu kegiatan ekonomi melalui pasar digital.</li>
+              <li class="rounded-xl bg-white p-4 shadow-sm">Mempermudah manusia mendapatkan informasi dan ilmu pengetahuan.</li>
+            </ul>
+          </div>
+
+          <div id="tab-negatif" class="mt-4 hidden rounded-2xl border border-rose-100 bg-rose-50 p-5">
+            <ul class="space-y-3 font-bold text-rose-950">
+              <li class="rounded-xl bg-white p-4 shadow-sm">Berkurangnya komunikasi langsung jika terlalu sering memakai gawai.</li>
+              <li class="rounded-xl bg-white p-4 shadow-sm">Muncul risiko penipuan, pembajakan karya digital, dan cyberbullying.</li>
+              <li class="rounded-xl bg-white p-4 shadow-sm">Ketergantungan pada teknologi jika tidak memakai batas waktu.</li>
+              <li class="rounded-xl bg-white p-4 shadow-sm">Produksi teknologi dapat berdampak pada lingkungan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-pribadi" class="section-card rounded-3xl p-5 md:p-8">
+      <div class="rounded-2xl border border-rose-200 bg-rose-50 p-5 md:p-6">
+        <p class="text-sm font-black uppercase tracking-[0.16em] text-rose-700">C. Aman Saat Online</p>
+        <h2 class="mt-2 text-3xl font-black text-rose-950 md:text-4xl">Data pribadi tidak boleh dibagikan sembarangan.</h2>
+        <p class="mt-4 max-w-3xl text-lg font-semibold leading-relaxed text-rose-950/80">
+          Internet bisa digunakan oleh banyak orang. Karena itu, kita perlu berhati-hati saat menulis, mengirim foto, atau membagikan informasi.
+        </p>
+      </div>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <p class="text-sm font-black text-rose-600">01</p>
+          <h3 class="mt-1 text-xl font-black">Informasi Pribadi</h3>
+          <p class="mt-2 font-semibold text-slate-600">Nama lengkap, alamat rumah, nomor telepon, tanggal lahir, kartu identitas, dan nama sekolah.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <p class="text-sm font-black text-rose-600">02</p>
+          <h3 class="mt-1 text-xl font-black">Kata Sandi</h3>
+          <p class="mt-2 font-semibold text-slate-600">Password adalah rahasia. Jangan diberikan kepada teman atau ditulis di tempat umum.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <p class="text-sm font-black text-rose-600">03</p>
+          <h3 class="mt-1 text-xl font-black">Rencana Perjalanan</h3>
+          <p class="mt-2 font-semibold text-slate-600">Jadwal liburan atau lokasi saat ini sebaiknya tidak diumumkan sembarangan.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <p class="text-sm font-black text-rose-600">04</p>
+          <h3 class="mt-1 text-xl font-black">Foto dan Video Pribadi</h3>
+          <p class="mt-2 font-semibold text-slate-600">Pastikan foto tidak memperlihatkan alamat, seragam lengkap, kartu, atau informasi penting.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 md:col-span-2">
+          <p class="text-sm font-black text-rose-600">05</p>
+          <h3 class="mt-1 text-xl font-black">Percakapan Pribadi</h3>
+          <p class="mt-2 font-semibold text-slate-600">Isi chat keluarga, teman, atau guru tidak boleh disebarkan tanpa izin.</p>
+        </article>
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-blue-200 bg-blue-50 p-5 text-center">
+        <p class="text-lg font-black text-blue-950">Jika ragu, mintalah bantuan orang tua atau guru sebelum membagikan sesuatu di internet.</p>
+      </div>
+    </section>
+
+    <section id="haki" class="section-card rounded-3xl p-5 md:p-8">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.16em] text-amber-700">D. HAKI</p>
+          <h2 class="mt-2 text-3xl font-black text-slate-950 md:text-4xl">Hargai karya orang lain di dunia digital.</h2>
+          <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-600">
+            HAKI adalah hak untuk memperoleh perlindungan hukum atas karya seseorang. Gambar, lagu, tulisan, video, program, dan game termasuk karya yang perlu dihargai.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="rounded-2xl border border-amber-200 bg-amber-50 p-5">
+            <h3 class="text-xl font-black text-amber-950">Contoh menghargai HAKI</h3>
+            <ul class="mt-3 space-y-2 font-bold text-amber-950/80">
+              <li>Mencantumkan nama pembuat saat memakai gambar atau tulisan.</li>
+              <li>Meminta izin sebelum memakai karya orang lain.</li>
+              <li>Menggunakan lagu, gambar, atau aplikasi dari sumber resmi.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-rose-200 bg-rose-50 p-5">
+            <h3 class="text-xl font-black text-rose-950">Contoh pelanggaran</h3>
+            <ul class="mt-3 space-y-2 font-bold text-rose-950/80">
+              <li>Menyalin gambar orang lain lalu mengaku sebagai karya sendiri.</li>
+              <li>Membagikan aplikasi, musik, atau video bajakan.</li>
+              <li>Mengambil tulisan dari internet tanpa menyebut sumbernya.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="section-card rounded-3xl bg-slate-950 p-5 text-white md:p-8">
+        <p class="text-sm font-black uppercase tracking-[0.16em] text-teal-300">Rangkuman</p>
+        <h2 class="mt-2 text-3xl font-black">Ingat empat hal penting ini.</h2>
+        <ul class="mt-6 space-y-4 font-bold leading-relaxed text-slate-200">
+          <li class="rounded-2xl bg-white/8 p-4">Teknologi membantu belajar, komunikasi, transportasi, keamanan, dan transaksi.</li>
+          <li class="rounded-2xl bg-white/8 p-4">Gunakan gawai dengan batas waktu dan tetap berkomunikasi langsung.</li>
+          <li class="rounded-2xl bg-white/8 p-4">Jaga data pribadi, terutama alamat, nomor telepon, password, foto, dan lokasi.</li>
+          <li class="rounded-2xl bg-white/8 p-4">Hargai karya digital dengan izin, sumber yang jelas, dan tidak membajak.</li>
+        </ul>
+      </div>
+
+      <section id="kuis" class="section-card rounded-3xl p-5 md:p-8">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-sm font-black uppercase tracking-[0.16em] text-blue-700">E. Uji Pemahaman</p>
+            <h2 class="mt-2 text-3xl font-black text-slate-950">Kuis cepat</h2>
+          </div>
+          <div class="rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-blue-800">
+            Skor: <span id="score-label">0</span>
+          </div>
+        </div>
+
+        <div id="quiz-box" class="mt-6">
+          <div class="mb-4 flex items-center justify-between text-sm font-black uppercase tracking-[0.14em] text-slate-500">
+            <span id="question-count">Pertanyaan 1/5</span>
+            <span id="question-status">Pilih jawaban</span>
+          </div>
+          <div class="h-2 overflow-hidden rounded-full bg-slate-100">
+            <div id="quiz-progress" class="h-full w-0 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 transition-all"></div>
+          </div>
+          <h3 id="question-text" class="mt-6 text-xl font-black leading-relaxed text-slate-950"></h3>
+          <div id="option-list" class="mt-5 grid gap-3"></div>
+          <p id="feedback-text" class="mt-4 min-h-7 font-black"></p>
+          <button id="next-question" type="button" class="option-button mt-3 hidden w-full rounded-2xl bg-slate-950 px-5 py-4 font-black text-white">
+            Lanjut
+          </button>
+        </div>
+
+        <div id="result-box" class="mt-6 hidden rounded-2xl border border-teal-200 bg-teal-50 p-6 text-center">
+          <p class="text-sm font-black uppercase tracking-[0.16em] text-teal-700">Selesai</p>
+          <h3 id="result-title" class="mt-2 text-3xl font-black text-teal-950"></h3>
+          <p id="result-message" class="mt-3 font-bold text-teal-900/80"></p>
+          <button id="reset-quiz" type="button" class="option-button mt-5 rounded-2xl bg-teal-700 px-5 py-3 font-black text-white">
+            Ulangi Kuis
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <section class="section-card rounded-3xl p-5 md:p-8">
+      <p class="text-sm font-black uppercase tracking-[0.16em] text-slate-600">Refleksi Siswa</p>
+      <h2 class="mt-2 text-3xl font-black text-slate-950">Jawab di buku tulismu.</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 font-bold text-slate-700">Sebutkan dua manfaat teknologi digital yang kamu rasakan.</div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 font-bold text-slate-700">Tuliskan tiga data pribadi yang harus kamu jaga.</div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 font-bold text-slate-700">Bagaimana cara menghargai karya teman di internet?</div>
+      </div>
+    </section>
+  </main>
+
+  <button id="scroll-top" type="button" class="no-print fixed bottom-5 right-5 hidden rounded-full bg-slate-950 px-4 py-3 font-black text-white shadow-lg" aria-label="Kembali ke atas">
+    ↑
+  </button>
+
+  <script>
+    const progress = document.getElementById("reading-progress");
+    const scrollTopButton = document.getElementById("scroll-top");
+
+    function updateReadingProgress() {
+      const maxScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const current = document.documentElement.scrollTop;
+      const percent = maxScroll > 0 ? (current / maxScroll) * 100 : 0;
+      progress.style.width = `${percent}%`;
+      scrollTopButton.classList.toggle("hidden", current < 500);
+    }
+
+    window.addEventListener("scroll", updateReadingProgress, { passive: true });
+    scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    updateReadingProgress();
+
+    const tabButtons = document.querySelectorAll("[data-tab]");
+    const tabPanels = {
+      positif: document.getElementById("tab-positif"),
+      negatif: document.getElementById("tab-negatif")
+    };
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tab = button.dataset.tab;
+        tabButtons.forEach((item) => item.classList.toggle("active", item === button));
+        Object.entries(tabPanels).forEach(([key, panel]) => {
+          panel.classList.toggle("hidden", key !== tab);
+        });
+      });
+    });
+
+    const quizData = [
+      {
+        question: "Perangkat dan jaringan apa yang membantu kita melakukan panggilan video jarak jauh?",
+        options: ["Perangkat TIK dan internet", "Mesin tik dan kertas", "Televisi tanpa jaringan", "Kamera CCTV saja"],
+        answer: 0
+      },
+      {
+        question: "Manakah contoh dampak negatif teknologi digital?",
+        options: ["Mendapatkan informasi lebih cepat", "Komunikasi menjadi mudah", "Berkurangnya komunikasi langsung", "Belajar dari rumah"],
+        answer: 2
+      },
+      {
+        question: "Data pribadi apa yang tidak boleh dibagikan sembarangan?",
+        options: ["Warna kesukaan", "Alamat rumah dan password", "Judul buku favorit", "Hobi olahraga"],
+        answer: 1
+      },
+      {
+        question: "Menyalin karya orang lain lalu mengaku sebagai karya sendiri termasuk...",
+        options: ["Menghargai karya", "Belajar kelompok", "Pelanggaran HAKI", "Merapikan folder"],
+        answer: 2
+      },
+      {
+        question: "Apa tindakan terbaik saat ragu membagikan sesuatu di internet?",
+        options: ["Langsung unggah", "Tanya orang tua atau guru", "Kirim ke semua teman", "Hapus semua aplikasi"],
+        answer: 1
+      }
+    ];
+
+    const questionCount = document.getElementById("question-count");
+    const questionStatus = document.getElementById("question-status");
+    const questionText = document.getElementById("question-text");
+    const optionList = document.getElementById("option-list");
+    const feedbackText = document.getElementById("feedback-text");
+    const nextButton = document.getElementById("next-question");
+    const scoreLabel = document.getElementById("score-label");
+    const quizProgress = document.getElementById("quiz-progress");
+    const quizBox = document.getElementById("quiz-box");
+    const resultBox = document.getElementById("result-box");
+    const resultTitle = document.getElementById("result-title");
+    const resultMessage = document.getElementById("result-message");
+    const resetQuizButton = document.getElementById("reset-quiz");
+
+    let currentQuestion = 0;
+    let score = 0;
+    let locked = false;
+
+    function renderQuestion() {
+      const item = quizData[currentQuestion];
+      locked = false;
+      questionCount.textContent = `Pertanyaan ${currentQuestion + 1}/${quizData.length}`;
+      questionStatus.textContent = "Pilih jawaban";
+      questionText.textContent = item.question;
+      feedbackText.textContent = "";
+      feedbackText.className = "mt-4 min-h-7 font-black";
+      nextButton.classList.add("hidden");
+      quizProgress.style.width = `${(currentQuestion / quizData.length) * 100}%`;
+
+      optionList.innerHTML = item.options
+        .map((option, index) => `
+          <button type="button" class="quiz-option option-button rounded-2xl border-2 border-slate-200 bg-white p-4 text-left font-black text-slate-800 shadow-sm" data-index="${index}">
+            ${option}
+          </button>
+        `)
+        .join("");
+
+      optionList.querySelectorAll("[data-index]").forEach((button) => {
+        button.addEventListener("click", () => handleAnswer(Number(button.dataset.index)));
+      });
+    }
+
+    function handleAnswer(index) {
+      if (locked) return;
+      locked = true;
+
+      const item = quizData[currentQuestion];
+      const buttons = optionList.querySelectorAll("[data-index]");
+      const isCorrect = index === item.answer;
+
+      if (isCorrect) {
+        score += 20;
+        feedbackText.textContent = "Benar. Jawabanmu tepat.";
+        feedbackText.classList.add("text-green-700");
+      } else {
+        feedbackText.textContent = "Belum tepat. Perhatikan jawaban yang benar.";
+        feedbackText.classList.add("text-rose-700");
+      }
+
+      buttons.forEach((button) => {
+        const buttonIndex = Number(button.dataset.index);
+        button.disabled = true;
+        if (buttonIndex === item.answer) {
+          button.classList.add("correct");
+        } else if (buttonIndex === index) {
+          button.classList.add("wrong");
+        } else {
+          button.classList.add("dimmed");
         }
+      });
 
-        function loadQuestion() {
-            if (currentQuestionIndex < gameData.length) {
-                document.getElementById('game-question').innerText = gameData[currentQuestionIndex].text;
-                document.getElementById('game-counter').innerText = `Soal ${currentQuestionIndex + 1} / ${gameData.length}`;
-                updateProgress();
-            } else {
-                updateProgress(); // Pastikan bar penuh
-                let finalIcon = score > 5 ? "🏆" : "👍";
-                let finalTitle = score > 5 ? "Luar Biasa!" : "Kerja Bagus!";
-                let finalMessage = `Kamu berhasil menjawab ${score} dari ${gameData.length} dengan benar! Kamu sudah hebat membedakan dampak teknologi.`;
-                showModal(finalTitle, finalMessage, finalIcon);
-                
-                // Reset Game
-                currentQuestionIndex = 0;
-                score = 0;
-                // Bar direset setelah modal ditutup
-                document.getElementById('custom-modal').setAttribute('data-next-action', 'resetGame');
-            }
-        }
+      scoreLabel.textContent = String(score);
+      questionStatus.textContent = isCorrect ? "Benar" : "Coba lagi nanti";
+      quizProgress.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
+      nextButton.textContent = currentQuestion === quizData.length - 1 ? "Lihat Hasil" : "Lanjut";
+      nextButton.classList.remove("hidden");
+    }
 
-        function checkAnswer(userChoice) {
-            const currentQuestion = gameData[currentQuestionIndex];
-            
-            if (userChoice === currentQuestion.isPositive) {
-                score++;
-                showModal("Benar Sekali!", "Wah, tebakanmu sangat tepat!", "🎉");
-            } else {
-                showModal("Ups, Kurang Tepat", "Coba pelajari lagi dampaknya ya.", "😅");
-            }
-            
-            currentQuestionIndex++;
-            document.getElementById('custom-modal').setAttribute('data-next-action', 'loadQuestion');
-        }
+    function showResult() {
+      quizBox.classList.add("hidden");
+      resultBox.classList.remove("hidden");
+      resultTitle.textContent = `Skor ${score}`;
+      resultMessage.textContent =
+        score >= 80
+          ? "Hebat. Kamu sudah memahami cara menggunakan dunia digital dengan bijak."
+          : score >= 60
+            ? "Bagus. Baca lagi bagian data pribadi dan HAKI supaya makin mantap."
+            : "Tidak apa-apa. Ulangi materi pelan-pelan, lalu coba kuis lagi.";
+    }
 
-        window.onload = () => {
-            loadQuestion();
-        };
+    nextButton.addEventListener("click", () => {
+      if (currentQuestion < quizData.length - 1) {
+        currentQuestion += 1;
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    });
 
-        function submitIdea() {
-            const q1 = document.getElementById('q1-input').value;
-            const q2 = document.getElementById('q2-input').value;
-            const q3 = document.getElementById('q3-input').value;
+    resetQuizButton.addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+      scoreLabel.textContent = "0";
+      quizBox.classList.remove("hidden");
+      resultBox.classList.add("hidden");
+      renderQuestion();
+    });
 
-            if (q1.trim() === "" || q2.trim() === "" || q3.trim() === "") {
-                showModal("Tunggu Dulu!", "Pastikan kamu sudah mengisi ketiga kotak jawaban di atas ya!", "✏️");
-            } else {
-                showModal("Misi Selesai!", "Jawaban yang sangat hebat! Ide penemuanmu sangat brilian.", "🌟");
-                document.getElementById('q1-input').value = "";
-                document.getElementById('q2-input').value = "";
-                document.getElementById('q3-input').value = "";
-            }
-        }
-
-        function showModal(title, message, icon) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-message').innerText = message;
-            document.getElementById('modal-icon').innerText = icon;
-            
-            const modal = document.getElementById('custom-modal');
-            const content = document.getElementById('modal-content');
-            
-            modal.classList.remove('hidden');
-            // Menghapus dan menambahkan ulang class pop-in untuk memicu animasi
-            content.classList.remove('pop-in');
-            void content.offsetWidth; // Trigger reflow
-            content.classList.add('pop-in');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('custom-modal');
-            modal.classList.add('hidden');
-
-            const nextAction = modal.getAttribute('data-next-action');
-            if (nextAction === 'loadQuestion') {
-                modal.removeAttribute('data-next-action');
-                loadQuestion();
-            } else if (nextAction === 'resetGame') {
-                modal.removeAttribute('data-next-action');
-                document.getElementById('progress-bar').style.width = '0%';
-                loadQuestion();
-            }
-        }
-    </script>
+    renderQuestion();
+  </script>
 </body>
 </html>

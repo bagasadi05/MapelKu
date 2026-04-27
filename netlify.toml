@@ -12,6 +12,11 @@
   status = 301
 
 [[redirects]]
+  from = "/materi/Informatika%20materi-kelas-3-bab-7.html"
+  to = "/materi/informatika-kelas-3-bab-7.html"
+  status = 301
+
+[[redirects]]
   from = "/materi/informatika-kelas-4-bab-7.html"
   to = "/materi/informatika-kelas-3-bab-7.html"
   status = 301

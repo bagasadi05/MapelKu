@@ -125,6 +125,13 @@ window.portalData = {
           materialUrl: null
         },
         {
+          name: "Informatika",
+          teacher: "Pak Andri",
+          topic: "Dampak sosial informatika dan keamanan data pribadi",
+          summary: "Materi interaktif tentang dunia digital, dampak teknologi, perlindungan data pribadi, HAKI, refleksi, dan kuis.",
+          materialUrl: "materi/informatika-kelas-3-bab-7.html"
+        },
+        {
           name: "PJOK",
           teacher: "Pak Budi Santoso",
           topic: "Latihan kekuatan otot dan daya tahan otot",
@@ -183,8 +190,8 @@ window.portalData = {
           name: "Informatika Dasar",
           teacher: "Pak Andri",
           topic: "Perangkat digital, internet, dan dampaknya",
-          summary: "Materi interaktif tentang dunia digital, kartu belajar, game, dan refleksi siswa.",
-          materialUrl: "materi/informatika-kelas-3-bab-7.html"
+          summary: "Pengenalan teknologi digital dan pemanfaatannya dalam kegiatan belajar.",
+          materialUrl: null
         }
       ]
     },
