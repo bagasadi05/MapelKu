@@ -4,101 +4,125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informatika Kelas 3 Bab 7 - Dampak Sosial Informatika</title>
-  <meta name="description" content="Materi Informatika kelas 3 tentang dunia digital, dampak teknologi, perlindungan data pribadi, dan HAKI.">
+  <meta name="description" content="Materi Informatika kelas 3 tentang dunia digital, dampak teknologi, data pribadi, dan HAKI.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #172033;
-      --paper: #f7fbff;
-      --teal: #0f766e;
-      --blue: #2563eb;
-      --rose: #e11d48;
-      --amber: #d97706;
-      --green: #16a34a;
-    }
-
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: "Nunito", sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
     }
 
     html {
       scroll-behavior: smooth;
     }
 
-    body {
-      margin: 0;
-      font-family: "Nunito", sans-serif;
-      color: var(--ink);
-      background:
-        linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 32rem),
-        linear-gradient(315deg, rgba(217, 119, 6, 0.12), transparent 28rem),
-        var(--paper);
-    }
-
-    h1,
-    h2,
-    h3,
-    .display-font {
-      font-family: "Space Grotesk", sans-serif;
-    }
-
     .progress-fill {
       width: 0%;
-      transition: width 180ms ease;
+      transition: width 250ms ease-out;
     }
 
-    .lesson-shell {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
+    .float-one {
+      animation: float 6s ease-in-out infinite;
     }
 
-    .hero-panel {
-      background:
-        linear-gradient(135deg, rgba(15, 118, 110, 0.96), rgba(37, 99, 235, 0.92)),
-        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 18px);
+    .float-two {
+      animation: float 8s ease-in-out infinite reverse;
     }
 
-    .section-card {
-      border: 1px solid rgba(23, 32, 51, 0.1);
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 18px 48px rgba(23, 32, 51, 0.08);
+    .float-three {
+      animation: float 7s ease-in-out infinite;
     }
 
-    .nav-pill,
-    .option-button,
-    .tab-button {
-      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
     }
 
-    .nav-pill:hover,
-    .option-button:hover,
-    .tab-button:hover {
-      transform: translateY(-2px);
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-8px) rotate(-1deg);
+      }
+      50% {
+        transform: translateX(8px) rotate(1deg);
+      }
+      75% {
+        transform: translateX(-8px) rotate(-1deg);
+      }
     }
 
-    .tab-button.active {
-      background: #ffffff;
-      color: var(--teal);
-      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.14);
+    @keyframes scale-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes progress {
+      0% {
+        background-position: 1rem 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .animate-shake {
+      animation: shake 0.5s ease-in-out;
+    }
+
+    .animate-scale-in {
+      animation: scale-in 0.45s ease-out;
     }
 
     .quiz-option.correct {
-      border-color: var(--green);
-      background: #dcfce7;
-      color: #14532d;
+      background: rgba(16, 185, 129, 0.2);
+      border-color: #10b981;
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+      transform: scale(1.02);
     }
 
     .quiz-option.wrong {
-      border-color: var(--rose);
-      background: #ffe4e6;
-      color: #881337;
+      background: rgba(244, 63, 94, 0.2);
+      border-color: #f43f5e;
+      color: #fecdd3;
     }
 
     .quiz-option.dimmed {
+      background: rgba(15, 23, 42, 0.5);
+      border-color: #334155;
+      color: #64748b;
       opacity: 0.55;
+      transform: scale(0.97);
+    }
+
+    .tab-button.active-positive {
+      background: #ffffff;
+      color: #059669;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+      transform: scale(1.02);
+    }
+
+    .tab-button.active-negative {
+      background: #ffffff;
+      color: #e11d48;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+      transform: scale(1.02);
     }
 
     @media print {
@@ -109,290 +133,290 @@
       body {
         background: #ffffff;
       }
-
-      .section-card {
-        box-shadow: none;
-        break-inside: avoid;
-      }
     }
   </style>
 </head>
-<body>
-  <div class="fixed left-0 top-0 z-50 h-1.5 w-full bg-slate-200 no-print" aria-hidden="true">
-    <div id="reading-progress" class="progress-fill h-full bg-gradient-to-r from-teal-500 via-blue-500 to-amber-500"></div>
+<body class="selection:bg-blue-200">
+  <div class="fixed left-0 top-0 z-50 h-1.5 w-full bg-slate-200 no-print">
+    <div id="reading-progress" class="progress-fill h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
   </div>
 
-  <header class="hero-panel text-white">
-    <div class="lesson-shell py-10 md:py-14">
-      <a href="../index.html" class="no-print mb-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-sm font-extrabold text-white backdrop-blur hover:bg-white/25">
-        <span aria-hidden="true">←</span>
+  <header class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 px-4 py-20 text-center text-white shadow-lg">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 22px 22px;"></div>
+    <div class="float-one absolute left-8 top-10 hidden text-6xl opacity-20 md:block">🖥️</div>
+    <div class="float-two absolute bottom-10 right-8 hidden text-6xl opacity-20 md:block">📱</div>
+    <div class="float-three absolute right-24 top-20 hidden text-5xl opacity-20 lg:block">🛡️</div>
+
+    <div class="relative z-10 mx-auto max-w-4xl">
+      <a href="../index.html" class="no-print mb-8 inline-flex rounded-full border border-white/30 bg-white/20 px-5 py-2 text-sm font-bold uppercase tracking-widest text-white shadow-sm backdrop-blur-md transition hover:bg-white/30">
         Kembali ke Portal
       </a>
-
-      <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-        <div>
-          <p class="mb-4 inline-flex rounded-full bg-white/18 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.18em]">
-            Informatika Kelas 3 • Bab 7
-          </p>
-          <h1 class="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
-            Dampak Sosial Informatika
-          </h1>
-          <p class="mt-5 max-w-2xl text-lg font-semibold leading-relaxed text-white/90 md:text-xl">
-            Kenali manfaat dunia digital, gunakan internet dengan bijak, lindungi data pribadi, dan hargai karya orang lain.
-          </p>
-        </div>
-
-        <div class="rounded-3xl border border-white/25 bg-white/14 p-5 backdrop-blur">
-          <p class="text-sm font-extrabold uppercase tracking-[0.14em] text-white/80">Target Belajar</p>
-          <ul class="mt-4 space-y-3 text-sm font-bold leading-relaxed text-white/92">
-            <li class="flex gap-3"><span aria-hidden="true">01</span><span>Menjelaskan contoh teknologi digital di sekitar kita.</span></li>
-            <li class="flex gap-3"><span aria-hidden="true">02</span><span>Membedakan dampak positif dan negatif penggunaan teknologi.</span></li>
-            <li class="flex gap-3"><span aria-hidden="true">03</span><span>Menentukan data pribadi yang perlu dilindungi saat online.</span></li>
-            <li class="flex gap-3"><span aria-hidden="true">04</span><span>Memahami HAKI dan contoh menghargai karya digital.</span></li>
-          </ul>
-        </div>
+      <div class="mb-6 inline-block rounded-full border border-white/30 bg-white/20 px-5 py-2 text-sm font-bold uppercase tracking-widest shadow-sm backdrop-blur-md">
+        Bab 7 • Informatika
       </div>
+      <h1 class="mb-6 text-4xl font-extrabold leading-tight tracking-tight drop-shadow-lg md:text-5xl lg:text-6xl">
+        Dampak Sosial <br class="hidden md:block"> Informatika
+      </h1>
+      <p class="mx-auto max-w-3xl text-lg font-light leading-relaxed opacity-95 md:text-2xl">
+        Jelajahi serunya dunia digital, pahami dampaknya, dan pelajari cara melindungi dirimu di dunia maya!
+      </p>
     </div>
   </header>
 
-  <nav class="no-print sticky top-1.5 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div class="lesson-shell flex gap-2 overflow-x-auto py-3">
-      <a class="nav-pill shrink-0 rounded-full bg-slate-900 px-4 py-2 text-sm font-extrabold text-white" href="#dunia-digital">Dunia Digital</a>
-      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#dampak">Dampak</a>
-      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#data-pribadi">Data Pribadi</a>
-      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#haki">HAKI</a>
-      <a class="nav-pill shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700" href="#kuis">Kuis</a>
-    </div>
-  </nav>
-
-  <main class="lesson-shell space-y-8 py-8 md:py-12">
-    <section id="dunia-digital" class="section-card rounded-3xl p-5 md:p-8">
-      <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-        <div>
-          <p class="text-sm font-black uppercase tracking-[0.16em] text-teal-700">A. Dunia Digital</p>
-          <h2 class="mt-2 text-3xl font-black text-slate-950 md:text-4xl">Teknologi membuat kegiatan harian lebih mudah.</h2>
-          <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-600">
-            Saat melakukan panggilan video, belajar daring, atau melihat orang tua memesan kendaraan lewat aplikasi, kita sedang memakai perangkat TIK dan internet.
+  <main class="relative z-20 mx-auto -mt-12 max-w-6xl space-y-12 px-4 pb-24 sm:px-6 lg:px-8">
+    <section class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl shadow-blue-900/5 transition hover:shadow-2xl hover:shadow-blue-900/10" id="dunia-digital">
+      <div class="flex items-center gap-4 bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white md:px-10">
+        <div class="rounded-2xl bg-white/20 p-3 shadow-inner text-3xl">🖥️</div>
+        <h2 class="text-2xl font-bold md:text-3xl">A. Dunia Digital</h2>
+      </div>
+      <div class="p-8 md:p-10">
+        <div class="relative mb-10 overflow-hidden rounded-2xl border border-blue-100 bg-blue-50 p-6 text-lg leading-relaxed text-blue-900 shadow-sm md:p-8">
+          <div class="absolute right-4 top-4 text-5xl opacity-20">✨</div>
+          <p class="relative z-10">
+            <strong>Apakah kamu pernah melakukan panggilan video</strong> dengan teman atau keluarga yang tempat tinggalnya jauh? Kita dapat melakukannya karena adanya perangkat TIK dan internet. Selain itu, masih banyak kegiatan yang dipermudah oleh teknologi.
           </p>
-          <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-5">
-            <p class="font-extrabold text-teal-900">Pertanyaan pembuka</p>
-            <p class="mt-2 text-slate-700">Pernahkah kamu memakai internet untuk belajar, berkomunikasi, atau mencari informasi? Ceritakan satu contoh di kelas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <article class="group cursor-default rounded-2xl border-2 border-slate-100 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-400 hover:bg-blue-50/50 hover:shadow-xl">
+            <div class="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-slate-100 bg-slate-50 text-5xl shadow-inner transition group-hover:bg-white group-hover:shadow-md">🎥</div>
+            <h3 class="mb-3 text-xl font-bold text-slate-800">Belajar Daring</h3>
+            <p class="text-sm leading-relaxed text-slate-600">Belajar dari mana saja menggunakan laptop, HP, dan internet.</p>
+          </article>
+          <article class="group cursor-default rounded-2xl border-2 border-slate-100 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-green-400 hover:bg-green-50/50 hover:shadow-xl">
+            <div class="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-slate-100 bg-slate-50 text-5xl shadow-inner transition group-hover:bg-white group-hover:shadow-md">🚗</div>
+            <h3 class="mb-3 text-xl font-bold text-slate-800">Transportasi Daring</h3>
+            <p class="text-sm leading-relaxed text-slate-600">Memesan ojek atau mobil dengan mudah lewat aplikasi.</p>
+          </article>
+          <article class="group cursor-default rounded-2xl border-2 border-slate-100 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-yellow-400 hover:bg-yellow-50/50 hover:shadow-xl">
+            <div class="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-slate-100 bg-slate-50 text-5xl shadow-inner transition group-hover:bg-white group-hover:shadow-md">💳</div>
+            <h3 class="mb-3 text-xl font-bold text-slate-800">ATM</h3>
+            <p class="text-sm leading-relaxed text-slate-600">Mengambil uang tunai secara mandiri melalui mesin.</p>
+          </article>
+          <article class="group cursor-default rounded-2xl border-2 border-slate-100 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-red-400 hover:bg-red-50/50 hover:shadow-xl">
+            <div class="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border border-slate-100 bg-slate-50 text-5xl shadow-inner transition group-hover:bg-white group-hover:shadow-md">📹</div>
+            <h3 class="mb-3 text-xl font-bold text-slate-800">Kamera CCTV</h3>
+            <p class="text-sm leading-relaxed text-slate-600">Kamera pengawas untuk menjaga keamanan suatu tempat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl shadow-teal-900/5">
+      <div class="flex items-center gap-4 bg-gradient-to-r from-teal-500 to-cyan-600 p-6 text-white md:px-10">
+        <div class="rounded-2xl bg-white/20 p-3 shadow-inner text-3xl">🎬</div>
+        <h2 class="text-2xl font-bold md:text-3xl">Video Pembelajaran</h2>
+      </div>
+      <div class="p-8 md:p-10">
+        <div class="overflow-hidden rounded-2xl border-4 border-white bg-slate-100 shadow-lg">
+          <iframe
+            class="aspect-video w-full"
+            src="https://www.youtube.com/embed/qNskX8A5I90?rel=0"
+            title="Video Pembelajaran Dunia Digital"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl shadow-emerald-900/5 transition hover:shadow-2xl hover:shadow-emerald-900/10" id="dampak">
+      <div class="flex items-center gap-4 bg-gradient-to-r from-emerald-500 to-emerald-600 p-6 text-white md:px-10">
+        <div class="rounded-2xl bg-white/20 p-3 shadow-inner text-3xl">📱</div>
+        <h2 class="text-2xl font-bold md:text-3xl">B. Pengaruh Dunia Digital</h2>
+      </div>
+
+      <div class="p-8 md:p-10">
+        <p class="mx-auto mb-8 max-w-3xl text-center text-lg text-slate-600">
+          Perkembangan teknologi digital sangat memengaruhi kehidupan manusia. Layaknya dua sisi mata uang, ada dampak <strong>positif</strong> dan <strong>negatif</strong>.
+        </p>
+
+        <div class="mb-8 flex flex-col gap-4 rounded-2xl bg-slate-100 p-2 md:flex-row">
+          <button id="tab-positive" class="tab-button active-positive flex flex-1 items-center justify-center gap-3 rounded-xl px-6 py-4 text-lg font-bold transition" type="button">👍 Dampak Positif</button>
+          <button id="tab-negative" class="tab-button flex flex-1 items-center justify-center gap-3 rounded-xl px-6 py-4 text-lg font-bold text-slate-500 transition hover:bg-slate-200" type="button">👎 Dampak Negatif</button>
+        </div>
+
+        <div id="positive-panel" class="rounded-2xl border-2 border-emerald-200 bg-emerald-50/50 p-6 shadow-inner transition md:p-8">
+          <ul class="space-y-4">
+            <li class="flex items-center gap-4 rounded-xl border border-emerald-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-emerald-100 p-2 text-emerald-600">✅</span><span class="font-medium text-slate-700">Mempermudah manusia melakukan kegiatan.</span></li>
+            <li class="flex items-center gap-4 rounded-xl border border-emerald-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-emerald-100 p-2 text-emerald-600">✅</span><span class="font-medium text-slate-700">Membuat komunikasi menjadi lebih mudah, cepat, dan efisien.</span></li>
+            <li class="flex items-center gap-4 rounded-xl border border-emerald-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-emerald-100 p-2 text-emerald-600">✅</span><span class="font-medium text-slate-700">Meningkatkan perekonomian karena terbukanya pasar digital.</span></li>
+            <li class="flex items-center gap-4 rounded-xl border border-emerald-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-emerald-100 p-2 text-emerald-600">✅</span><span class="font-medium text-slate-700">Mempermudah manusia mendapatkan informasi dan ilmu pengetahuan.</span></li>
+          </ul>
+        </div>
+
+        <div id="negative-panel" class="hidden rounded-2xl border-2 border-rose-200 bg-rose-50/50 p-6 shadow-inner transition md:p-8">
+          <ul class="space-y-4">
+            <li class="flex items-center gap-4 rounded-xl border border-rose-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-rose-100 p-2 text-rose-600">❌</span><span class="font-medium text-slate-700">Berkurangnya komunikasi secara langsung atau tatap muka.</span></li>
+            <li class="flex items-center gap-4 rounded-xl border border-rose-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-rose-100 p-2 text-rose-600">❌</span><span class="font-medium text-slate-700">Meningkatnya kejahatan seperti penipuan, pembajakan karya digital, dan cyberbullying.</span></li>
+            <li class="flex items-center gap-4 rounded-xl border border-rose-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-rose-100 p-2 text-rose-600">❌</span><span class="font-medium text-slate-700">Ketergantungan pada teknologi.</span></li>
+            <li class="flex items-center gap-4 rounded-xl border border-rose-100 bg-white p-4 text-lg shadow-sm transition hover:translate-x-2 md:p-5"><span class="rounded-full bg-rose-100 p-2 text-rose-600">❌</span><span class="font-medium text-slate-700">Kerusakan lingkungan akibat produksi dalam bidang teknologi.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl shadow-rose-900/5 transition hover:shadow-2xl hover:shadow-rose-900/10" id="data-pribadi">
+      <div class="relative flex items-center gap-4 overflow-hidden bg-gradient-to-r from-rose-500 to-rose-600 p-6 text-white md:px-10">
+        <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 20px);"></div>
+        <div class="relative z-10 rounded-2xl bg-white/20 p-3 text-3xl shadow-inner">🛡️</div>
+        <h2 class="relative z-10 text-2xl font-bold md:text-3xl">C. Melindungi Data Pribadi Saat Online</h2>
+      </div>
+
+      <div class="p-8 md:p-10">
+        <div class="relative mb-10 flex flex-col items-center gap-6 overflow-hidden rounded-2xl border-l-8 border-rose-500 bg-rose-50 p-6 shadow-sm md:flex-row md:gap-8 md:p-8">
+          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-rose-500 opacity-5"></div>
+          <div class="shrink-0 animate-pulse text-6xl text-rose-500">⚠️</div>
+          <div>
+            <h3 class="mb-2 text-2xl font-extrabold tracking-tight text-rose-800">HATI-HATI! PERINGATAN!</h3>
+            <p class="text-lg leading-relaxed text-rose-900">
+              Internet memudahkan orang tak bertanggung jawab melakukan kejahatan. Berikut adalah <strong>5 data pribadi</strong> yang <strong>sangat dilarang</strong> dibagikan sembarangan di internet.
+            </p>
           </div>
         </div>
 
-        <div class="grid gap-4 sm:grid-cols-2">
-          <article class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
-            <div class="text-4xl" aria-hidden="true">🎥</div>
-            <h3 class="mt-4 text-xl font-black text-blue-950">Belajar Daring</h3>
-            <p class="mt-2 font-semibold text-blue-900/80">Belajar dari rumah atau sekolah lain menggunakan HP, laptop, dan internet.</p>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
+          <article class="group relative flex gap-5 overflow-hidden rounded-2xl border-2 border-slate-100 bg-white p-5 shadow-sm transition hover:border-rose-400 hover:shadow-xl lg:p-6">
+            <div class="h-fit rounded-2xl bg-rose-100 p-4 text-2xl text-rose-600 shadow-inner transition group-hover:bg-rose-500 group-hover:text-white">ℹ️</div>
+            <div><div class="mb-2 flex items-center gap-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-rose-500 text-xs font-bold text-white shadow-sm">1</span><h3 class="text-xl font-bold text-slate-800 group-hover:text-rose-700">Informasi Pribadi</h3></div><p class="text-sm leading-relaxed text-slate-600 md:text-base">Nama, alamat rumah, nomor telepon, tanggal lahir, kartu identitas, dan sekolah.</p></div>
           </article>
-          <article class="rounded-2xl border border-green-100 bg-green-50 p-5">
-            <div class="text-4xl" aria-hidden="true">🚕</div>
-            <h3 class="mt-4 text-xl font-black text-green-950">Transportasi Daring</h3>
-            <p class="mt-2 font-semibold text-green-900/80">Memesan ojek atau mobil lewat aplikasi dengan bantuan peta digital.</p>
+          <article class="group relative flex gap-5 overflow-hidden rounded-2xl border-2 border-slate-100 bg-white p-5 shadow-sm transition hover:border-rose-400 hover:shadow-xl lg:p-6">
+            <div class="h-fit rounded-2xl bg-rose-100 p-4 text-2xl text-rose-600 shadow-inner transition group-hover:bg-rose-500 group-hover:text-white">🔒</div>
+            <div><div class="mb-2 flex items-center gap-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-rose-500 text-xs font-bold text-white shadow-sm">2</span><h3 class="text-xl font-bold text-slate-800 group-hover:text-rose-700">Kata Sandi</h3></div><p class="text-sm leading-relaxed text-slate-600 md:text-base">Kata rahasia yang digunakan untuk masuk ke akunmu, misalnya email atau aplikasi belajar.</p></div>
           </article>
-          <article class="rounded-2xl border border-amber-100 bg-amber-50 p-5">
-            <div class="text-4xl" aria-hidden="true">🏧</div>
-            <h3 class="mt-4 text-xl font-black text-amber-950">ATM</h3>
-            <p class="mt-2 font-semibold text-amber-900/80">Mengambil uang dan melakukan transaksi secara mandiri melalui mesin.</p>
+          <article class="group relative flex gap-5 overflow-hidden rounded-2xl border-2 border-slate-100 bg-white p-5 shadow-sm transition hover:border-rose-400 hover:shadow-xl lg:p-6">
+            <div class="h-fit rounded-2xl bg-rose-100 p-4 text-2xl text-rose-600 shadow-inner transition group-hover:bg-rose-500 group-hover:text-white">🗺️</div>
+            <div><div class="mb-2 flex items-center gap-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-rose-500 text-xs font-bold text-white shadow-sm">3</span><h3 class="text-xl font-bold text-slate-800 group-hover:text-rose-700">Rencana Perjalanan</h3></div><p class="text-sm leading-relaxed text-slate-600 md:text-base">Jadwal kegiatan liburan atau lokasi tempatmu berada pada suatu waktu.</p></div>
           </article>
-          <article class="rounded-2xl border border-rose-100 bg-rose-50 p-5">
-            <div class="text-4xl" aria-hidden="true">📹</div>
-            <h3 class="mt-4 text-xl font-black text-rose-950">Kamera CCTV</h3>
-            <p class="mt-2 font-semibold text-rose-900/80">Membantu menjaga keamanan dengan merekam keadaan suatu tempat.</p>
+          <article class="group relative flex gap-5 overflow-hidden rounded-2xl border-2 border-slate-100 bg-white p-5 shadow-sm transition hover:border-rose-400 hover:shadow-xl lg:p-6">
+            <div class="h-fit rounded-2xl bg-rose-100 p-4 text-2xl text-rose-600 shadow-inner transition group-hover:bg-rose-500 group-hover:text-white">🖼️</div>
+            <div><div class="mb-2 flex items-center gap-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-rose-500 text-xs font-bold text-white shadow-sm">4</span><h3 class="text-xl font-bold text-slate-800 group-hover:text-rose-700">Foto & Video Pribadi</h3></div><p class="text-sm leading-relaxed text-slate-600 md:text-base">Media yang menampilkan diri sendiri, keluarga, atau teman dengan info yang terlihat jelas.</p></div>
+          </article>
+          <article class="group relative flex gap-5 overflow-hidden rounded-2xl border-2 border-slate-100 bg-white p-5 shadow-sm transition hover:border-rose-400 hover:shadow-xl md:col-span-2 lg:p-6">
+            <div class="h-fit rounded-2xl bg-rose-100 p-4 text-2xl text-rose-600 shadow-inner transition group-hover:bg-rose-500 group-hover:text-white">💬</div>
+            <div><div class="mb-2 flex items-center gap-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-rose-500 text-xs font-bold text-white shadow-sm">5</span><h3 class="text-xl font-bold text-slate-800 group-hover:text-rose-700">Percakapan Pribadi</h3></div><p class="text-sm leading-relaxed text-slate-600 md:text-base">Pembicaraan rahasia tentang masalah pribadi, keluarga, teman, atau sekolah.</p></div>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section class="section-card rounded-3xl p-5 md:p-8">
-      <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p class="text-sm font-black uppercase tracking-[0.16em] text-blue-700">Video Pendamping</p>
-          <h2 class="mt-2 text-3xl font-black text-slate-950">Belajar lewat contoh visual</h2>
-        </div>
-        <p class="max-w-xl font-semibold leading-relaxed text-slate-600">
-          Gunakan video sebagai pengantar diskusi. Setelah menonton, siswa bisa menyebutkan teknologi digital yang sering mereka temui.
-        </p>
-      </div>
-      <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-        <iframe
-          class="aspect-video w-full"
-          src="https://www.youtube.com/embed/qNskX8A5I90?rel=0"
-          title="Video Pembelajaran Dunia Digital"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-
-    <section id="dampak" class="section-card rounded-3xl p-5 md:p-8">
-      <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p class="text-sm font-black uppercase tracking-[0.16em] text-green-700">B. Pengaruh Dunia Digital</p>
-          <h2 class="mt-2 text-3xl font-black text-slate-950 md:text-4xl">Teknologi punya manfaat, tetapi perlu aturan.</h2>
-          <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-600">
-            Dunia digital bisa membantu kita belajar dan berkomunikasi. Namun, jika digunakan tanpa batas, teknologi juga bisa membawa risiko.
+        <div class="mt-10 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 text-center shadow-sm transition hover:shadow-md md:p-8">
+          <p class="flex flex-col items-center justify-center gap-4 text-xl font-bold text-blue-900 md:flex-row">
+            <span class="rounded-full bg-white p-3 text-4xl shadow-sm">👨‍🏫</span>
+            <span>Jika ragu, mintalah bimbingan orang tua atau guru ketika online!</span>
           </p>
         </div>
+      </div>
+    </section>
 
+    <section class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl shadow-amber-900/5 transition hover:shadow-2xl hover:shadow-amber-900/10" id="haki">
+      <div class="relative flex items-center gap-4 overflow-hidden bg-gradient-to-r from-amber-500 to-orange-500 p-6 text-white md:px-10">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="relative z-10 rounded-2xl bg-white/20 p-3 text-3xl shadow-inner">⚖️</div>
+        <h2 class="relative z-10 text-2xl font-bold md:text-3xl">D. Hak Atas Kekayaan Intelektual (HAKI)</h2>
+      </div>
+
+      <div class="p-8 md:p-10">
+        <div class="mb-10 rounded-2xl border border-amber-200 bg-amber-50 p-6 text-lg leading-relaxed shadow-sm md:p-8">
+          <p class="mb-6 text-amber-900">
+            Gambar, lagu, tulisan, video, program, dan game adalah karya. Karya seseorang dilindungi secara hukum. Jika orang lain ingin menggunakannya, ada aturan yang harus dipatuhi.
+          </p>
+          <div class="flex flex-col items-start gap-5 rounded-xl border-l-8 border-amber-500 bg-white p-5 shadow-md transition hover:scale-[1.01] md:flex-row md:items-center">
+            <div class="shrink-0 rounded-full bg-amber-100 p-3 text-3xl">©️</div>
+            <p class="text-slate-700"><strong>HAKI</strong> adalah hak untuk memperoleh perlindungan hukum atas karya seseorang yang diatur dalam undang-undang.</p>
+          </div>
+        </div>
+
+        <h3 class="mb-5 flex items-center gap-2 text-xl font-bold text-slate-800"><span class="text-amber-500">✨</span> Contoh Karya Digital</h3>
+        <div class="mb-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div class="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-center transition hover:border-amber-200 hover:bg-amber-50"><div class="rounded-full bg-white p-3 text-3xl shadow-sm transition group-hover:scale-110">🎨</div><span class="font-medium text-slate-700">Gambar / Desain</span></div>
+          <div class="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-center transition hover:border-amber-200 hover:bg-amber-50"><div class="rounded-full bg-white p-3 text-3xl shadow-sm transition group-hover:scale-110">🎵</div><span class="font-medium text-slate-700">Lagu / Audio</span></div>
+          <div class="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-center transition hover:border-amber-200 hover:bg-amber-50"><div class="rounded-full bg-white p-3 text-3xl shadow-sm transition group-hover:scale-110">📄</div><span class="font-medium text-slate-700">Buku / Tulisan</span></div>
+          <div class="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-center transition hover:border-amber-200 hover:bg-amber-50"><div class="rounded-full bg-white p-3 text-3xl shadow-sm transition group-hover:scale-110">💻</div><span class="font-medium text-slate-700">Program / Game</span></div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-3xl border-2 border-rose-100 bg-rose-50 p-6 shadow-sm md:p-8">
+          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-rose-500 opacity-5"></div>
+          <h3 class="mb-4 flex items-center gap-3 text-2xl font-extrabold text-rose-800"><span>⚠️</span> Hati-hati Pelanggaran HAKI!</h3>
+          <p class="mb-6 text-lg text-slate-700">
+            Di dunia digital, karya lebih mudah dicuri atau dibajak. <strong>Pembajakan</strong> adalah menyalin dan menyalurkan karya orang lain secara tidak resmi.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 shadow-sm transition hover:shadow-md md:p-5"><span class="mt-1 rounded-full bg-rose-100 p-2 text-rose-600">⬇️</span><p class="text-slate-700"><strong>Mengunduh & Menjual Tanpa Izin:</strong> Mengunduh ciptaan orang lain, menyalinnya, lalu membagikan atau menjualnya.</p></div>
+            <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 shadow-sm transition hover:shadow-md md:p-5"><span class="mt-1 rounded-full bg-rose-100 p-2 text-rose-600">📄</span><p class="text-slate-700"><strong>Plagiarisme Tulisan:</strong> Mengambil tulisan orang lain tanpa mencantumkan nama penulis aslinya.</p></div>
+            <div class="flex items-start gap-4 rounded-xl border border-rose-100 bg-white p-4 shadow-sm transition hover:shadow-md md:p-5"><span class="mt-1 rounded-full bg-rose-100 p-2 text-rose-600">📚</span><p class="text-slate-700"><strong>Menggandakan Buku:</strong> Menggandakan isi buku tanpa izin dari penerbit, kemudian menjualnya.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3" id="kuis">
+      <aside class="flex flex-col justify-between rounded-3xl bg-gradient-to-b from-indigo-500 to-purple-600 p-8 text-white shadow-xl lg:col-span-1">
         <div>
-          <div class="rounded-2xl bg-slate-100 p-2">
-            <div class="grid grid-cols-2 gap-2">
-              <button class="tab-button active rounded-xl px-4 py-3 text-center font-black" type="button" data-tab="positif">Dampak Positif</button>
-              <button class="tab-button rounded-xl px-4 py-3 text-center font-black text-slate-600" type="button" data-tab="negatif">Dampak Negatif</button>
+          <div class="mb-6 w-fit rounded-2xl bg-white/20 p-3 text-3xl">📘</div>
+          <h2 class="mb-4 text-2xl font-bold">Rangkuman Cepat</h2>
+          <ul class="space-y-4 font-medium text-indigo-50">
+            <li class="flex items-start gap-3"><span class="text-xl">✅</span> Teknologi memudahkan hidup kita.</li>
+            <li class="flex items-start gap-3"><span class="text-xl">⚠️</span> Waspada dampak negatif seperti kecanduan dan kejahatan siber.</li>
+            <li class="flex items-start gap-3"><span class="text-xl">🔒</span> Jaga 5 data pribadi utamamu.</li>
+            <li class="flex items-start gap-3"><span class="text-xl">⚖️</span> Hargai karya orang lain melalui HAKI.</li>
+          </ul>
+        </div>
+        <div class="mt-8 border-t border-white/20 pt-6">
+          <p class="text-center text-sm text-indigo-100 opacity-80">Siap untuk tantangan? Uji pemahamanmu di sebelah kanan.</p>
+        </div>
+      </aside>
+
+      <section class="flex flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl shadow-indigo-900/5 lg:col-span-2">
+        <div class="flex items-center gap-4 bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
+          <div class="rounded-2xl bg-white/20 p-3 text-3xl shadow-inner">🏆</div>
+          <h2 class="text-2xl font-bold">E. Uji Pemahaman Terakhir</h2>
+        </div>
+
+        <div class="flex flex-1 flex-col p-8">
+          <div class="relative flex flex-1 flex-col justify-center overflow-hidden rounded-3xl bg-slate-800 p-6 text-white shadow-inner md:p-8">
+            <div class="absolute right-0 top-0 h-48 w-48 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-purple-500 opacity-10 blur-3xl"></div>
+            <h3 class="relative z-10 mb-6 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-center text-2xl font-black tracking-widest text-transparent">
+              🎮 UJI KEMAMPUAN!
+            </h3>
+
+            <div id="quiz-running" class="relative z-10">
+              <div class="mb-3 flex justify-between text-sm font-bold uppercase tracking-wider text-slate-400">
+                <span id="question-count">Pertanyaan 1 / 5</span>
+                <span class="text-blue-400">Skor: <span id="score-label">0</span></span>
+              </div>
+              <div class="mb-8 h-2.5 w-full overflow-hidden rounded-full border border-slate-600/50 bg-slate-700/50">
+                <div id="quiz-progress" class="relative h-full rounded-full bg-gradient-to-r from-blue-400 to-emerald-400 transition-all duration-700 ease-out" style="width: 0%;">
+                  <div class="absolute inset-0 animate-[progress_1s_linear_infinite]" style="background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent); background-size: 1rem 1rem;"></div>
+                </div>
+              </div>
+
+              <div class="mb-6 flex min-h-[120px] items-center rounded-2xl border border-slate-600 bg-slate-700/40 p-6 shadow-xl">
+                <p id="question-text" class="text-xl font-semibold leading-relaxed text-slate-100 md:text-2xl"></p>
+              </div>
+
+              <div id="option-list" class="relative space-y-3"></div>
+              <div id="feedback-text" class="mt-5 min-h-8 text-center text-lg font-bold"></div>
+              <button id="next-question" type="button" class="mt-2 hidden w-full rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4 text-lg font-bold text-white shadow-lg transition hover:-translate-y-1 hover:from-blue-600 hover:to-indigo-700 hover:shadow-blue-500/40">Lanjut</button>
+            </div>
+
+            <div id="quiz-result" class="relative z-10 hidden animate-scale-in rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm">
+              <div class="relative inline-block">
+                <div class="mb-4 text-8xl drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">🏆</div>
+              </div>
+              <h4 id="result-title" class="mb-2 text-4xl font-extrabold text-white">Skor Akhir: 0</h4>
+              <div class="mx-auto mb-6 h-1 w-20 rounded-full bg-blue-500"></div>
+              <p id="result-message" class="mb-8 text-xl font-medium text-blue-100"></p>
+              <button id="reset-quiz" type="button" class="flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4 text-lg font-bold text-white shadow-lg transition hover:-translate-y-1 hover:from-blue-600 hover:to-indigo-700 hover:shadow-blue-500/50">🔄 Main Lagi</button>
             </div>
           </div>
-
-          <div id="tab-positif" class="mt-4 rounded-2xl border border-green-100 bg-green-50 p-5">
-            <ul class="space-y-3 font-bold text-green-950">
-              <li class="rounded-xl bg-white p-4 shadow-sm">Mempermudah manusia melakukan kegiatan sehari-hari.</li>
-              <li class="rounded-xl bg-white p-4 shadow-sm">Membuat komunikasi menjadi lebih cepat dan efisien.</li>
-              <li class="rounded-xl bg-white p-4 shadow-sm">Membantu kegiatan ekonomi melalui pasar digital.</li>
-              <li class="rounded-xl bg-white p-4 shadow-sm">Mempermudah manusia mendapatkan informasi dan ilmu pengetahuan.</li>
-            </ul>
-          </div>
-
-          <div id="tab-negatif" class="mt-4 hidden rounded-2xl border border-rose-100 bg-rose-50 p-5">
-            <ul class="space-y-3 font-bold text-rose-950">
-              <li class="rounded-xl bg-white p-4 shadow-sm">Berkurangnya komunikasi langsung jika terlalu sering memakai gawai.</li>
-              <li class="rounded-xl bg-white p-4 shadow-sm">Muncul risiko penipuan, pembajakan karya digital, dan cyberbullying.</li>
-              <li class="rounded-xl bg-white p-4 shadow-sm">Ketergantungan pada teknologi jika tidak memakai batas waktu.</li>
-              <li class="rounded-xl bg-white p-4 shadow-sm">Produksi teknologi dapat berdampak pada lingkungan.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="data-pribadi" class="section-card rounded-3xl p-5 md:p-8">
-      <div class="rounded-2xl border border-rose-200 bg-rose-50 p-5 md:p-6">
-        <p class="text-sm font-black uppercase tracking-[0.16em] text-rose-700">C. Aman Saat Online</p>
-        <h2 class="mt-2 text-3xl font-black text-rose-950 md:text-4xl">Data pribadi tidak boleh dibagikan sembarangan.</h2>
-        <p class="mt-4 max-w-3xl text-lg font-semibold leading-relaxed text-rose-950/80">
-          Internet bisa digunakan oleh banyak orang. Karena itu, kita perlu berhati-hati saat menulis, mengirim foto, atau membagikan informasi.
-        </p>
-      </div>
-
-      <div class="mt-6 grid gap-4 md:grid-cols-2">
-        <article class="rounded-2xl border border-slate-200 bg-white p-5">
-          <p class="text-sm font-black text-rose-600">01</p>
-          <h3 class="mt-1 text-xl font-black">Informasi Pribadi</h3>
-          <p class="mt-2 font-semibold text-slate-600">Nama lengkap, alamat rumah, nomor telepon, tanggal lahir, kartu identitas, dan nama sekolah.</p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-5">
-          <p class="text-sm font-black text-rose-600">02</p>
-          <h3 class="mt-1 text-xl font-black">Kata Sandi</h3>
-          <p class="mt-2 font-semibold text-slate-600">Password adalah rahasia. Jangan diberikan kepada teman atau ditulis di tempat umum.</p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-5">
-          <p class="text-sm font-black text-rose-600">03</p>
-          <h3 class="mt-1 text-xl font-black">Rencana Perjalanan</h3>
-          <p class="mt-2 font-semibold text-slate-600">Jadwal liburan atau lokasi saat ini sebaiknya tidak diumumkan sembarangan.</p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-5">
-          <p class="text-sm font-black text-rose-600">04</p>
-          <h3 class="mt-1 text-xl font-black">Foto dan Video Pribadi</h3>
-          <p class="mt-2 font-semibold text-slate-600">Pastikan foto tidak memperlihatkan alamat, seragam lengkap, kartu, atau informasi penting.</p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-5 md:col-span-2">
-          <p class="text-sm font-black text-rose-600">05</p>
-          <h3 class="mt-1 text-xl font-black">Percakapan Pribadi</h3>
-          <p class="mt-2 font-semibold text-slate-600">Isi chat keluarga, teman, atau guru tidak boleh disebarkan tanpa izin.</p>
-        </article>
-      </div>
-
-      <div class="mt-6 rounded-2xl border border-blue-200 bg-blue-50 p-5 text-center">
-        <p class="text-lg font-black text-blue-950">Jika ragu, mintalah bantuan orang tua atau guru sebelum membagikan sesuatu di internet.</p>
-      </div>
-    </section>
-
-    <section id="haki" class="section-card rounded-3xl p-5 md:p-8">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p class="text-sm font-black uppercase tracking-[0.16em] text-amber-700">D. HAKI</p>
-          <h2 class="mt-2 text-3xl font-black text-slate-950 md:text-4xl">Hargai karya orang lain di dunia digital.</h2>
-          <p class="mt-4 text-lg font-semibold leading-relaxed text-slate-600">
-            HAKI adalah hak untuk memperoleh perlindungan hukum atas karya seseorang. Gambar, lagu, tulisan, video, program, dan game termasuk karya yang perlu dihargai.
-          </p>
-        </div>
-
-        <div class="space-y-4">
-          <div class="rounded-2xl border border-amber-200 bg-amber-50 p-5">
-            <h3 class="text-xl font-black text-amber-950">Contoh menghargai HAKI</h3>
-            <ul class="mt-3 space-y-2 font-bold text-amber-950/80">
-              <li>Mencantumkan nama pembuat saat memakai gambar atau tulisan.</li>
-              <li>Meminta izin sebelum memakai karya orang lain.</li>
-              <li>Menggunakan lagu, gambar, atau aplikasi dari sumber resmi.</li>
-            </ul>
-          </div>
-
-          <div class="rounded-2xl border border-rose-200 bg-rose-50 p-5">
-            <h3 class="text-xl font-black text-rose-950">Contoh pelanggaran</h3>
-            <ul class="mt-3 space-y-2 font-bold text-rose-950/80">
-              <li>Menyalin gambar orang lain lalu mengaku sebagai karya sendiri.</li>
-              <li>Membagikan aplikasi, musik, atau video bajakan.</li>
-              <li>Mengambil tulisan dari internet tanpa menyebut sumbernya.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-      <div class="section-card rounded-3xl bg-slate-950 p-5 text-white md:p-8">
-        <p class="text-sm font-black uppercase tracking-[0.16em] text-teal-300">Rangkuman</p>
-        <h2 class="mt-2 text-3xl font-black">Ingat empat hal penting ini.</h2>
-        <ul class="mt-6 space-y-4 font-bold leading-relaxed text-slate-200">
-          <li class="rounded-2xl bg-white/8 p-4">Teknologi membantu belajar, komunikasi, transportasi, keamanan, dan transaksi.</li>
-          <li class="rounded-2xl bg-white/8 p-4">Gunakan gawai dengan batas waktu dan tetap berkomunikasi langsung.</li>
-          <li class="rounded-2xl bg-white/8 p-4">Jaga data pribadi, terutama alamat, nomor telepon, password, foto, dan lokasi.</li>
-          <li class="rounded-2xl bg-white/8 p-4">Hargai karya digital dengan izin, sumber yang jelas, dan tidak membajak.</li>
-        </ul>
-      </div>
-
-      <section id="kuis" class="section-card rounded-3xl p-5 md:p-8">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p class="text-sm font-black uppercase tracking-[0.16em] text-blue-700">E. Uji Pemahaman</p>
-            <h2 class="mt-2 text-3xl font-black text-slate-950">Kuis cepat</h2>
-          </div>
-          <div class="rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-blue-800">
-            Skor: <span id="score-label">0</span>
-          </div>
-        </div>
-
-        <div id="quiz-box" class="mt-6">
-          <div class="mb-4 flex items-center justify-between text-sm font-black uppercase tracking-[0.14em] text-slate-500">
-            <span id="question-count">Pertanyaan 1/5</span>
-            <span id="question-status">Pilih jawaban</span>
-          </div>
-          <div class="h-2 overflow-hidden rounded-full bg-slate-100">
-            <div id="quiz-progress" class="h-full w-0 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 transition-all"></div>
-          </div>
-          <h3 id="question-text" class="mt-6 text-xl font-black leading-relaxed text-slate-950"></h3>
-          <div id="option-list" class="mt-5 grid gap-3"></div>
-          <p id="feedback-text" class="mt-4 min-h-7 font-black"></p>
-          <button id="next-question" type="button" class="option-button mt-3 hidden w-full rounded-2xl bg-slate-950 px-5 py-4 font-black text-white">
-            Lanjut
-          </button>
-        </div>
-
-        <div id="result-box" class="mt-6 hidden rounded-2xl border border-teal-200 bg-teal-50 p-6 text-center">
-          <p class="text-sm font-black uppercase tracking-[0.16em] text-teal-700">Selesai</p>
-          <h3 id="result-title" class="mt-2 text-3xl font-black text-teal-950"></h3>
-          <p id="result-message" class="mt-3 font-bold text-teal-900/80"></p>
-          <button id="reset-quiz" type="button" class="option-button mt-5 rounded-2xl bg-teal-700 px-5 py-3 font-black text-white">
-            Ulangi Kuis
-          </button>
         </div>
       </section>
-    </section>
+    </div>
 
-    <section class="section-card rounded-3xl p-5 md:p-8">
-      <p class="text-sm font-black uppercase tracking-[0.16em] text-slate-600">Refleksi Siswa</p>
-      <h2 class="mt-2 text-3xl font-black text-slate-950">Jawab di buku tulismu.</h2>
-      <div class="mt-5 grid gap-4 md:grid-cols-3">
+    <section class="rounded-3xl border border-slate-100 bg-white p-8 shadow-xl shadow-slate-900/5 md:p-10">
+      <p class="mb-2 text-sm font-black uppercase tracking-[0.18em] text-slate-500">Refleksi Siswa</p>
+      <h2 class="mb-6 text-3xl font-black text-slate-900">Jawab di buku tulismu.</h2>
+      <div class="grid gap-4 md:grid-cols-3">
         <div class="rounded-2xl border border-slate-200 bg-white p-5 font-bold text-slate-700">Sebutkan dua manfaat teknologi digital yang kamu rasakan.</div>
         <div class="rounded-2xl border border-slate-200 bg-white p-5 font-bold text-slate-700">Tuliskan tiga data pribadi yang harus kamu jaga.</div>
         <div class="rounded-2xl border border-slate-200 bg-white p-5 font-bold text-slate-700">Bagaimana cara menghargai karya teman di internet?</div>
@@ -400,103 +424,103 @@
     </section>
   </main>
 
-  <button id="scroll-top" type="button" class="no-print fixed bottom-5 right-5 hidden rounded-full bg-slate-950 px-4 py-3 font-black text-white shadow-lg" aria-label="Kembali ke atas">
-    ↑
-  </button>
+  <button id="scroll-top" type="button" class="fixed bottom-8 right-8 z-50 hidden rounded-full bg-blue-600 p-4 text-white shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] transition hover:-translate-y-1 hover:bg-blue-700" aria-label="Kembali ke atas">↑</button>
 
   <script>
-    const progress = document.getElementById("reading-progress");
+    const readingProgress = document.getElementById("reading-progress");
     const scrollTopButton = document.getElementById("scroll-top");
 
     function updateReadingProgress() {
-      const maxScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const current = document.documentElement.scrollTop;
-      const percent = maxScroll > 0 ? (current / maxScroll) * 100 : 0;
-      progress.style.width = `${percent}%`;
-      scrollTopButton.classList.toggle("hidden", current < 500);
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const percent = windowHeight > 0 ? (totalScroll / windowHeight) * 100 : 0;
+      readingProgress.style.width = `${percent}%`;
+      scrollTopButton.classList.toggle("hidden", totalScroll <= 500);
     }
 
     window.addEventListener("scroll", updateReadingProgress, { passive: true });
     scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
     updateReadingProgress();
 
-    const tabButtons = document.querySelectorAll("[data-tab]");
-    const tabPanels = {
-      positif: document.getElementById("tab-positif"),
-      negatif: document.getElementById("tab-negatif")
-    };
+    const tabPositive = document.getElementById("tab-positive");
+    const tabNegative = document.getElementById("tab-negative");
+    const positivePanel = document.getElementById("positive-panel");
+    const negativePanel = document.getElementById("negative-panel");
 
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const tab = button.dataset.tab;
-        tabButtons.forEach((item) => item.classList.toggle("active", item === button));
-        Object.entries(tabPanels).forEach(([key, panel]) => {
-          panel.classList.toggle("hidden", key !== tab);
-        });
-      });
+    tabPositive.addEventListener("click", () => {
+      tabPositive.classList.add("active-positive");
+      tabNegative.classList.remove("active-negative");
+      positivePanel.classList.remove("hidden");
+      negativePanel.classList.add("hidden");
+    });
+
+    tabNegative.addEventListener("click", () => {
+      tabNegative.classList.add("active-negative");
+      tabPositive.classList.remove("active-positive");
+      negativePanel.classList.remove("hidden");
+      positivePanel.classList.add("hidden");
     });
 
     const quizData = [
       {
-        question: "Perangkat dan jaringan apa yang membantu kita melakukan panggilan video jarak jauh?",
-        options: ["Perangkat TIK dan internet", "Mesin tik dan kertas", "Televisi tanpa jaringan", "Kamera CCTV saja"],
-        answer: 0
+        question: "Apakah perangkat yang kita gunakan untuk melakukan panggilan video jarak jauh?",
+        options: ["Perangkat TIK dan Internet", "Mesin Tik dan Kertas", "Televisi dan Radio", "Kamera CCTV saja"],
+        correct: 0
       },
       {
-        question: "Manakah contoh dampak negatif teknologi digital?",
-        options: ["Mendapatkan informasi lebih cepat", "Komunikasi menjadi mudah", "Berkurangnya komunikasi langsung", "Belajar dari rumah"],
-        answer: 2
+        question: "Manakah yang merupakan dampak NEGATIF dari teknologi digital?",
+        options: ["Mempermudah mendapatkan informasi", "Meningkatkan perekonomian", "Berkurangnya komunikasi secara langsung", "Komunikasi menjadi cepat"],
+        correct: 2
       },
       {
-        question: "Data pribadi apa yang tidak boleh dibagikan sembarangan?",
-        options: ["Warna kesukaan", "Alamat rumah dan password", "Judul buku favorit", "Hobi olahraga"],
-        answer: 1
+        question: "Tindakan menyalin dan menyalurkan karya orang lain secara tidak resmi disebut...",
+        options: ["Kolaborasi Digital", "Pembajakan", "Berbagi Kebaikan", "Cyberbullying"],
+        correct: 1
       },
       {
-        question: "Menyalin karya orang lain lalu mengaku sebagai karya sendiri termasuk...",
-        options: ["Menghargai karya", "Belajar kelompok", "Pelanggaran HAKI", "Merapikan folder"],
-        answer: 2
+        question: "Data pribadi mana yang TIDAK BOLEH dibagikan secara sembarangan di internet?",
+        options: ["Hobi bermain bola", "Warna kesukaan", "Alamat rumah & Kata Sandi", "Judul buku favorit"],
+        correct: 2
       },
       {
-        question: "Apa tindakan terbaik saat ragu membagikan sesuatu di internet?",
-        options: ["Langsung unggah", "Tanya orang tua atau guru", "Kirim ke semua teman", "Hapus semua aplikasi"],
-        answer: 1
+        question: "HAKI adalah singkatan dari...",
+        options: ["Hukum Anak Komputer Indonesia", "Hak Atas Kekayaan Intelektual", "Hak Atas Karya Internet", "Hubungan Antar Komputer Indonesia"],
+        correct: 1
       }
     ];
 
+    const quizRunning = document.getElementById("quiz-running");
+    const quizResult = document.getElementById("quiz-result");
     const questionCount = document.getElementById("question-count");
-    const questionStatus = document.getElementById("question-status");
+    const scoreLabel = document.getElementById("score-label");
+    const quizProgress = document.getElementById("quiz-progress");
     const questionText = document.getElementById("question-text");
     const optionList = document.getElementById("option-list");
     const feedbackText = document.getElementById("feedback-text");
-    const nextButton = document.getElementById("next-question");
-    const scoreLabel = document.getElementById("score-label");
-    const quizProgress = document.getElementById("quiz-progress");
-    const quizBox = document.getElementById("quiz-box");
-    const resultBox = document.getElementById("result-box");
+    const nextQuestion = document.getElementById("next-question");
     const resultTitle = document.getElementById("result-title");
     const resultMessage = document.getElementById("result-message");
-    const resetQuizButton = document.getElementById("reset-quiz");
+    const resetQuiz = document.getElementById("reset-quiz");
 
     let currentQuestion = 0;
     let score = 0;
-    let locked = false;
+    let selectedAnswer = null;
 
     function renderQuestion() {
       const item = quizData[currentQuestion];
-      locked = false;
-      questionCount.textContent = `Pertanyaan ${currentQuestion + 1}/${quizData.length}`;
-      questionStatus.textContent = "Pilih jawaban";
+      selectedAnswer = null;
+      questionCount.textContent = `Pertanyaan ${currentQuestion + 1} / ${quizData.length}`;
+      scoreLabel.textContent = String(Math.round(score));
+      quizProgress.style.width = `${(currentQuestion / quizData.length) * 100}%`;
       questionText.textContent = item.question;
       feedbackText.textContent = "";
-      feedbackText.className = "mt-4 min-h-7 font-black";
-      nextButton.classList.add("hidden");
-      quizProgress.style.width = `${(currentQuestion / quizData.length) * 100}%`;
+      nextQuestion.classList.add("hidden");
 
       optionList.innerHTML = item.options
         .map((option, index) => `
-          <button type="button" class="quiz-option option-button rounded-2xl border-2 border-slate-200 bg-white p-4 text-left font-black text-slate-800 shadow-sm" data-index="${index}">
-            ${option}
+          <button type="button" class="quiz-option group flex w-full items-center justify-between rounded-2xl border-2 border-slate-600 bg-slate-700/50 p-4 text-left font-medium text-slate-200 transition duration-300 hover:scale-[1.01] hover:border-slate-500 hover:bg-slate-600 md:p-5" data-index="${index}">
+            <span class="text-lg">${option}</span>
+            <span class="ml-4 text-slate-400 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100">›</span>
           </button>
         `)
         .join("");
@@ -507,54 +531,60 @@
     }
 
     function handleAnswer(index) {
-      if (locked) return;
-      locked = true;
+      if (selectedAnswer !== null) return;
 
+      selectedAnswer = index;
       const item = quizData[currentQuestion];
+      const isCorrect = index === item.correct;
       const buttons = optionList.querySelectorAll("[data-index]");
-      const isCorrect = index === item.answer;
 
       if (isCorrect) {
-        score += 20;
-        feedbackText.textContent = "Benar. Jawabanmu tepat.";
-        feedbackText.classList.add("text-green-700");
+        score += 100 / quizData.length;
+        feedbackText.textContent = "Benar sekali! Pintar!";
+        feedbackText.className = "mt-5 min-h-8 text-center text-lg font-bold text-emerald-300";
       } else {
-        feedbackText.textContent = "Belum tepat. Perhatikan jawaban yang benar.";
-        feedbackText.classList.add("text-rose-700");
+        feedbackText.textContent = "Ups, kurang tepat. Perhatikan lagi ya!";
+        feedbackText.className = "mt-5 min-h-8 text-center text-lg font-bold text-rose-300";
       }
 
       buttons.forEach((button) => {
         const buttonIndex = Number(button.dataset.index);
         button.disabled = true;
-        if (buttonIndex === item.answer) {
+        button.classList.remove("hover:scale-[1.01]", "hover:border-slate-500", "hover:bg-slate-600");
+
+        if (buttonIndex === item.correct) {
           button.classList.add("correct");
+          button.querySelector("span:last-child").textContent = "✓";
+          button.querySelector("span:last-child").classList.remove("opacity-0");
         } else if (buttonIndex === index) {
-          button.classList.add("wrong");
+          button.classList.add("wrong", "animate-shake");
+          button.querySelector("span:last-child").textContent = "×";
+          button.querySelector("span:last-child").classList.remove("opacity-0");
         } else {
           button.classList.add("dimmed");
         }
       });
 
-      scoreLabel.textContent = String(score);
-      questionStatus.textContent = isCorrect ? "Benar" : "Coba lagi nanti";
+      scoreLabel.textContent = String(Math.round(score));
       quizProgress.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
-      nextButton.textContent = currentQuestion === quizData.length - 1 ? "Lihat Hasil" : "Lanjut";
-      nextButton.classList.remove("hidden");
+      nextQuestion.textContent = currentQuestion === quizData.length - 1 ? "Lihat Hasil" : "Lanjut";
+      nextQuestion.classList.remove("hidden");
     }
 
     function showResult() {
-      quizBox.classList.add("hidden");
-      resultBox.classList.remove("hidden");
-      resultTitle.textContent = `Skor ${score}`;
+      quizRunning.classList.add("hidden");
+      quizResult.classList.remove("hidden");
+      const roundedScore = Math.round(score);
+      resultTitle.textContent = `Skor Akhir: ${roundedScore}`;
       resultMessage.textContent =
-        score >= 80
-          ? "Hebat. Kamu sudah memahami cara menggunakan dunia digital dengan bijak."
-          : score >= 60
-            ? "Bagus. Baca lagi bagian data pribadi dan HAKI supaya makin mantap."
-            : "Tidak apa-apa. Ulangi materi pelan-pelan, lalu coba kuis lagi.";
+        roundedScore === 100
+          ? "Luar biasa! Kamu adalah pakar keamanan digital!"
+          : roundedScore >= 60
+            ? "Kerja bagus! Sedikit lagi menuju sempurna."
+            : "Ayo baca materinya lagi dan coba kembali. Jangan menyerah!";
     }
 
-    nextButton.addEventListener("click", () => {
+    nextQuestion.addEventListener("click", () => {
       if (currentQuestion < quizData.length - 1) {
         currentQuestion += 1;
         renderQuestion();
@@ -563,13 +593,13 @@
       }
     });
 
-    resetQuizButton.addEventListener("click", () => {
+    resetQuiz.addEventListener("click", () => {
       currentQuestion = 0;
       score = 0;
-      scoreLabel.textContent = "0";
-      quizBox.classList.remove("hidden");
-      resultBox.classList.add("hidden");
+      quizRunning.classList.remove("hidden");
+      quizResult.classList.add("hidden");
       renderQuestion();
+      document.getElementById("kuis").scrollIntoView({ behavior: "smooth" });
     });
 
     renderQuestion();
