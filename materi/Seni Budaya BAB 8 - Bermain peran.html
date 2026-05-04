@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Seni Budaya Kelas 3: Ayo Bermain Peran!</title>
+    <!-- Menggunakan Tailwind CSS untuk desain yang cantik dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan Font lucu untuk anak-anak -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #e0f2fe; /* Biru langit muda */
+            background-image: radial-gradient(#bae6fd 2px, transparent 2px);
+            background-size: 30px 30px;
+        }
+        .card-pop:hover {
+            transform: translateY(-5px) scale(1.02);
+            transition: all 0.3s ease;
+        }
+        .radio-custom input:checked + div {
+            background-color: #fef08a; /* Kuning saat dipilih */
+            border-color: #eab308;
+            font-weight: bold;
+        }
+        
+        /* Tambahan Efek Visual Keren */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating { animation: float 3s ease-in-out infinite; }
+        
+        /* Style untuk kuis */
+        .correct-answer { background-color: #86efac !important; border-color: #22c55e !important; color: #14532d; font-weight: bold; }
+        .wrong-answer { background-color: #fca5a5 !important; border-color: #ef4444 !important; color: #7f1d1d; }
+        .disabled-label { cursor: not-allowed; opacity: 0.8; }
+    </style>
+    <!-- Library Confetti untuk efek menang kuis -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="p-4 md:p-8 text-gray-800">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
+        
+        <!-- Header Section -->
+        <div class="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 p-8 md:p-12 text-center text-white relative overflow-hidden">
+            <!-- Elemen dekoratif melayang -->
+            <div class="absolute top-4 left-6 text-5xl md:text-6xl floating opacity-50">🌟</div>
+            <div class="absolute bottom-4 right-8 text-6xl md:text-7xl floating opacity-50" style="animation-delay: 1.5s;">🎭</div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4 drop-shadow-lg relative z-10">🎭 Ayo Bermain Peran! 🐾</h1>
+            <p class="text-xl md:text-2xl font-bold bg-white/20 backdrop-blur-sm text-white inline-block px-8 py-3 rounded-full border-2 border-white/50 shadow-sm relative z-10">Pantomim dan Cerita Fabel</p>
+        </div>
+
+        <!-- Intro -->
+        <div class="p-6 md:p-10">
+            <div class="bg-blue-50 border-l-8 border-blue-400 p-6 rounded-r-2xl mb-10 text-lg">
+                <p>Halo, <strong>Anak-anak Hebat Kelas 3!</strong> 👋</p>
+                <p class="mt-2">Hari ini kita akan belajar hal yang sangat seru. Kita akan belajar menjadi aktor dan aktris cilik di atas panggung melalui Pantomim dan mementaskan cerita hewan (Fabel). Yuk, kita mulai petualangannya! 🚀</p>
+            </div>
+
+            <!-- Bagian 1: Persiapan -->
+            <h2 class="text-3xl font-black text-purple-600 mb-6 flex items-center gap-3">
+                <span class="text-4xl">✨</span> 1. Persiapan Menjadi Bintang!
+            </h2>
+            <p class="text-lg mb-4">Pantomim adalah pertunjukan tanpa suara, jadi kita hanya menggunakan <strong>gerakan tubuh</strong> dan <strong>ekspresi wajah</strong>. Sebelum tampil, lakukan langkah ini:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-pink-100 p-6 rounded-2xl card-pop border-2 border-pink-200">
+                    <div class="text-4xl mb-3 text-center">🧘‍♂️</div>
+                    <h3 class="font-bold text-xl text-pink-700 mb-2 text-center">Sebelum Pentas</h3>
+                    <ul class="list-disc pl-5 text-pink-900 space-y-2">
+                        <li><strong>Kepala:</strong> Tengok kiri kanan, putar pelan-pelan.</li>
+                        <li><strong>Tangan:</strong> Buka tutup lengan seperti sayap kupu-kupu 🦋.</li>
+                        <li><strong>Kaki:</strong> Putar pinggul, tekuk lutut, coba berjinjit.</li>
+                    </ul>
+                </div>
+                <div class="bg-green-100 p-6 rounded-2xl card-pop border-2 border-green-200">
+                    <div class="text-4xl mb-3 text-center">🌟</div>
+                    <h3 class="font-bold text-xl text-green-700 mb-2 text-center">Saat di Panggung</h3>
+                    <ul class="list-disc pl-5 text-green-900 space-y-2">
+                        <li>Tampillah dengan <strong>berani</strong> dan <strong>percaya diri</strong>.</li>
+                        <li>Gunakan kostum hewanmu.</li>
+                        <li>Berikan tepuk tangan 👏 saat teman lain selesai tampil.</li>
+                    </ul>
+                </div>
+                <div class="bg-yellow-100 p-6 rounded-2xl card-pop border-2 border-yellow-200">
+                    <div class="text-4xl mb-3 text-center">💭</div>
+                    <h3 class="font-bold text-xl text-yellow-700 mb-2 text-center">Selesai Pentas</h3>
+                    <ul class="list-disc pl-5 text-yellow-900 space-y-2">
+                        <li>Ungkapkan perasaanmu. Apakah kamu canggung?</li>
+                        <li>Bercerita dengan teman-teman agar penampilan selanjutnya lebih hebat!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bagian 2: Tim Pementasan -->
+            <h2 class="text-3xl font-black text-blue-600 mb-6 flex items-center gap-3">
+                <span class="text-4xl">🤝</span> 2. Membentuk Tim Super!
+            </h2>
+            <div class="bg-blue-100 p-6 rounded-2xl mb-10 border-2 border-blue-200 flex flex-col md:flex-row gap-6 items-center">
+                <div class="text-7xl">🦸‍♂️🦸‍♀️</div>
+                <div class="text-lg text-blue-900">
+                    <p class="mb-2">Di panggung, kita tidak bisa bekerja sendirian. Kita butuh <strong>Tim Pementasan</strong>! Ada ketua, pemain, petugas dekorasi, dan banyak lagi.</p>
+                    <p class="font-bold bg-blue-200 inline-block p-2 rounded-lg mt-2">💡 Ingat: Kerja sama tim itu sangat penting agar pementasan berjalan lancar. Saling bantu ya!</p>
+                </div>
+            </div>
+
+            <!-- Bagian 3: Kostum dan Properti -->
+            <h2 class="text-3xl font-black text-orange-600 mb-6 flex items-center gap-3">
+                <span class="text-4xl">🎩</span> 3. Kostum dan Properti Ajaib
+            </h2>
+            <p class="text-lg mb-4">Apa sih bedanya Kostum dan Properti? Yuk kita lihat dari cerita <strong>"Kancil Suka Makan Timun"</strong>!</p>
+            
+            <div class="flex flex-col md:flex-row gap-6 mb-12">
+                <div class="flex-1 bg-white border-4 border-orange-200 p-6 rounded-3xl shadow-md text-center card-pop">
+                    <div class="text-6xl mb-4">👕</div>
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">Kostum</h3>
+                    <p class="text-gray-600">Pakaian yang kamu gunakan saat pentas.</p>
+                    <div class="mt-4 bg-orange-100 p-3 rounded-xl font-bold text-orange-800">
+                        Contoh: Topeng Kelinci / Kancil, Baju Petani.
+                    </div>
+                </div>
+                <div class="flex-1 bg-white border-4 border-teal-200 p-6 rounded-3xl shadow-md text-center card-pop">
+                    <div class="text-6xl mb-4">🌳</div>
+                    <h3 class="text-2xl font-bold text-teal-600 mb-2">Properti</h3>
+                    <p class="text-gray-600">Benda pendukung yang diletakkan atau dipegang di panggung.</p>
+                    <div class="mt-4 bg-teal-100 p-3 rounded-xl font-bold text-teal-800">
+                        Contoh: Pohon Timun buatan, Caping, Orang-orangan sawah.
+                    </div>
+                </div>
+            </div>
+
+            <!-- KUIS SECTION -->
+            <div class="bg-indigo-600 p-8 rounded-3xl text-white shadow-inner">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-black mb-2 text-yellow-300">🎯 Kuis Waktunya Bermain! 🧠</h2>
+                    <p class="text-xl">Ayo uji ingatanmu! Pilih jawaban yang paling tepat.</p>
+                </div>
+
+                <form id="quizForm" class="space-y-6 text-gray-800 text-lg">
+                    
+                    <!-- Soal 1 -->
+                    <div class="bg-white p-6 rounded-2xl">
+                        <p class="font-bold mb-4 text-xl">1. Sebelum melakukan pementasan pantomim, apa yang harus kita lakukan agar tubuh tenang dan tidak kaku?</p>
+                        <div class="space-y-3">
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q1" value="a" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">a. Langsung berlari ke panggung</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q1" value="b" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">b. Makan yang banyak</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q1" value="c" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">c. Melakukan pemanasan dan relaksasi</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="bg-white p-6 rounded-2xl">
+                        <p class="font-bold mb-4 text-xl">2. Gerakan lengan membuka dan menutup ke atas dan ke bawah mirip dengan gerakan sayap hewan apa?</p>
+                        <div class="space-y-3">
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q2" value="a" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">a. Katak</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q2" value="b" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">b. Kupu-kupu</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q2" value="c" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">c. Ular</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 3 -->
+                    <div class="bg-white p-6 rounded-2xl">
+                        <p class="font-bold mb-4 text-xl">3. Apa yang harus kita lakukan saat teman kita selesai tampil di atas panggung?</p>
+                        <div class="space-y-3">
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q3" value="a" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">a. Memberikan tepuk tangan</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q3" value="b" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">b. Mengobrol dengan teman di sebelah</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q3" value="c" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">c. Meninggalkan ruangan</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 4 -->
+                    <div class="bg-white p-6 rounded-2xl">
+                        <p class="font-bold mb-4 text-xl">4. Mengapa dalam pementasan kita sangat memerlukan kerja sama tim?</p>
+                        <div class="space-y-3">
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q4" value="a" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">a. Agar kita bisa bermain-main saja</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q4" value="b" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">b. Agar pementasan berjalan lancar dan saling membantu</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q4" value="c" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">c. Agar panggungnya menjadi sempit</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 5 -->
+                    <div class="bg-white p-6 rounded-2xl">
+                        <p class="font-bold mb-4 text-xl">5. Benda-benda pendukung yang digunakan saat pementasan seni (seperti pohon timun buatan) disebut...</p>
+                        <div class="space-y-3">
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q5" value="a" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">a. Kostum</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q5" value="b" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">b. Makanan</div>
+                            </label>
+                            <label class="radio-custom flex cursor-pointer">
+                                <input type="radio" name="q5" value="c" class="hidden">
+                                <div class="w-full p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition">c. Properti</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="checkAnswers()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-black text-2xl py-4 rounded-2xl shadow-lg transform hover:scale-105 transition duration-300">
+                        🚀 Cek Nilai Kamu! 🚀
+                    </button>
+                </form>
+
+                <!-- Tempat Hasil Kuis -->
+                <div id="quizResult" class="hidden mt-8 p-6 rounded-2xl text-center"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript untuk logika kuis -->
+    <script>
+        function checkAnswers() {
+            // Kunci Jawaban
+            const correctAnswers = {
+                q1: 'c',
+                q2: 'b',
+                q3: 'a',
+                q4: 'b',
+                q5: 'c'
+            };
+
+            let score = 0;
+            let totalQuestions = 5;
+            let allAnswered = true;
+
+            // Reset warna jika sebelumnya sudah dinilai
+            const allOptions = document.querySelectorAll('.radio-custom div');
+            allOptions.forEach(opt => {
+                opt.classList.remove('correct-answer', 'wrong-answer');
+            });
+
+            // Cek setiap jawaban
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                
+                if (!selected) {
+                    allAnswered = false;
+                } else {
+                    const correctInput = document.querySelector(`input[name="q${i}"][value="${correctAnswers[`q${i}`]}"]`);
+                    // Selalu tunjukkan jawaban yang benar dengan warna hijau
+                    correctInput.nextElementSibling.classList.add('correct-answer');
+                    
+                    if (selected.value === correctAnswers[`q${i}`]) {
+                        score++;
+                    } else {
+                        // Tandai merah jika jawaban yang dipilih salah
+                        selected.nextElementSibling.classList.add('wrong-answer');
+                    }
+                }
+            }
+
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.classList.remove('hidden');
+
+            // Jika ada soal yang belum dijawab
+            if (!allAnswered) {
+                resultDiv.innerHTML = "Ups! 🙊 Ada soal yang belum dijawab tuh. Cek lagi ya!";
+                resultDiv.className = "mt-8 p-6 rounded-2xl text-center font-bold text-2xl bg-orange-200 text-orange-800 animate-pulse";
+                return;
+            }
+
+            // Kunci semua radio button setelah disubmit
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.disabled = true;
+                radio.parentElement.classList.add('disabled-label');
+            });
+            // Sembunyikan tombol cek nilai
+            document.querySelector('button[onclick="checkAnswers()"]').style.display = 'none';
+
+            // Menampilkan hasil berdasarkan nilai
+            if (score === 5) {
+                resultDiv.innerHTML = "🎉 <strong>LUAR BIASA!</strong> 🎉<br>Kamu menjawab semua dengan benar! Nilaimu 100! 🌟";
+                resultDiv.className = "mt-8 p-6 rounded-2xl text-center text-2xl bg-green-300 text-green-900 font-bold border-4 border-green-400";
+                
+                // Lempar Confetti jika nilai 100!
+                var duration = 3 * 1000;
+                var animationEnd = Date.now() + duration;
+                var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+
+                function randomInRange(min, max) {
+                  return Math.random() * (max - min) + min;
+                }
+
+                var interval = setInterval(function() {
+                  var timeLeft = animationEnd - Date.now();
+
+                  if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                  }
+
+                  var particleCount = 50 * (timeLeft / duration);
+                  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                }, 250);
+
+            } else if (score >= 3) {
+                resultDiv.innerHTML = `😊 <strong>Bagus Sekali!</strong><br>Kamu benar ${score} dari 5. Nilaimu ${score * 20}. <br><span class="text-lg">Perhatikan jawaban berwarna hijau ya!</span>`;
+                resultDiv.className = "mt-8 p-6 rounded-2xl text-center text-2xl bg-yellow-300 text-yellow-900 font-bold border-4 border-yellow-400";
+            } else {
+                resultDiv.innerHTML = `💪 <strong>Tetap Semangat!</strong><br>Kamu benar ${score} dari 5. Nilaimu ${score * 20}. <br><span class="text-lg">Perhatikan jawaban berwarna hijau untuk belajar lagi!</span>`;
+                resultDiv.className = "mt-8 p-6 rounded-2xl text-center text-2xl bg-red-300 text-red-900 font-bold border-4 border-red-400";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -144,6 +144,13 @@ window.portalData = {
           topic: "Ritme, gerak, dan ekspresi sederhana",
           summary: "Aktivitas kreatif untuk menumbuhkan kepekaan seni dan rasa percaya diri.",
           materialUrl: "materi/seni-budaya-kelas-3-bab-7.html"
+        },
+        {
+          name: "Seni Budaya BAB 8",
+          teacher: "Bu Rina Pertiwi",
+          topic: "Bermain peran - Pantomim dan Cerita Fabel",
+          summary: "Materi interaktif tentang pantomim, tim pementasan, kostum, properti, dan kuis bermain peran.",
+          materialUrl: "materi/Seni Budaya BAB 8 - Bermain peran.html"
         }
       ]
     },
