@@ -37,6 +37,13 @@
         .correct-answer { background-color: #86efac !important; border-color: #22c55e !important; color: #14532d; font-weight: bold; }
         .wrong-answer { background-color: #fca5a5 !important; border-color: #ef4444 !important; color: #7f1d1d; }
         .disabled-label { cursor: not-allowed; opacity: 0.8; }
+        
+        /* Responsive video */
+        @media (max-width: 768px) {
+            .video-container {
+                padding-bottom: 56.25% !important;
+            }
+        }
     </style>
     <!-- Library Confetti untuk efek menang kuis -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -118,16 +125,16 @@
                 
                 <div class="flex justify-center mb-4">
                     <div class="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
-                        <iframe 
-                            width="100%" 
-                            height="500" 
-                            src="https://www.youtube.com/embed/BlicXnuECUc" 
-                            title="Kancil Suka Makan Timun" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            class="rounded-2xl">
-                        </iframe>
+                        <div class="relative video-container" style="padding-bottom: 56.25%;">
+                            <iframe 
+                                class="absolute top-0 left-0 w-full h-full rounded-2xl"
+                                src="https://www.youtube.com/embed/BlicXnuECUc" 
+                                title="Kancil Suka Makan Timun" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
                 
